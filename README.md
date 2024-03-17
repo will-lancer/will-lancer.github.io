@@ -12,6 +12,7 @@
 
   * I am especially interested in how to
     to apply (very) pure math to physics.
+    
 ### Hobbies
 Outside of physics and math, I enjoy,
   * Lifting weights (especially leg day)
