@@ -4,10 +4,12 @@
   * I am a physics and mathematics double major
   at Stony Brook university.
   * My research interests are:
+
 | Physics            | Math                    |
 | ------------------ | ----------------------- |
 | High-energy theory | The Langlands program   |
 | String Theory      | Combinatorial geometry  |
+
   * I am especially interested in how to
     to apply (very) pure math to physics.
 ### Hobbies
