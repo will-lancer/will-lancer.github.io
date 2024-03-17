@@ -35,4 +35,5 @@ at all, please contact me with them).
 
 ### Contact
 Email: william.lancer@stonybrook.edu
+
 (Personal) email: will.m.lancer@gmail.com
