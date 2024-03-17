@@ -26,7 +26,7 @@ that teaching it gives me. There are not many
 finished handouts out right now, so [here](https://github.com/will-lancer/handouts/blob/main/School/Laplace_transforms.pdf)
 is one that I made for my Differential
 Equations with Linear Algebra class
-([MAT 308](https://www.math.stonybrook.edu/MAT308);
+[MAT 308](https://www.math.stonybrook.edu/MAT308);
 it's on Laplace transforms.
 (Any feedback is greatly appreciated
 and welcome; if you see *any* mistakes
