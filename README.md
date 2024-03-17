@@ -1,4 +1,3 @@
-# will-lancer.github.io
 ## Main stuff
 ### Academics
   * I am a physics and mathematics double major
