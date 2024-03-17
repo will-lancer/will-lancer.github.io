@@ -23,11 +23,14 @@ I have authored, and will author (**many** more)
 learning resources; I do this because I enjoy it,
 and because I like the clarity about a subject
 that teaching it gives me. There are not many
-finished handouts out right now, so [https://github.com/will-lancer/handouts/blob/main/School/Laplace_transforms.pdf](here)
+finished handouts out right now, so [here]([here](https://github.com/will-lancer/handouts/blob/main/School/Laplace_transforms.pdf))
 is one that I made for my Differential
 Equations with Linear Algebra class
-([https://www.math.stonybrook.edu/MAT308](MAT 308);
+([MAT 308](https://www.math.stonybrook.edu/MAT308);
 it's on Laplace transforms.
+(Any feedback is greatly appreciated
+and welcome; if you see *any* mistakes
+at all, please contact me with them).
 
 ### Contact
 Email: william.lancer@stonybrook.edu
