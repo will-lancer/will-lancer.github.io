@@ -1,5 +1,5 @@
-## Main stuff
-### Academics
+# Main stuff
+## Academics
   * I am a physics and mathematics double major
   at Stony Brook university.
   * My research interests are:
@@ -11,8 +11,16 @@
 
   * I am especially interested in how to
     to apply (very) pure math to physics.
+
+### Relevant coursework
+| Physics                                    | Math                                     |
+| ------------------------------------------ | ---------------------------------------- |
+| Modern physics (in progress)               | Multivariable calculus                   |
+| Waves and Optics (in progress)             | Linear Algebra                           |
+| Graduate Classical Electrodynamics (audit) | Differential equations (in progress)     |
+| Classical Mechanics (self-studied)         | Proof-based linear algebra (in progress) |
     
-### Hobbies
+## Hobbies
 Outside of physics and math, I enjoy,
   * Lifting weights (especially leg day)
   * Brazilian jiu-jitsu
