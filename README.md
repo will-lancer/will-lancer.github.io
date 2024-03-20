@@ -13,6 +13,7 @@
     to apply (very) pure math to physics.
 
 ### Relevant coursework
+
 | Physics                                    | Math                                     |
 | ------------------------------------------ | ---------------------------------------- |
 | Modern physics (in progress)               | Multivariable calculus                   |
