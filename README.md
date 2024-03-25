@@ -20,7 +20,17 @@
 | Waves and Optics (in progress)             | Linear Algebra                           |
 | Graduate Classical Electrodynamics (audit) | Differential equations (in progress)     |
 | Classical Mechanics (self-studied)         | Proof-based linear algebra (in progress) |
-    
+
+### What I'm currently reading (updated 3/24/24)
+
+**Classical Mechanics**
+  * *Modern Classical Mechanics* by Helliwell and Sahakian
+  * *Mechanics* by Landau and Lifshitz
+**Classical Field Theory**
+  * *Classical Field Theory* by Soper
+  * *Classical Covariant Fields* by Burgess
+  * *Classical Field Theory* by Nastase
+
 ## Hobbies
 Outside of physics and math, I enjoy,
   * Lifting weights (especially leg day)
