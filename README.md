@@ -43,7 +43,7 @@ I have authored, and will author (**many** more)
 learning resources; I do this because I enjoy it,
 and because I like the clarity about a subject
 that teaching it gives me. There are not many
-finished handouts out right now, but [here](https://github.com/will-lancer/handouts/blob/main/School/Laplace_transforms/Laplace_transforms.pdf)
+finished handouts out right now, but [here](https://github.com/will-lancer/handouts/blob/main/School/Laplace_transforms/MAT308_Laplace.pdf)
 is one that I made for my Differential
 Equations with Linear Algebra class
 [MAT 308](https://www.math.stonybrook.edu/MAT308);
