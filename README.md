@@ -23,6 +23,9 @@
 
 ### What I'm currently reading (updated 3/24/24)
 
+Both of these subjects are on recommendation
+of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
+
 **Classical Mechanics**
   * *Modern Classical Mechanics* by Helliwell and Sahakian
   * *Mechanics* by Landau and Lifshitz
