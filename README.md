@@ -21,7 +21,7 @@
 | Graduate Classical Electrodynamics (audit) | Differential equations (in progress)     |
 | Classical Mechanics (self-studied)         | Proof-based linear algebra (in progress) |
 
-### What I'm currently reading (updated 3/24/24)
+### What I'm currently reading (updated 3/25/24)
 
 Both of these subjects are on recommendation
 of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
