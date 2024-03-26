@@ -57,8 +57,10 @@ and welcome; if you see *any* mistakes
 at all, please contact me with them).
 
 Here is the mock
-<a href="Handouts/Physics/Mock.pdf" class="image fit"><img src="Handouts/Physics/Mock.pdf" alt=""></a>
-
+<a href="/Handouts/Physics/Mock.pdf" class="image fit">
+    <img src="/Handouts/Physics/Mock.pdf" alt="Mock">
+    Here
+</a>
 ### Contact
 Email: william.lancer@stonybrook.edu
 
