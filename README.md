@@ -4,10 +4,10 @@
   at Stony Brook university.
   * My research interests are:
 
-| Physics            | Math                    |
-| ------------------ | ----------------------- |
-| High-energy theory | The Langlands program   |
-| String Theory      | Algebraic number theory |
+| Physics                   | Math                    |
+| ------------------------- | ----------------------- |
+| Beyond the Standard Model | The Langlands program   |
+| String Theory             | Algebraic number theory |
 
   * I am especially interested in how to
     to apply (very) pure math to physics.
