@@ -1,0 +1,403 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{william}
+\usepackage{graphicx} %pictures
+\usepackage{wrapfig} %for wrapping pictures
+\usepackage{pgfplots} %graphs
+\usepackage[makeroom]{cancel} %for striking out math
+
+% code for totaling up points
+\usepackage{totcount}
+\newtotcounter{tpts}
+\newtotcounter{cpts}
+\newtotcounter{endpts}
+\newcommand{\clearpts}{\addtocounter{tpts}{\value{cpts}} \setcounter{cpts}{0}}
+\newcommand{\pts}[1]{\clearpts \setcounter{cpts}{#1}}
+\newcommand{\totpts}{\setcounter{endpts}{\totvalue{tpts} + \totvalue{cpts}}\arabic{endpts}}
+
+% formatting for problems and solutions
+\definecolor{ptred}{rgb}{0.7,0.1,0.1}
+\newcommand{\ptfmt}[1]{\textbf{\color{ptred}#1\color{black}}}
+\definecolor{advblue}{rgb}{0.1,0.1,0.7}
+\newcommand{\advanced}{\!\textbf{\color{advblue}[A]\color{black}}\ }
+
+\newtheorem*{solution}{Solution}
+\newtheorem*{answer}{Answer}
+
+% headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\href{https://will-lancer.github.io}{Will Lancer}}
+\chead{}
+\rhead{USAPhO Mock}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+
+\newcommand{\bigtitle}[1]{
+    \begin{center}
+    \huge \textbf{#1}
+    \end{center}
+}
+
+\makeatletter
+\newtheoremstyle{mystyle}
+{\topsep}               % space above
+{\topsep}               % space below
+{}                      % bodyfont
+{}                      % indent
+{\bfseries}             % headfont
+{}                      % punctuation
+{0.6em}                 % space after head
+{\llap{[\ptfmt{\arabic{cpts}}]\hspace{.6em}}\thmname{#1}\thmnumber{ #2}\thmnote{\normalfont{ (#3)}}{\bfseries .}}  %theoremheadspec
+\theoremstyle{mystyle}
+\newtheorem{pproblem}{Problem}
+\makeatother
+
+% uncomment to hide solutions
+
+% \usepackage{environ}
+% \NewEnviron{hide}{}
+% \let\solution\hide
+% \let\endsolution\endhide
+% \let\answer\hide
+% \let\endanswer\endhide
+
+
+\linespread{1.03} % give a little extra room
+\setlength{\parindent}{0.2in} % reduce paragraph indent a bit
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\bigtitle{USAPhO Mock}
+
+Yep. This is probably going to be a ``super-USAPhO'',
+so don't be down if you get like a 2/6. Sources for the
+problems are on the last page, plus where you can
+find solutions to them. Among us picture for good luck. 
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{RedAmongUs.jpeg}
+\end{center}
+
+\newpage
+
+\section{Oscillating Lake}
+
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{mock_lake.png}
+\end{center}
+
+The simplest approximation to water sloshing around
+in a closed container is that the water's surface
+\emph{tilts} while still retaining its flat surface.
+Imagine a lake of rectangular cross section, as shown,
+of length $L$ and with water depth $h \ll L$. The problem
+resembles that of the simple pendulum, in that the kinetic energy is
+almost entirely due to horizontal flow of the water, whereas the potential
+energy depends on the very small change of vertical level.
+
+\begin{alphamerate}
+    \item Imagine at some instant the water level at the
+    extreme ends is at $\pm y_0$ with respect to the normal
+    water level. Show that the increased gravitational potential
+    energy of the whole mass of the water is given by
+    \begin{align*}
+        U = \frac{1}{6} b \rho g L y_0^2,
+    \end{align*}
+    where $b$ is the width of the lake.
+    \item Assuming the water flow is purely horizontal,
+    its speed $v$ must vary with $x$, being greatest at
+    $x = 0$ and zero at $x = \pm L/2$. Show that
+    the speed of the water as a function of $x$ is
+    given by,
+    \begin{align*}
+        v(x) = v(0) - \frac{x^2}{hL} \frac{dy_0}{dt}.
+    \end{align*}
+    where,
+    \begin{align*}
+        v(0) = \frac{L}{4h} \frac{dy_0}{dt}.
+    \end{align*}
+    You may assume the lake water is incompressible,
+    and thus obeys the continuity equation.
+    \item Hence show that at any given instant, the total
+    kinetic energy of the lake associated with the horizontal
+    motion of the water is given by,
+    \begin{align*}
+        K = \frac{1}{60} \frac{b\rho L^3}{h} \left( \frac{dy_0}{dt} \right)^2.
+    \end{align*}
+    \item From this, find the period of oscillation of the
+    lake. \textbf{Hint:} consider the sum of $K$ and $U$. Does this
+    value change with time? You may make reasonable approximations
+    if needed.
+\end{alphamerate}
+
+\newpage
+
+\section{(Not An) Inverse Square}
+
+Imagine that new and extraordinarily precise measurements 
+have revealed an error in Coulomb's law. The \emph{actual} force
+of interaction between two point charges is found to be
+\begin{align*}
+    \mathbf{F} = \frac{q_1 q_2}{4 \pi \epsilon_0} 
+    \frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|^3} 
+    \left( 1 + \frac{|\mathbf{r} - \mathbf{r}'|}{\lambda} \right) e^{(|\mathbf{r} - \mathbf{r}'|)/\lambda},
+\end{align*}
+where $\lambda$ is a new constant of nature called
+the PhODs constant. You, the test taker, are now
+charged with the task of reformulating electrostatics
+to accomodate for the new discovery. Assume
+superposition still holds.
+\begin{alphamerate}
+    \item What is the electric field a distance $\mathbf{r}$
+    from a uniform charged spherical shell of radius $\mathbf{a}$,
+    with charge density $\sigma$?
+    \item Does this version of electrostatics permit a
+    scalar potential? Why or why not? (You need only
+    give a convincing argument; a proof is not required).
+    \item Show that under this formulation of electrostatics,
+    not \emph{all} excess charge on a three-dimensional
+    conducting object goes to its boundary, only some.
+    \item Now suppose we have found \emph{another} error
+    in our measurements, and it turns out the new adjustment is
+    (completely ignore the previous ``actual'' force for this sub-problem).
+    \begin{align*}
+        \mathbf{F} \propto r^{-2 + \delta}.
+    \end{align*}
+    You are going to follow in Maxwell's footsteps, and experimentally
+    measure the value of $\delta$. Based on the work of Cavendish, 
+    Maxwell used the following experiment to test the value of $\delta$:
+    Place two conducting, concentric, thin, spherical shells with radii $a$ and $b$ ($a > b$)
+    down, connect a thin wire between them. After charging the outer spherical 
+    shell to potential $U$, remove the power supply, then remove the thin 
+    wire connecting the two spherical shells, and then ground the outer 
+    spherical shell. At this time, the measured potential of the inner 
+    spherical shell is not greater than $U$. From this, estimate the value 
+    of $\delta$. It is known that $\delta \ll 1$, as it has gone unnoticed
+    for so long. 
+\end{alphamerate}
+
+\newpage
+
+\section{The Photoelectric Effect}
+
+A zinc ball of radius $R = 1cm$ is located in vacuum,
+far away from any other charged bodies, and is charged 
+to a potential of $V = -0.5 V$ (assume $V = 0$ at infinity).
+The ball is being illuminated by a monochromatic ultraviolet
+light with a wavelength of $\lambda = 290nm$.
+
+\begin{alphamerate}
+    \item What is the maximum velocity, $v_{\rm max}$ of
+    the photoelectrons flying out of the ball?
+    \item What is the maximum velocity $v_2$ of a single
+    photoelectron very far away from the ball?
+    \item Determine the ball's potential after a prolonged
+    exposure to the UV light.
+    \item Determine the net number, $N$, of photoelectrons
+    escaped from the ball after the prolonged exposure to
+    the UV light.
+\end{alphamerate}
+
+\textbf{Some useful numbers:}
+\begin{itemize}
+    \item Photoelectric threshold for zinc: $\lambda_0 = 332nm$.
+    \item $c = 3 \cdot 10^8 m/s$, $h = 6.626 \cdot 10^{-34} J/s$,
+    $\epsilon_0 = 8.85 \cdot 10^{-12} F/m$, $e = -1.6 \cdot 10^{-19}$,
+    and the electron mass is $m_e = 9.1 \cdot 10^{-31}kg$.
+\end{itemize}
+
+\newpage
+
+\section*{Intermission}
+
+\includegraphics[width=\textwidth]{cat.png}
+
+\newpage
+
+
+\section{Barrel Stacking}
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{p4_barrel.png}
+\end{center}
+
+Consider the problem of two cylindrical barrels,
+one on top of the other, as shown in Figure 6.3. 
+The bottom barrel is fixed in position and orientation, 
+but the top one, of mass m, is free to move. It starts 
+rolling down from its initial position at the top, 
+rolling without slipping due to friction between the 
+barrels.\\
+
+The bottom barrel has radius $R$, and the top barrel has
+radius $a$. $\theta$ is measured from the positive vertical.
+The bottom barrel is unable to move, and the top barrel
+rolls without slipping on the bottom barrel.
+\begin{alphamerate}
+    \item Find the height when the top barrel loses
+    contact with the bottom barrel.
+    \item Find the angle $\theta$ from the vertical
+    when the top barrel falls off of the bottom barrel.
+    \item Find the distance elapsed on the top barrel
+    when the bottom barrel falls off (as in, how
+    much circumference of the bottom barrel has
+    the top barrel rolled across).
+    \item \verb|[***]| Find the normal force as a function of
+    $\theta$ (maybe skip this part; I'm pretty sure it's
+    harder than all of the other ones combined).
+\end{alphamerate}
+
+\newpage
+
+\section{Prism Stacking}
+
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{p5_prisms.png}
+\end{center}
+
+Two dispersive prisms having apex angles of $A_1 = 60^\circ$
+and $A_2 = 30^\circ$ are glued into the shape above.
+The refractive indices of the prisms, dependent on
+the wavelength, are respectively
+\begin{align*}
+    n_1(\lambda) & = a_1 + \frac{b_1}{\lambda}\\
+    n_2(\lambda) & = a_2 + \frac{b_2}{\lambda}.
+\end{align*}
+Where $a_1 = 1.1, a_2 = 1.3, b_1 = 10^5 nm^2, b_2 = 5 \cdot 10^4 nm^2$.
+\begin{alphamerate}
+    \item Determine the wavelength $\lambda_0$ of the incident
+    radiation that passes through the prisms without refraction
+    on the $AC$ face at any incident angle; determine the corresponding
+    refractional indices of the prisms.
+    \item Draw the ray path in the system of prisms for three
+    different radiations, $\lambda_{\rm red}, \lambda_0, \lambda_{\rm violet}$,
+    which are incident on the system at the same angle.
+    \item Determine the minimum deviation angle for a ray
+    of wavelength $\lambda_0$.
+    \item Calculate the wavelength of the ray that penetrates
+    and then exits the system parallel to $DC$.
+\end{alphamerate}
+
+\newpage
+
+\section{Traveling Faster Than Light}
+
+Can a body move faster than the speed of light? 
+The answer is “No” if the object is moving in the vacuum. 
+But the answer can be “Yes”, if we deal with the phase speed
+of light in an optically dense medium with refractive index of 
+$n$ ($n = c/u$, where $u$ is the speed of light in the medium).\\
+
+\noin
+We say a body is superluminal if $u < v < c$, where $v$ is
+the velocity of the body. Throughout the problem, we will
+be dealing with a superluminal body of constant velocity
+$v$ in an optical medium without dispersino, with $u$
+begin the velocity of light in the medium.\\
+
+\noin
+Note that we define $\gamma \equiv 1/\sqrt{1 - (v/c)^2}$,
+and $\tan{\theta} = \sqrt{v^2/u^2 - 1}$.
+
+
+\begin{figure}[h]
+    \centering
+     \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=0.9\textwidth]{figure1.png} % first figure itself
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+         \centering
+         \includegraphics[width=0.9\textwidth]{figure3.png} % first figure itself
+    \end{minipage}
+\end{figure}
+
+\textbf{Note:} there is no figure 2. I had to trim this
+question to make it USAPhO-length, so I got rid of the
+figure 2 part.
+
+\subsubsection{Figure 1}
+For all of these sub-questions, refer to figure 1.
+For this figure, a radiating particle is moving along
+the $x$-axis with a constant velocity $v$, with $v > u$.
+An observer $M$ is located at a distance $d$ from the $x$-axis.
+We choose the point closest to the observer on the $x$-axis
+to be the origin. The time when the particle passes $x = 0$
+is $t = 0$.
+\begin{alphamerate}
+    \item At time $t = t_0$, the observer first sees the particle at
+    position $x_0'$. Find the apparent position $x_0'$ and the observed
+    time $t_0$ for this first appearance in terms of $d, v,$ and $\theta$.
+    \item Find the apparent position $x'(t)$ at all times $t$. Write
+    your answer in terms of $v, \theta, t,$ and $t_0$.
+    \item From this, find the apparent velocity, $v'(t)$, at all times $t$.
+    Write your answer in terms of $v, \theta, t,$ and $t_0$.
+    \item Can an apparent velocity be greater than $c$? Why or why not?
+\end{alphamerate}
+
+\subsubsection{Figure 3}
+You should refer to figure 3 for all parts of this question.
+Assume that the linear radiating object moves perpendicularly
+along the $x$-axis. Let the observer be located at the origin,
+which we define to be at $x = 0$. The object is symmetric with
+respect to the $x$-axis.
+\begin{alphamerate}
+    \item Show that for a given time $t$, the apparent
+    form of this object is an ellipse, or part(s) of an
+    ellipse.
+    \item Find the position of the center of symmetry for
+    the ellipse at a given time $t$, in terms of $v, \theta,$
+    and $t$.
+    \item Determine the lengths of the semi-major and semi-minor
+    axes of the ellipse for a given time $t$, in terms of
+    $v, \theta,$ and $t$.
+\end{alphamerate}
+
+
+
+\newpage
+
+
+\subsubsection*{Sources}
+These problems were inspired/taken from:
+\begin{enumerate}
+    \item French's \emph{Vibrations and Waves}, problem 3-18
+    \item Griffiths EM, problem 2.54, and Guopei, problem idk.
+    \item Kiselev and Slobodyanin, page 8, problem 10.
+    \item Helliwell and Sahakian's \emph{Modern Classical Mechanics} example 6.2.
+    They do it with Lagrangians, but you can do it with Newtonian; it's just
+    harder.
+    \item IPhO 1983 problem 3
+    \item (Some of) APhO 2008 problem 3 (If I included all of
+    it, it would have been way too long).
+\end{enumerate}
+
+You can get solutions to these problems from
+these sources, which you can get by Googling
+or by using the resources on the server. For
+the Kiselev and Slobodyanin book, I'll post
+it in the server or something, along with
+Guopei. For the IPhO and APhO problems,
+see \href{https://mega.nz/folder/3ZpAGKYJ#hp_Z2CtDlJjhR9shIMHP8w}{this} problem archive.
+
+\subsubsection*{Solutions}
+\begin{itemize}
+    \item See \href{https://quizlet.com/explanations/textbook-solutions/vibrations-and-waves-1st-edition-9780393099362}{here}.
+    \item See \href{https://media.physicsisbeautiful.com/resources/2019/02/18/solutions_manual.pdf}{here}.
+    \item See in Discord resources. Ping me and I'll post them.
+    \item You can find the book on Libgen or Anna's Archive.
+    Not that I'm recommending you do that or anything$\ldots$
+    \item See \href{https://mega.nz/folder/3ZpAGKYJ#hp_Z2CtDlJjhR9shIMHP8w}{this} problem archive
+    for the $5^{th}$ and $6^{th}$ problem.
+\end{itemize}
+
+
+
+\end{document}
