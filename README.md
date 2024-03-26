@@ -34,6 +34,7 @@ of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
   * *Classical Field Theory* by Soper
   * *Classical Covariant Fields* by Burgess
   * *Classical Field Theory* by Nastase
+  * *Introduction to the Classical Theory of Particles and Fields* by Kosyakov
 
 ## Hobbies
 Outside of physics and math, I enjoy,
