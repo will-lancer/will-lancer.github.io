@@ -56,11 +56,9 @@ it's on Laplace transforms.
 and welcome; if you see *any* mistakes
 at all, please contact me with them).
 
-Here is the mock
 <a href="/Handouts/Physics/Mock.pdf" class="image fit">
-    <img src="/Handouts/Physics/Mock.pdf" alt="Mock">
     Here
-</a>
+</a> is the mock
 ### Contact
 Email: william.lancer@stonybrook.edu
 
