@@ -58,7 +58,7 @@ at all, please contact me with them).
 
 <a href="/Handouts/Physics/Mock.pdf">
     Here
-</a> is the mock
+</a> is the mock.
 
 ### Contact
 Email: william.lancer@stonybrook.edu
