@@ -25,7 +25,7 @@
 
 Both of these subjects are on recommendation
 of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
-The starred sections [$] are the books I like
+The sections marked with a [$] are the books I like
 the most.
 
 **Classical Mechanics**
