@@ -25,18 +25,18 @@
 
 Both of these subjects are on recommendation
 of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
-The starred sections [*] are the books I like
+The starred sections [$] are the books I like
 the most.
 
 **Classical Mechanics**
-  * [*] *Modern Classical Mechanics* by Helliwell and Sahakian
+  * [$] *Modern Classical Mechanics* by Helliwell and Sahakian
   * *Mechanics* by Landau and Lifshitz
 
 **Classical Field Theory**
   * *Classical Field Theory* by Soper
-  * [*] *Classical Covariant Fields* by Burgess
+  * [$] *Classical Covariant Fields* by Burgess
   * *Classical Field Theory* by Nastase
-  * [*] *Introduction to the Classical Theory of Particles and Fields* by Kosyakov
+  * [$] *Introduction to the Classical Theory of Particles and Fields* by Kosyakov
 
 ## Hobbies
 Outside of physics and math, I enjoy,
