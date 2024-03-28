@@ -1,7 +1,7 @@
 # Main stuff
 ## Academics
-  * I am a freshman physics and mathematics double major
-  at Stony Brook university.
+  * I am a freshman [physics](https://www.stonybrook.edu/commcms/physics/index.php)
+    and [mathematics](https://www.math.stonybrook.edu) double major at Stony Brook university.
   * My research interests are:
 
 | Physics                   | Math                    |
