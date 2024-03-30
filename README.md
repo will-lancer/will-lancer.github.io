@@ -21,6 +21,12 @@
 | Graduate Classical Electrodynamics (audit) | Differential equations (in progress)     |
 | Classical Mechanics (self-studied)         | Proof-based linear algebra (in progress) |
 
+### Future coursework (Fall 2024, Sophomore year)
+ * PHY 501: Graduate Classical Mechanics
+ * PHY 308: Quantum Mechanics
+ * PHY 301: Electromagnetic Theory I
+ * MAT 320: Introduction to Analysis
+
 ### What I'm currently reading (updated 3/25/24)
 
 Both of these subjects are on recommendation
