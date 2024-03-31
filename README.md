@@ -34,6 +34,8 @@ of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
 The sections marked with a [$] are the books I like
 the most.
 
+### Physics
+
 **Classical Mechanics**
   * [$] *Modern Classical Mechanics* by Helliwell and Sahakian
   * *Mechanics* by Landau and Lifshitz
@@ -43,6 +45,15 @@ the most.
   * [$] *Classical Covariant Fields* by Burgess
   * *Classical Field Theory* by Nastase
   * [$] *Introduction to the Classical Theory of Particles and Fields* by Kosyakov
+
+### Math
+
+**Linear Algebra**
+ * *Linear Algebra Done Right* by Axler
+ * *Abstract Linear Algebra* by Curtis
+
+**Number Theory**
+ * *A Classical Introduction to Modern Number Theory* by Rosen and Ireland
 
 ## Hobbies
 Outside of physics and math, I enjoy,
