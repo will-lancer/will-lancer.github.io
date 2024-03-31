@@ -53,7 +53,7 @@ now. Curtis' book is a great companion to Axler's, presenting
 the material in a more abstract, and often simpler, manner,
 while emphasizing connections to abstract algebra as a whole.
 The number theory book is a pet interest of mine; I hope
-to one day discover a deep connection between number theory
+to one day see a deep connection between number theory
 and physics.
 
 **Linear Algebra**
