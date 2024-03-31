@@ -29,7 +29,7 @@
 
 ### What I'm currently reading (updated 3/31/24)
 
-Both of these subjects are on recommendation
+Both of the physics subjects are on recommendation
 of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
 The sections marked with a [$] are the books I like
 the most.
@@ -47,6 +47,14 @@ the most.
   * [$] *Introduction to the Classical Theory of Particles and Fields* by Kosyakov
 
 ### Math
+
+I am reading Axler's book for MAT 315, a class I'm taking right
+now. Curtis' book is a great companion to Axler's, presenting
+the material in a more abstract, and often simpler, manner,
+while emphasizing connections to abstract algebra as a whole.
+The number theory book is a pet interest of mine; I hope
+to one day discover a deep connection between number theory
+and physics.
 
 **Linear Algebra**
  * *Linear Algebra Done Right* by Axler
