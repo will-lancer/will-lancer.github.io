@@ -49,9 +49,9 @@ the most.
 ### Math
 
 I am reading Axler's book for MAT 315, a class I'm taking right
-now. Curtis' book is a great companion to Axler's, presenting
-the material in a more abstract and simple manner,
-while emphasizing connections to abstract algebra as a whole.
+now. Curtis' book is a great companion to Axler's; he presents
+the material in a more abstract and simple manner than Axler,
+while constantly emphasizing connections to abstract algebra as a whole.
 The number theory book is a pet interest of mine; I hope
 to one day see a deep connection between number theory
 and physics.
