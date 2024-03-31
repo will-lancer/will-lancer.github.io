@@ -31,7 +31,7 @@
 
 Both of the physics subjects are on recommendation
 of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
-The sections marked with a [$] are the books I like
+The books marked with a [$] are the ones I like
 the most.
 
 ### Physics
@@ -57,11 +57,11 @@ to one day see a deep connection between number theory
 and physics.
 
 **Linear Algebra**
- * *Linear Algebra Done Right* by Axler
- * *Abstract Linear Algebra* by Curtis
+ * [$] *Linear Algebra Done Right* by Axler
+ * [$] *Abstract Linear Algebra* by Curtis
 
 **Number Theory**
- * *A Classical Introduction to Modern Number Theory* by Rosen and Ireland
+ * [$] *A Classical Introduction to Modern Number Theory* by Rosen and Ireland
 
 ## Hobbies
 Outside of physics and math, I enjoy,
