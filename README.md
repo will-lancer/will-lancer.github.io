@@ -12,14 +12,6 @@
   * I am especially interested in how to
     to apply (very) pure math to physics.
 
-## Industry
-My main interests in business are:
- * Economical nuclear fission
- * Quantitative finance
- * The prospect of AGI; applying artificial intelligence
-   to specific industries (finance, energy efficiency,
-   customer service, etc.)
-
 ### Relevant coursework
 
 | Physics                                    | Math                                     |
@@ -70,6 +62,14 @@ and physics.
 
 **Number Theory**
  * [$] *A Classical Introduction to Modern Number Theory* by Rosen and Ireland
+
+## Industry
+My main interests in business are:
+ * Economical nuclear fission
+ * Quantitative finance
+ * The prospect of AGI; applying artificial intelligence
+   to specific industries (finance, energy efficiency,
+   customer service, etc.)
 
 ## Hobbies
 Outside of physics and math, I enjoy,
