@@ -27,7 +27,7 @@
  * PHY 301: Electromagnetic Theory I
  * MAT 320: Introduction to Analysis
 
-### What I'm currently reading (updated 3/25/24)
+### What I'm currently reading (updated 3/31/24)
 
 Both of these subjects are on recommendation
 of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
