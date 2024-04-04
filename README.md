@@ -22,12 +22,11 @@
 | Classical Mechanics (self-studied)         | Proof-based linear algebra (in progress) |
 
 ### Future coursework (Fall 2024, Sophomore year)
-Doing the required labs my first semester, as my patience
+I'm doing one of the required labs my first semester, as my patience
 for labs will surely undergo an exponential decrease as
-time goes on.
+time goes on (and I learn more theory).
  * PHY 501: Graduate Classical Mechanics
  * PHY 335: Electronics and Experimentation Lab
- * PHY 252: Modern Physics Lab
  * PHY 301: Electromagnetic Theory I
  * MAT 320: Introduction to Analysis
 
