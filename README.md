@@ -4,38 +4,28 @@
     and [mathematics](https://www.math.stonybrook.edu) double major at Stony Brook university.
   * My research interests are:
 
-| Physics                   | Math                    |
-| ------------------------- | ----------------------- |
-| Beyond the Standard Model | The Langlands program   |
-| String Theory             | Algebraic number theory |
+| Physics                   | Math                              |
+| ------------------------- | --------------------------------- |
+| Beyond the Standard Model | The Geometric Langlands program   |
+| String Theory             | Quantum field theory              |
 
-  * I am especially interested in how to
-    to apply (very) pure math to physics.
-
-### Relevant coursework
-
-| Physics                                    | Math                                     |
-| ------------------------------------------ | ---------------------------------------- |
-| Modern physics (in progress)               | Multivariable calculus                   |
-| Waves and Optics (in progress)             | Linear Algebra                           |
-| Graduate Classical Electrodynamics (audit) | Differential equations (in progress)     |
-| Classical Mechanics (self-studied)         | Proof-based linear algebra (in progress) |
+  * I am especially interested in how to make quantum
+    field theory rigorous.
 
 ### Future coursework (Fall 2024, Sophomore year)
 I'm doing one of the required labs my first semester, as my patience
-for labs will surely undergo an exponential decrease as
-time goes on (and I learn more theory).
+for labs will surely undergo an exponential decay as
+time goes on, and I learn more theory.
  * PHY 501: Graduate Classical Mechanics
  * PHY 335: Electronics and Experimentation Lab
  * PHY 301: Electromagnetic Theory I
  * MAT 320: Introduction to Analysis
+ * MAT 313: Abstract Algebra
 
 ### What I'm currently reading (updated 3/31/24)
 
-Both of the physics subjects are on recommendation
-of [Warren Siegel](http://insti.physics.sunysb.edu/~siegel/plan.html).
-The books marked with a [$] are the ones I like
-the most.
+I am learning the four mechanics (四大力学) at an undergraduate level right
+now.
 
 ### Physics
 
@@ -43,28 +33,28 @@ the most.
   * [$] *Modern Classical Mechanics* by Helliwell and Sahakian
   * *Mechanics* by Landau and Lifshitz
 
-**Classical Field Theory**
-  * *Classical Field Theory* by Soper
-  * [$] *Classical Covariant Fields* by Burgess
-  * *Classical Field Theory* by Nastase
-  * [$] *Introduction to the Classical Theory of Particles and Fields* by Kosyakov
+**Electromagnetism**
+  * [$] *Introduction to Electrodynamics* by Griffiths.
+
+**Quantum Mechanics**
+  * *The Physics of Quantum Mechanics* by Binney and Skinner
+
+**Statistical Physics**
+  * *Concepts in Thermal Physics* by Blundell^2
 
 ### Math
 
-I am reading Axler's book for MAT 315, a class I'm taking right
-now. Curtis' book is a great companion to Axler's; he presents
-the material in a more abstract and simple manner than Axler,
-while constantly emphasizing connections to abstract algebra as a whole.
-The number theory book is a pet interest of mine; I hope
-to one day see a deep connection between number theory
-and physics.
+I'm learning basic math right now, like algebra, analysis, and topology.
 
-**Linear Algebra**
- * [$] *Linear Algebra Done Right* by Axler
- * [$] *Abstract Linear Algebra* by Curtis
+**Algebra**
+ * [$] *Algebra* by Artin
+ * [$] *Undegraduate Algebra* by Lang
 
-**Number Theory**
- * [$] *A Classical Introduction to Modern Number Theory* by Rosen and Ireland
+**Analysis**
+ * [$] *Real Mathematical Analysis* by Pugh
+
+**Topology**
+ * [$] *Topology* by Munkres.
 
 ## Industry
 My main interests in business are:
@@ -93,10 +83,6 @@ it's on Laplace transforms.
 (Any feedback is greatly appreciated
 and welcome; if you see *any* mistakes
 at all, please contact me with them).
-
-<a href="/Handouts/Physics/Mock.pdf">
-    Here
-</a> is the mock.
 
 ### Contact
 Email: william.lancer@stonybrook.edu
