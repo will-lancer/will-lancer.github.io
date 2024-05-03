@@ -69,6 +69,7 @@ Outside of physics and math, I enjoy,
   * Lifting weights (especially leg day)
   * Brazilian jiu-jitsu
   * Reading about quantitative finance
+  * Learning Mandarin Chinese
 
 ## Teaching 
 I have authored, and will author (**many** more)
