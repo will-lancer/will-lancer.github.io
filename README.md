@@ -1,7 +1,7 @@
 # Main stuff
 ## Academics
-  * I am a freshman [physics](https://www.stonybrook.edu/commcms/physics/index.php)
-    and [mathematics](https://www.math.stonybrook.edu) double major at Stony Brook university.
+  * I am a rising sophomore in [physics](https://www.stonybrook.edu/commcms/physics/index.php)
+    and [mathematics](https://www.math.stonybrook.edu) at Stony Brook university.
   * My research interests are:
 
 | Physics                   | Math                              |
@@ -9,8 +9,8 @@
 | Beyond the Standard Model | The Geometric Langlands program   |
 | String Theory             | Quantum field theory              |
 
-  * I am especially interested in how to make quantum
-    field theory rigorous.
+  * I am especially interested in extending the mathematics of quantum
+    field theory, and the challenge of making parts of QFT rigorous.
 
 ### Future coursework (Fall 2024, Sophomore year)
 I'm doing one of the required labs my first semester, as my patience
