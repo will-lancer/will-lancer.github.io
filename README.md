@@ -27,7 +27,7 @@ undergraduate physics and mathematics courses.
  * MAT 320: Introduction to Analysis.
  * MAT 313: Abstract Algebra.
 
-### What I'm currently reading (updated 3/31/24)
+### What I'm currently reading (updated 5/25/24)
 
 I am learning the four mechanics (四大力学) at an undergraduate level right
 now.
