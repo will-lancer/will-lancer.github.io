@@ -16,11 +16,12 @@
 I'm doing one of the required labs my first semester, as my patience
 for labs will surely undergo an exponential decay as
 time goes on, and I learn more theory.
- * PHY 501: Graduate Classical Mechanics
- * PHY 335: Electronics and Experimentation Lab
- * PHY 301: Electromagnetic Theory I
- * MAT 320: Introduction to Analysis
- * MAT 313: Abstract Algebra
+ * PHY 501: Graduate Classical Mechanics.
+ * PHY 540: Graduate Statistical Mechanics.
+ * PHY 335: Electronics and Experimentation Lab.
+ * PHY 301: Electromagnetic Theory I.
+ * MAT 320: Introduction to Analysis.
+ * MAT 313: Abstract Algebra.
 
 ### What I'm currently reading (updated 3/31/24)
 
@@ -30,46 +31,46 @@ now.
 ### Physics
 
 **Classical Mechanics**
-  * [$] *Modern Classical Mechanics* by Helliwell and Sahakian
-  * *Mechanics* by Landau and Lifshitz
+  * [$] *Modern Classical Mechanics* by Helliwell and Sahakian.
+  * *Mechanics* by Landau and Lifshitz.
 
 **Electromagnetism**
   * [$] *Introduction to Electrodynamics* by Griffiths.
 
 **Quantum Mechanics**
-  * *The Physics of Quantum Mechanics* by Binney and Skinner
+  * *The Physics of Quantum Mechanics* by Binney and Skinner.
 
 **Statistical Physics**
-  * *Concepts in Thermal Physics* by Blundell^2
+  * *Concepts in Thermal Physics* by Blundell^2.
 
 ### Math
 
 I'm learning basic math right now, like algebra, analysis, and topology.
 
 **Algebra**
- * [$] *Algebra* by Artin
- * [$] *Undegraduate Algebra* by Lang
+ * [$] *Algebra: Chapter 0* by Aluffi.
+ * [$] *Undegraduate Algebra* by Lang.
 
 **Analysis**
- * [$] *Real Mathematical Analysis* by Pugh
+ * [$] *Real Mathematical Analysis* by Pugh.
 
 **Topology**
  * [$] *Topology* by Munkres.
 
 ## Industry
 My main interests in business are:
- * Economical nuclear fission
- * Quantitative finance
+ * Economical nuclear fission.
+ * Quantitative finance.
  * The prospect of AGI; applying artificial intelligence
    to specific industries (finance, energy efficiency,
    customer service, etc.)
 
 ## Hobbies
 Outside of physics and math, I enjoy,
-  * Lifting weights (especially leg day)
-  * Brazilian jiu-jitsu
-  * Reading about quantitative finance
-  * Learning Mandarin Chinese
+  * Lifting weights (especially leg day).
+  * Brazilian jiu-jitsu.
+  * Reading about quantitative finance.
+  * Learning Mandarin Chinese.
 
 ## Teaching 
 I have authored, and will author (**many** more)
