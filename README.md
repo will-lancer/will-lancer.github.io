@@ -73,18 +73,15 @@ Outside of physics and math, I enjoy,
   * Learning Mandarin Chinese.
 
 ## Teaching 
-I have authored, and will author (**many** more)
-learning resources; I do this because I enjoy it,
-and because I like the clarity about a subject
-that teaching it gives me. There are not many
-finished handouts out right now, but <a href="/Handouts/School/MAT308_Laplace.pdf"> here </a>
-is one that I made for my Differential
-Equations with Linear Algebra class
-[MAT 308](https://www.math.stonybrook.edu/MAT308);
-it's on Laplace transforms.
-(Any feedback is greatly appreciated
-and welcome; if you see *any* mistakes
-at all, please contact me with them).
+I will author some handouts and general teaching materials in
+the future, and will post them here for free.
+
+### Coming soon
+Here are some planned projects:
+ * A "graduate version" of Kevin Zhou's [handouts](https://knzhou.github.io/#teaching);
+   I want to cover the four main mechanics, then most likely QFT after that.
+ * Some handouts on mathematics for physics. Topics that are likely to be covered
+   are multivariable calculus, linear algebra, ODEs, and (the basics of) PDEs.
 
 ### Contact
 Email: william.lancer@stonybrook.edu
