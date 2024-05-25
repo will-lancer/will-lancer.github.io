@@ -26,7 +26,7 @@ time goes on, and I learn more theory.
 ### What I'm currently reading (updated 3/31/24)
 
 I am learning the four mechanics (四大力学) at an undergraduate level right
-now.
+now. Books that I especially like are marked with a [$].
 
 ### Physics
 
