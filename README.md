@@ -63,7 +63,7 @@ My main interests in business are:
  * Quantitative finance.
  * The prospect of AGI; applying artificial intelligence
    to specific industries (finance, energy efficiency,
-   customer service, etc.)
+   customer service, etc.).
 
 ## Hobbies
 Outside of physics and math, I enjoy,
