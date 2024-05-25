@@ -26,16 +26,16 @@ time goes on, and I learn more theory.
 ### What I'm currently reading (updated 3/31/24)
 
 I am learning the four mechanics (四大力学) at an undergraduate level right
-now. Books that I especially like are marked with a [$].
+now.
 
 ### Physics
 
 **Classical Mechanics**
-  * [$] *Modern Classical Mechanics* by Helliwell and Sahakian.
+  * *Modern Classical Mechanics* by Helliwell and Sahakian.
   * *Mechanics* by Landau and Lifshitz.
 
 **Electromagnetism**
-  * [$] *Introduction to Electrodynamics* by Griffiths.
+  * *Introduction to Electrodynamics* by Griffiths.
 
 **Quantum Mechanics**
   * *The Physics of Quantum Mechanics* by Binney and Skinner.
@@ -48,14 +48,14 @@ now. Books that I especially like are marked with a [$].
 I'm learning basic math right now, like algebra, analysis, and topology.
 
 **Algebra**
- * [$] *Algebra: Chapter 0* by Aluffi.
- * [$] *Undegraduate Algebra* by Lang.
+ * *Algebra: Chapter 0* by Aluffi.
+ * *Undegraduate Algebra* by Lang.
 
 **Analysis**
- * [$] *Real Mathematical Analysis* by Pugh.
+ * *Real Mathematical Analysis* by Pugh.
 
 **Topology**
- * [$] *Topology* by Munkres.
+ * *Topology* by Munkres.
 
 ## Industry
 My main interests in business are:
