@@ -26,7 +26,7 @@ courses.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
 
-### What I'm currently reading (updated 5/25/24)
+### What I'm currently reading (updated 6/4/24)
 I'm basically just prepping for my graduate courses next semester,
 in addition to some topical reading on PDEs and QM.
  * For classical mechanics, I'm going through *Modern Classical Mechanics* by
