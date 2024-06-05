@@ -32,7 +32,7 @@ in addition to some topical reading on PDEs and QM.
  * For classical mechanics, I'm going through *Modern Classical Mechanics* by
    Helliwell and Sahakian.
  * For algebra, I'm going through Aluffi's *Algebra: Chapter 0*.
- * For fun (and because I'm taking PDEs this summe), I'm going through
+ * For fun (and because I'm taking PDEs this summer), I'm going through
    Pivato's *Linear Partial Differential Equations and Fourier Theory*
    and a few quantum mechanics textbooks: Zwiebach's, Woit's, and Binney and Skinner's.
 
