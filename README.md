@@ -21,7 +21,7 @@ mechanics. In addition to that, I'm doing some basic
 undergraduate physics and mathematics courses.
 
  * PHY 501: Graduate Classical Mechanics.
- * PHY 540: Graduate Statistical Mechanics.
+ * MAT 534: Graduate Algebra I.
  * PHY 335: Electronics and Experimentation Lab.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
