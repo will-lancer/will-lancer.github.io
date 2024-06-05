@@ -27,38 +27,14 @@ courses.
  * MAT 320: Introduction to Analysis.
 
 ### What I'm currently reading (updated 5/25/24)
-
-I am learning the four mechanics (四大力学) at an undergraduate level right
-now.
-
-### Physics
-
-**Classical Mechanics**
-  * *Modern Classical Mechanics* by Helliwell and Sahakian.
-  * *Mechanics* by Landau and Lifshitz.
-
-**Electromagnetism**
-  * *Introduction to Electrodynamics* by Griffiths.
-
-**Quantum Mechanics**
-  * *The Physics of Quantum Mechanics* by Binney and Skinner.
-
-**Statistical Physics**
-  * *Concepts in Thermal Physics* by Blundell^2.
-
-### Math
-
-I'm learning basic math right now, like algebra, analysis, and topology.
-
-**Algebra**
- * *Algebra: Chapter 0* by Aluffi.
- * *Undegraduate Algebra* by Lang.
-
-**Analysis**
- * *Real Mathematical Analysis* by Pugh.
-
-**Topology**
- * *Topology* by Munkres.
+I'm basically just prepping for my graduate courses next semester,
+in addition to some topical reading on PDEs and QM.
+ * For classical mechanics, I'm going through *Modern Classical Mechanics* by
+   Helliwell and Sahakian.
+ * For algebra, I'm going through Aluffi's *Algebra: Chapter 0*.
+ * For fun (and because I'm taking PDEs this summe), I'm going through
+   Pivato's *Linear Partial Differential Equations and Fourier Theory*
+   and a few quantum mechanics textbooks: Zwiebach's, Woit's, and Binney and Skinner's.
 
 ## Industry
 My main interests in business are:
