@@ -8,14 +8,17 @@
 | ------------------------- | --------------------------------- |
 | Beyond the Standard Model | The Geometric Langlands program   |
 | String Theory             | Quantum field theory              |
+| Biophysics                | The Langlands program             |
 
-  * I am especially interested in extending the mathematics of quantum
-    field theory, and the challenge of making parts of QFT rigorous.
+  * I am especially interested in working on the mathematics of quantum
+    field theory, and in exploring the connections between
+    the Landlands program and theoretical physics (number
+    theory in physics? We'll see...).
 
 ### Future coursework (Fall 2024, Sophomore year)
 I'm doing one of the required labs my first semester, as my patience
 for labs will surely undergo an exponential decay as
-time goes on. I'm planning on doing one core physics
+time goes on. I'm also doing one core physics
 graduate course and one core math graduate course,
 in addition to some other more basic undergraduate
 courses.
@@ -26,28 +29,29 @@ courses.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
 
-### What I'm currently reading (updated 6/4/24)
+### What I'm currently reading (updated 6/10/24)
 I'm basically just prepping for my graduate courses next semester,
 in addition to some topical reading on PDEs and QM.
- * For classical mechanics, I'm going through *Modern Classical Mechanics* by
+ * For classical mechanics, I'm finishing up *Modern Classical Mechanics* by
    Helliwell and Sahakian.
- * For algebra, I'm going through Aluffi's *Algebra: Chapter 0*.
+ * For algebra, I'm going through Aluffi's *Algebra: Chapter 0* (best algebra book ever!).
  * For fun (and because I'm taking PDEs this summer), I'm going through
    Pivato's *Linear Partial Differential Equations and Fourier Theory*
    and a few quantum mechanics textbooks: Zwiebach's, Woit's, and Binney and Skinner's.
+   Most of my focus is on classical mechanics and algebra, though.
 
 ## Industry
 My main interests in business are:
- * Economical nuclear fission.
+ * Economical nuclear fission, and commercial nuclear fusion.
  * Quantitative finance.
- * The prospect of AGI; applying artificial intelligence
+ * The prospect of AGI; applying high-level artificial intelligence
    to specific industries (finance, energy efficiency,
-   customer service, etc.).
+   customer service, etc.)
 
 ## Hobbies
 Outside of physics and math, I enjoy,
-  * Lifting weights (especially leg day).
-  * Brazilian jiu-jitsu.
+  * Lifting weights (especially leg day; ATG all day.)
+  * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com)).
   * Reading about quantitative finance.
   * Learning Mandarin Chinese.
 
