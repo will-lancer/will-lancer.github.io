@@ -59,6 +59,18 @@ Outside of physics and math, I enjoy,
 I will author some handouts and general teaching materials in
 the future, and will post them here for free.
 
+### Planned materials
+Here are some planned projects:
+ * A "graduate version" of Kevin Zhou's [handouts](https://knzhou.github.io/#teaching);
+   I want to cover the four main mechanics, then most likely QFT after that.
+   Of course, I have to *learn* all of this stuff at the graduate level first (actually,
+   past the graduate level if I want to make the handouts good);
+   this is something I will probably accomplish around the end of my
+   Sophomore year, so look here around then for the beginnings of
+   the handouts.
+ * Some handouts on mathematics for physics. Topics that are likely to be covered
+   are multivariable calculus, linear algebra, ODEs, and (the basics of) PDEs.
+
 ## Notes
 I will post my notes here as I make them. Note (tehe)
 that I take notes in a different way than most; I use
@@ -71,13 +83,10 @@ are:
    * Electromagnetism; notes and mind-map.
    * Algebra; notes and mind-map.
    * Quantum; notes and mind-map
-
-### Coming soon
-Here are some planned projects:
- * A "graduate version" of Kevin Zhou's [handouts](https://knzhou.github.io/#teaching);
-   I want to cover the four main mechanics, then most likely QFT after that.
- * Some handouts on mathematics for physics. Topics that are likely to be covered
-   are multivariable calculus, linear algebra, ODEs, and (the basics of) PDEs.
+The classical mechanics and algebra notes and mind-maps
+are going to be graduate level, while the electromagnetism
+and quantum are most likely going to be at the
+upper-undergraduate/lower-graduate level.
 
 ### Contact
 Email: william.lancer@stonybrook.edu
