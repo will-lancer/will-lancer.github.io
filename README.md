@@ -59,6 +59,19 @@ Outside of physics and math, I enjoy,
 I will author some handouts and general teaching materials in
 the future, and will post them here for free.
 
+## Notes
+I will post my notes here as I make them. Note (tehe)
+that I take notes in a different way than most; I use
+mind-maps to learn content, and then make LaTeX notes to 
+store problem-solving strategies and interesting
+facts (aka things that I might forget after not seeing
+a subject for a while). Coming by the end of Fall 2024
+are:
+   * Classical mechanics; notes and mind-map.
+   * Electromagnetism; notes and mind-map.
+   * Algebra; notes and mind-map.
+   * Quantum; notes and mind-map
+
 ### Coming soon
 Here are some planned projects:
  * A "graduate version" of Kevin Zhou's [handouts](https://knzhou.github.io/#teaching);
