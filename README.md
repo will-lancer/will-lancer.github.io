@@ -83,6 +83,7 @@ are:
    * Electromagnetism; notes and mind-map.
    * Algebra; notes and mind-map.
    * Quantum; notes and mind-map
+
 The classical mechanics and algebra notes and mind-maps
 are going to be graduate level, while the electromagnetism
 and quantum are most likely going to be at the
