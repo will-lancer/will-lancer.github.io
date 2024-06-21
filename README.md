@@ -89,6 +89,51 @@ are going to be graduate level, while the electromagnetism
 and quantum are most likely going to be at the
 upper-undergraduate/lower-graduate level.
 
+### Book recommendations
+Here are some book recommendations for physics and math.
+Note that the physics recommendations are a tailored towards
+those that have very strong foundational physics backgrounds
+(i.e. from the physics olympiad. The background I roughly expect
+would be that of [Kevin Zhou's handouts](https://knzhou.github.io/#teaching).) If you don't have this
+background, then the first thing I'd do is *get it*;
+going through the handouts covers the first ~2 years
+of undergraduate at top colleges, and the first 3 years
+at many others (including Stony Brook, actually).
+Anything labeled with a "+" at the end of it means
+that it's not necessary, but if you want to go to
+"the next level", that's the thing I'd recommend.
+These are often more mathematical, and useful for
+those aiming towards theoretical high-energy physics.
+
+**Physics:**
+   * Classical Mechanics:
+       * Undergraduate: *Modern Classical Mechanics* by Helliwell and Sahakian.
+       * Graduate: *Mathematical Methods of Classical Mechanics* by Arnol'd.
+   * Electromagnetism:
+       * Undergraduate: *Introduction to Electrodynamics* by Griffiths.
+       * Graduate: *Modern Electrodynamics* by Zangwill.
+       * Graduate+: *Advanced Classical Electromagnetism* by Wald.
+   * Statistical Mechanics:
+       * Undergraduate: *Concepts in Thermal Physics* by Blundell^2.
+       * Graduate: Both of Kardar's volumes.
+   * Quantum Mechanics:
+       * Undergraduate: *Mastering Quantum Mechanics* by Zwiebach.
+       * Undergraduate+: *Quantum Theory, Groups, and Representations* by Woit.
+       * Graduate: Robert Littlejohn's [lecture notes](https://bohr.physics.berkeley.edu/classes/221/2021/221.html).
+
+**Math:**
+
+***Applied Math:***
+   * Multivariable calculus: David Tong's [lecture notes](http://www.damtp.cam.ac.uk/user/tong/vc.html).
+   * ODEs: Robinson's ODEs, or (for the more mathematically inclined) Arnol'd's ODEs. For a more concise resource, see Schekochihin's [lecture notes](http://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/ODE/2018/ODELectureNotes.pdf).
+   * Computational Linear Algebra: *Introduction to Linear Algebra* by Strang.
+
+***Actual math ;)***
+   * Algebra:
+       * Undergraduate: *Undergraduate Algebra* by Lang and *Linear Algebra Done Right* by Axler.
+       * Graduate: *Algebra: Chapter 0* by Aluffi.
+   * Everything else coming soon... (I don't give recommendations for things I haven't personally read)
+
 ### Contact
 Email: william.lancer@stonybrook.edu
 
