@@ -52,7 +52,9 @@ My main interests in business are:
 Outside of physics and math, I enjoy,
   * Lifting weights (especially leg day; ATG all day.)
   * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com)).
-  * Reading about quantitative finance.
+  * Reading about quantitative finance; the two books I'm leisurely reading
+    right now are *Quantitative Risk and Portfolio Management:
+Theory and Practice* by Winston and *An First Course in Quantitative Finance* by Mazzoni.
   * Learning Mandarin Chinese.
 
 ## Teaching 
