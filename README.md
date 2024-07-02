@@ -110,6 +110,7 @@ worth reading.
        * Undergraduate: *Introduction to Electrodynamics* by Griffiths.
        * Graduate: *Modern Electrodynamics* by Zangwill.
        * Graduate+: *Advanced Classical Electromagnetism* by Wald.
+       * Graduate+: *Classical Electrodynamics: A Modern Perspective* by Lechner.
    * Statistical Mechanics:
        * Undergraduate: *Concepts in Thermal Physics* by Blundell^2.
        * Graduate: Both of Kardar's volumes.
