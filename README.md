@@ -14,6 +14,12 @@
     field theory, and in exploring the connections between
     the Landlands program and theoretical physics (number
     theory in physics? We'll see...).
+  * I am also quite interested in *making predictions*; I see
+    few physicists in the field of hep-th making predictions
+    (not for lack of trying, of course!). However, since there
+    is evidence of certain groups doing so (e.g. Nima Arkani-Hamed
+    and a number of people in dark matter), I think it's a reasonable
+    goal.
 
 ### Future coursework (Fall 2024, Sophomore year)
 I'm doing one of the required labs my first semester, as my patience
@@ -29,16 +35,18 @@ courses.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
 
-### What I'm currently reading (updated 6/10/24)
+### What I'm currently reading (updated 7/2/24)
 I'm basically just prepping for my graduate courses next semester,
 in addition to some topical reading on PDEs and QM.
  * For classical mechanics, I'm finishing up *Modern Classical Mechanics* by
-   Helliwell and Sahakian.
- * For algebra, I'm going through Aluffi's *Algebra: Chapter 0* (best algebra book ever!).
- * For fun (and because I'm taking PDEs this summer), I'm going through
-   Pivato's *Linear Partial Differential Equations and Fourier Theory*
-   and a few quantum mechanics textbooks: Zwiebach's, Woit's, and Binney and Skinner's.
-   Most of my focus is on classical mechanics and algebra, though.
+   Helliwell and Sahakian, as well as *Mechanics* by Landau and Lifshitz.
+ * For algebra, I'm going through Aluffi's *Algebra: Chapter 0*, and Lang's
+   *Undergraduate Algebra*. The latter is a far more classical and digestible
+   treatment of algebra, and the former gives one a more modern perspective
+   on the subjectl; they complement each other nicely.
+ * I'm also reading some E&M; mainly Purcell and Griffiths,
+   with supplementary reading from Lechner's book *Classical
+   Electrodynamics: A Modern Perspective*.
 
 ## Industry
 My main interests in business are:
@@ -54,24 +62,9 @@ Outside of physics and math, I enjoy,
   * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com)).
   * Reading about quantitative finance; the two books I'm leisurely reading
     right now are *Quantitative Risk and Portfolio Management:
-Theory and Practice* by Winston and *A First Course in Quantitative Finance* by Mazzoni.
-  * Learning Mandarin Chinese.
-
-## Teaching 
-I will author some handouts and general teaching materials in
-the future, and will post them here for free.
-
-### Planned materials
-Here are some planned projects:
- * A "graduate version" of Kevin Zhou's [handouts](https://knzhou.github.io/#teaching);
-   I want to cover the four main mechanics, then most likely QFT after that.
-   Of course, I have to *learn* all of this stuff at the graduate level first (actually,
-   past the graduate level if I want to make the handouts good);
-   this is something I will probably accomplish around the end of my
-   Sophomore year, so look here around then for the beginnings of
-   the handouts.
- * Some handouts on mathematics for physics. Topics that are likely to be covered
-   are multivariable calculus, linear algebra, ODEs, and (the basics of) PDEs.
+    Theory and Practice* by Winston and *A First Course in Quantitative Finance* by Mazzoni.
+  * Learning Mandarin Chinese (I use LingQ, tons of comprehensible
+    input from YouTube, and Anki).
 
 ## Notes
 I will post my notes here as I make them. Note (tehe)
@@ -86,18 +79,13 @@ are:
    * Algebra; notes and mind-map.
    * Quantum; notes and mind-map
 
-The classical mechanics and algebra notes and mind-maps
-are going to be graduate level, while the electromagnetism
-and quantum are most likely going to be at the
-upper-undergraduate/lower-graduate level.
-
 ### Book recommendations
 Here are some book recommendations for physics and math.
 Note that the physics recommendations are a tailored towards
 those that have very strong foundational physics backgrounds
 (i.e. from the physics olympiad. The background I roughly expect
-would be that of [Kevin Zhou's handouts](https://knzhou.github.io/#teaching).) If you don't have this
-background, then the first thing I'd do is *get it*;
+would be that of [Kevin Zhou's handouts](https://knzhou.github.io/#teaching).) 
+If you don't have this background, then the first thing I'd do is *get it*;
 going through the handouts covers the first ~2 years
 of undergraduate at top colleges, and the first 3 years
 at many others (including Stony Brook, actually).
@@ -105,13 +93,20 @@ Anything labeled with a "+" at the end of it means
 that it's not necessary, but if you want to go to
 "the next level", that's the thing I'd recommend.
 These are often more mathematical, and useful for
-those aiming towards theoretical high-energy physics.
+those aiming towards theoretical high-energy physics
+(at least, I'd think so; I haven't "made it" in hep-th yet).
+Things marked with a "-" are the opposite: usually a
+bit easier than the book after it, but still very
+worth reading.
 
 **Physics:**
    * Classical Mechanics:
+       * Undergraduate-: *Introduction to Classical Mechanics* by Morin.
        * Undergraduate: *Modern Classical Mechanics* by Helliwell and Sahakian.
+       * Undergraduate+: *Mechanics* by Landau and Lifshitz.
        * Graduate: *Mathematical Methods of Classical Mechanics* by Arnol'd.
    * Electromagnetism:
+       * Undergraduate-: *Electricity and Magnetism* by Purcell and Morin.
        * Undergraduate: *Introduction to Electrodynamics* by Griffiths.
        * Graduate: *Modern Electrodynamics* by Zangwill.
        * Graduate+: *Advanced Classical Electromagnetism* by Wald.
@@ -127,7 +122,9 @@ those aiming towards theoretical high-energy physics.
 
 ***Applied Math:***
    * Multivariable calculus: David Tong's [lecture notes](http://www.damtp.cam.ac.uk/user/tong/vc.html).
-   * ODEs: Robinson's ODEs, or (for the more mathematically inclined) Arnol'd's ODEs. For a more concise resource, see Schekochihin's [lecture notes](http://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/ODE/2018/ODELectureNotes.pdf).
+   * ODEs: Robinson's ODEs, or (for the more mathematically inclined) Arnol'd's ODEs.
+     For a more concise resource, see Schekochihin's
+     [lecture notes](http://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/ODE/2018/ODELectureNotes.pdf).
    * Computational Linear Algebra: *Introduction to Linear Algebra* by Strang.
 
 ***Actual math ;)***
