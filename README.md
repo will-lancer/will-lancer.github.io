@@ -43,10 +43,8 @@ in addition to some topical reading on PDEs and QM.
  * For algebra, I'm going through Aluffi's *Algebra: Chapter 0*, and Lang's
    *Undergraduate Algebra*. The latter is a far more classical and digestible
    treatment of algebra, and the former gives one a more modern perspective
-   on the subjectl; they complement each other nicely.
- * I'm also reading some E&M; mainly Purcell and Griffiths,
-   with supplementary reading from Lechner's book *Classical
-   Electrodynamics: A Modern Perspective*.
+   on the subject; they complement each other nicely.
+ * I'm also reading up on basic undergraduate physics
 
 ## Industry
 My main interests in business are:
@@ -69,70 +67,15 @@ Outside of physics and math, I enjoy,
 ## Notes
 I will post my notes here as I make them. Note (tehe)
 that I take notes in a different way than most; I use
-mind-maps to learn content, and then make LaTeX notes to 
-store problem-solving strategies and interesting
-facts (aka things that I might forget after not seeing
-a subject for a while). Coming by the end of Fall 2024
-are:
+mind-maps to learn content and organize my thoughts, 
+and then make LaTeX notes to  make "mini-courses" for myself.
+Coming by the end of Fall 2024 are:
    * Classical mechanics; notes and mind-map.
    * Electromagnetism; notes and mind-map.
+   * Statistical mechanics; notes and mind-map.
+   * Quantum mechanics; notes and mind-map.
    * Algebra; notes and mind-map.
-   * Quantum; notes and mind-map
-
-### Book recommendations
-Here are some book recommendations for physics and math.
-Note that the physics recommendations are a tailored towards
-those that have very strong foundational physics backgrounds
-(i.e. from the physics olympiad. The background I roughly expect
-would be that of [Kevin Zhou's handouts](https://knzhou.github.io/#teaching).) 
-If you don't have this background, then the first thing I'd do is *get it*;
-going through the handouts covers the first ~2 years
-of undergraduate at top colleges, and the first 3 years
-at many others (including Stony Brook, actually).
-Anything labeled with a "+" at the end of it means
-that it's not necessary, but if you want to go to
-"the next level", that's the thing I'd recommend.
-These are often more mathematical, and useful for
-those aiming towards theoretical high-energy physics
-(at least, I'd think so; I haven't "made it" in hep-th yet).
-Things marked with a "-" are the opposite: usually a
-bit easier than the book after it, but still very
-worth reading.
-
-**Physics:**
-   * Classical Mechanics:
-       * Undergraduate-: *Introduction to Classical Mechanics* by Morin.
-       * Undergraduate: *Modern Classical Mechanics* by Helliwell and Sahakian.
-       * Undergraduate+: *Mechanics* by Landau and Lifshitz.
-       * Graduate: *Mathematical Methods of Classical Mechanics* by Arnol'd.
-   * Electromagnetism:
-       * Undergraduate-: *Electricity and Magnetism* by Purcell and Morin.
-       * Undergraduate: *Introduction to Electrodynamics* by Griffiths.
-       * Graduate: *Modern Electrodynamics* by Zangwill.
-       * Graduate+: *Advanced Classical Electromagnetism* by Wald.
-       * Graduate+: *Classical Electrodynamics: A Modern Perspective* by Lechner.
-   * Statistical Mechanics:
-       * Undergraduate: *Concepts in Thermal Physics* by Blundell^2.
-       * Graduate: Both of Kardar's volumes.
-   * Quantum Mechanics:
-       * Undergraduate: *Mastering Quantum Mechanics* by Zwiebach.
-       * Undergraduate+: *Quantum Theory, Groups, and Representations* by Woit.
-       * Graduate: Robert Littlejohn's [lecture notes](https://bohr.physics.berkeley.edu/classes/221/2021/221.html).
-
-**Math:**
-
-***Applied Math:***
-   * Multivariable calculus: David Tong's [lecture notes](http://www.damtp.cam.ac.uk/user/tong/vc.html).
-   * ODEs: Robinson's ODEs, or (for the more mathematically inclined) Arnol'd's ODEs.
-     For a more concise resource, see Schekochihin's
-     [lecture notes](http://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/ODE/2018/ODELectureNotes.pdf).
-   * Computational Linear Algebra: *Introduction to Linear Algebra* by Strang.
-
-***Actual math ;)***
-   * Algebra:
-       * Undergraduate: *Undergraduate Algebra* by Lang and *Linear Algebra Done Right* by Axler.
-       * Graduate: *Algebra: Chapter 0* by Aluffi.
-   * Everything else coming soon... (I don't give recommendations for things I haven't personally read)
+   * Analysis; notes and mind-map.
 
 ### Contact
 Email: william.lancer@stonybrook.edu
