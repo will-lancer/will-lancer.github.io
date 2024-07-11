@@ -44,7 +44,16 @@ in addition to some topical reading on PDEs and QM.
    *Undergraduate Algebra*. The latter is a far more classical and digestible
    treatment of algebra, and the former gives one a more modern perspective
    on the subject; they complement each other nicely.
- * I'm also reading up on basic undergraduate physics
+ * I'm also reading up on basic undergraduate physics. A list
+   of books is:
+     * *Modern Classical Mechanics* by Helliwell and Sahakian
+       and *Mechanics* by Landau and Lifshitz.
+     * *Introduction to Electrodynamics* by Griffiths and
+       *Classical Electrodynamics: A Modern Perspective* by
+       Lechner.
+     * *Introduction to Thermal Physics* by Blundell.
+     * *The Physics of Quantum Mechanics* by Binney and Skinner
+       and *Quantum Theory, Groups, and Representations* by Woit.
 
 ## Industry
 My main interests in business are:
