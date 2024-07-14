@@ -35,26 +35,6 @@ ones.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
 
-### What I'm currently reading (updated 7/2/24)
-I'm basically just prepping for my graduate courses next semester,
-in addition to some topical reading on PDEs and QM.
- * For classical mechanics, I'm finishing up *Modern Classical Mechanics* by
-   Helliwell and Sahakian, as well as *Mechanics* by Landau and Lifshitz.
- * For algebra, I'm going through Aluffi's *Algebra: Chapter 0*, and Lang's
-   *Undergraduate Algebra*. The latter is a far more classical and digestible
-   treatment of algebra, and the former gives one a more modern perspective
-   on the subject; they complement each other nicely.
- * I'm also reading up on basic undergraduate physics. A list
-   of books is:
-     * *Modern Classical Mechanics* by Helliwell and Sahakian
-       and *Mechanics* by Landau and Lifshitz.
-     * *Introduction to Electrodynamics* by Griffiths and
-       *Classical Electrodynamics: A Modern Perspective* by
-       Lechner.
-     * *Introduction to Thermal Physics* by Blundell.
-     * *The Physics of Quantum Mechanics* by Binney and Skinner
-       and *Quantum Theory, Groups, and Representations* by Woit.
-
 ## Industry
 My main interests in business are:
  * Economical nuclear fission, and commercial nuclear fusion.
