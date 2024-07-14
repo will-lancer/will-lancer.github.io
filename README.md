@@ -30,7 +30,7 @@ in addition to some other more basic undergraduate
 ones.
 
  * PHY 501: Graduate Classical Mechanics.
- * MAT 540: Graduate Statistical Mechanics.
+ * PHY 540: Graduate Statistical Mechanics.
  * PHY 335: Electronics and Experimentation Lab.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
