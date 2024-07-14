@@ -24,13 +24,13 @@
 ### Future coursework (Fall 2024, Sophomore year)
 I'm doing one of the required labs my first semester, as my patience
 for labs will surely undergo an exponential decay as
-time goes on. I'm also doing one core physics
-graduate course and one core math graduate course,
+time goes on. I'm also doing taking two core
+graduate phyics courses,
 in addition to some other more basic undergraduate
-courses.
+ones.
 
  * PHY 501: Graduate Classical Mechanics.
- * MAT 534: Graduate Algebra I.
+ * MAT 540: Graduate Statistical Mechanics.
  * PHY 335: Electronics and Experimentation Lab.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
