@@ -45,7 +45,7 @@ My main interests in business are:
 
 ## Hobbies
 Outside of physics and math, I enjoy,
-  * Lifting weights (especially leg day; ATG all day.)
+  * Lifting weights (especially leg day; ATG all day).
   * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com)).
   * Reading about quantitative finance; the two books I'm leisurely reading
     right now are *Quantitative Risk and Portfolio Management:
@@ -54,7 +54,7 @@ Outside of physics and math, I enjoy,
     input from YouTube, and Anki).
 
 ## Notes
-I will post my notes here as I make them. Note (tehe)
+I will post my notes here as I make/polish them. Note (tehe)
 that I take notes in a different way than most; I use
 mind-maps to learn content and organize my thoughts, 
 and then make LaTeX notes to  make "mini-courses" for myself.
