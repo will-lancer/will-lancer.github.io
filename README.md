@@ -35,8 +35,8 @@ ones.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
  * CSE 114: Introduction to Object-Oriented Programming (I have to take this
-   class to do other CS classes that interest me; Stony Brook is an absolute
-   menace with pre-reqs for CS).
+   class to do other CS classes that interest me; sadly, Stony Brook is an absolute
+   menace when it comes to CS pre-reqs).
 
 ## Industry
 My main interests in business are:
