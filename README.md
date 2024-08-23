@@ -1,7 +1,7 @@
 # Main stuff
 ## Academics
-  * I am a rising sophomore in [physics](https://www.stonybrook.edu/commcms/physics/index.php)
-    and [mathematics](https://www.math.stonybrook.edu) at Stony Brook university.
+  * I am a rising sophomore in [physics](https://www.stonybrook.edu/commcms/physics/index.php),
+    [mathematics](https://www.math.stonybrook.edu), and [computer science](https://www.cs.stonybrook.edu/) at Stony Brook university.
   * My research interests are:
 
 | Physics                   | Math                              |
