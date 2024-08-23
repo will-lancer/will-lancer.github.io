@@ -31,7 +31,7 @@ in addition to some other more basic undergraduate ones.
  * PHY 335: Electronics and Experimentation Lab.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
- * MAT 313: Abstract Algebra.
+ * CSE 114: Introduction to Object-Oriented Programming.
 
 ## Industry
 My main interests in business are:
