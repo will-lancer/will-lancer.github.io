@@ -59,9 +59,6 @@ and then make LaTeX notes to  make "mini-courses" for myself.
 Coming by the end of Fall 2024 are:
    * Classical mechanics; notes and mind-map.
    * Electromagnetism; notes and mind-map.
-   * Statistical mechanics; notes and mind-map.
-   * Quantum mechanics; notes and mind-map.
-   * Algebra; notes and mind-map.
    * Analysis; notes and mind-map.
 
 ### Contact
