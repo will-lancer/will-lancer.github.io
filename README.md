@@ -52,11 +52,8 @@ Outside of physics and math, I enjoy,
     input from YouTube, and Anki).
 
 ## Notes
-I will post my notes here as I make/polish them. Note (tehe)
-that I take notes in a different way than most; I use
-mind-maps to learn content and organize my thoughts, 
-and then make LaTeX notes to  make "mini-courses" for myself.
-Coming by the end of Fall 2024 are:
+I will post my notes here as I make/polish them.
+Some ones that will be posted soon are:
    * Classical mechanics; notes and mind-map.
    * Electromagnetism; notes and mind-map.
    * Analysis; notes and mind-map.
