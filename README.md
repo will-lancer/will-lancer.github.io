@@ -28,6 +28,7 @@ time goes on. I'm also taking a core graduate physics course,
 in addition to some other more basic undergraduate ones.
 
  * PHY 501: Graduate Classical Mechanics.
+ * PHY 511: Graduate Quantum Mechanics I (audit).
  * PHY 335: Electronics and Experimentation Lab.
  * PHY 301: Electromagnetic Theory I.
  * MAT 320: Introduction to Analysis.
