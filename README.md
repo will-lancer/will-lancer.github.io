@@ -52,12 +52,17 @@ Outside of physics and math, I enjoy,
   * Learning Mandarin Chinese (I use LingQ, tons of comprehensible
     input from YouTube, and Anki).
 
-## Notes
-I will post my notes here as I make/polish them.
-Some ones that will be posted soon are:
-   * Classical mechanics; notes and mind-map.
-   * Electromagnetism; notes and mind-map.
-   * Analysis; notes and mind-map.
+## Writing
+I will post writings here as I make them. Some
+ones planned for the future are:
+  * Advice for undergrad (targeted towards math/physics/CS majors)
+  * A physics version of [the Napkin](https://web.evanchen.cc/napkin.html) by Evan Chen
+  * A graduate version of Kevin Zhou's [handouts](https://knzhou.github.io/#teaching).
+    (Maybe; I'm pretty busy, so what's more likely to occur is a list of hard, informational,
+    and interesting problems in graduate level physics, with full solutions by myself. I will
+    probably also add useful ideas needed to solve the problems in the list as well, so it'll
+    be some sort of pseudo-handout. We'll see what happens).
+
 
 ### Contact
 Email: william.lancer@stonybrook.edu
