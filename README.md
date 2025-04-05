@@ -24,6 +24,20 @@ Research-wise, I'm apart of the ATLAS group at SBU,
 under the direction of professor [Hannah Arnold](https://www.linkedin.com/in/hannah-arnold-71406a26/).
 We study ways to improve the efficiency of c-tagging algorithms.
 
+This summer, I'm going to be doing a few main things:
+ * (Most central item) A research project with Hannah Arnold to implement the
+   SALT framework in studying leptonic decays of ttH(->cc).
+ * [COMPs](https://www.stonybrook.edu/commcms/grad-physics-astronomy/resources/Comps) prep. I'm planning on TAing graduate mechanics and
+   electrodynamics next year, as well as skipping graduate quantum
+   1 & 2, so I probably need to take the corresponding comprehensive exams
+   for them as well. So I'm going to be grinding past tests
+   all summer to take the COMPs in the fall.
+ * All the QFT I didn't learn in QFT 1 but need for QFT 2.
+   Zamolodchikov teaches an... [interesting first course](http://max2.physics.sunysb.edu/~rastelli/2019/Zamolodchikov-QFTnotes.pdf)
+   on QFT. So he doesn't teach a bunch of stuff that's standard
+   for first courses that QFT 2 assumes. So I need to learn
+   that to take QFT 2 in the fall.
+
 My next semester course schedule is planned to be:
  * QFT 2
  * String theory 1
