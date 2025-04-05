@@ -12,24 +12,24 @@
 
   * I am especially interested in working on the mathematics of quantum
     field theory, and in exploring the connections between
-    the Landlands program and theoretical physics.
-  * I am also quite interested in Nima-Arkani Hamed's
-    scattering amplitudes program; it seems like one
-    of the only modern hep-th programs that is actually
-    treating spacetime as emergent, and that is very enticing
-    to me.
+    the Landlands program and theoretical physics. I am also quite
+    interested in Nima-Arkani Hamed's scattering amplitudes program.
 
-### Current coursework (Fall 2024, Sophomore year)
+### What I'm doing right now
+I'm mostly focused on trying to understand quantum field theory right now,
+as I'm taking QFT 1 under [Alexander Zamolodchikov](https://en.wikipedia.org/wiki/Alexander_Zamolodchikov) this spring semester.
+I'm also doing a lot of electrodynamics (Jackson my love), 
+as I'm taking graduate classical electrodynamics as well.
+Research-wise, I'm apart of the ATLAS group at SBU,
+under the direction of professor [Hannah Arnold](https://www.linkedin.com/in/hannah-arnold-71406a26/).
+We study ways to improve the efficiency of c-tagging algorithms.
 
- * PHY 501: Graduate Classical Mechanics.
- * PHY 511: Graduate Quantum Mechanics I (audit).
- * PHY 335: Electronics and Experimentation Lab.
- * PHY 301: Electromagnetic Theory I.
- * MAT 320: Introduction to Analysis.
- * CSE 114: Introduction to Object-Oriented Programming.
- * PHY 447: Tutorial in Advanced Topics (A reading course on Georgi's
-   *Lie Algebras in Particle Physics* under
-   [Martin Rocek](https://www.stonybrook.edu/commcms/physics/people/_profiles/rocekm)).
+My next semester course schedule is planned to be:
+ * QFT 2
+ * String theory 1
+ * Grad stat mech
+ * Grad algebra 1 (algebra 1 as a junior in university... 💔)
+ * Research (theory and experiment)
 
 ## Industry
 My main interests in industry are:
@@ -37,13 +37,13 @@ My main interests in industry are:
  * Quantitative finance.
  * The prospect of AGI; applying high-level artificial intelligence
    to specific industries (finance, energy efficiency,
-   customer service, etc.)
+   customer service, defense, etc.)
 
 ## Hobbies
 Outside of physics and math, I enjoy,
   * Lifting weights.
   * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com)).
-  * Learning other languages (currently French; I
+  * Learning other languages (currently Mandarin; I
     use [Lingq](https://www.lingq.com/en/) as my main resource).
 
 ## Writing
