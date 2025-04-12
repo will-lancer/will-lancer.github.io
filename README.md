@@ -20,7 +20,7 @@ I'm mostly focused on trying to understand quantum field theory right now,
 as I'm taking QFT 1 under [Alexander Zamolodchikov](https://en.wikipedia.org/wiki/Alexander_Zamolodchikov) this spring semester.
 I'm also doing a lot of electrodynamics (Jackson my love), 
 as I'm taking graduate classical electrodynamics as well.
-Research-wise, I'm apart of the ATLAS group at SBU,
+Research-wise, I'm a part of the ATLAS group at SBU,
 under the direction of professor [Hannah Arnold](https://www.linkedin.com/in/hannah-arnold-71406a26/).
 We study ways to improve the efficiency of c-tagging algorithms.
 
