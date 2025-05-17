@@ -16,31 +16,24 @@
     interested in Nima-Arkani Hamed's scattering amplitudes program.
 
 ### What I'm doing right now
-I'm mostly focused on trying to understand quantum field theory right now,
-as I'm taking QFT 1 under [Alexander Zamolodchikov](https://en.wikipedia.org/wiki/Alexander_Zamolodchikov) this spring semester.
-I'm also doing a lot of electrodynamics (Jackson my love), 
-as I'm taking graduate classical electrodynamics as well.
-Research-wise, I'm a part of the ATLAS group at SBU,
-under the direction of professor [Hannah Arnold](https://www.linkedin.com/in/hannah-arnold-71406a26/).
-We study ways to improve the efficiency of c-tagging algorithms.
+Summer is about to to start, so I'll be updating this page soon. But
+my summer plans are below.
 
 This summer, I'm going to be doing a few main things:
  * (Most central item) A research project with Hannah Arnold to implement the
    SALT framework in studying leptonic decays of ttH(->cc).
- * [COMPs](https://www.stonybrook.edu/commcms/grad-physics-astronomy/resources/Comps) prep. I'm planning on TAing graduate mechanics and
-   electrodynamics next year, as well as skipping graduate quantum
-   1 & 2, so I probably need to take the corresponding comprehensive exams
-   for them as well. So I'm going to be grinding past tests
-   all summer to take the COMPs in the fall.
- * All the QFT I didn't learn in QFT 1 but need for QFT 2.
-   Zamolodchikov teaches an... [interesting first course](http://max2.physics.sunysb.edu/~rastelli/2019/Zamolodchikov-QFTnotes.pdf)
-   on QFT. So he doesn't teach a bunch of stuff that's standard
-   for first courses that QFT 2 assumes. So I need to learn
-   that to take QFT 2 in the fall.
+ * QFT. Zamolodchikov's course is very unique, mostly focusing on
+   the renormalization group and related topics. After about 1.5 months
+   we only did renormalization. So I need to learn all of the standard
+   QFT 1 stuff, e.g. QED and whatnot before I take QFT 2, as it's all assumed.
+ * Math. I want to make my foundation in basic math (algebra, topology, analysis)
+   stronger; I've taken some classes in them, but I don't have the same freedom thinking
+   about math as I do with physics. So I will be spending some time working on these
+   subjects this summer.
 
-My next semester course schedule is planned to be:
+My next semester course schedule is:
  * QFT 2
- * String theory 1
+ * Group theory for theoretical physics (PHY 680, as taught by Peter van Nieuwenhuizen (one of the inventors of supergravity))
  * Grad stat mech
  * Grad algebra 1 (algebra 1 as a junior in university... 💔)
  * Research (theory and experiment)
@@ -65,12 +58,6 @@ I will post writings here as I make them. Some
 ideas I'm playing around with for the future are:
   * Advice for undergrad (targeted towards math/physics/CS majors)
   * A physics version of [the Napkin](https://web.evanchen.cc/napkin.html) by Evan Chen
-  * A graduate version of Kevin Zhou's [handouts](https://knzhou.github.io/#teaching).
-    (Maybe; I'm pretty busy, so what's more likely to occur is a list of hard, informational,
-    and interesting problems in graduate level physics, with full solutions by myself. I will
-    probably also add useful ideas needed to solve the problems in the list as well, so it'll
-    be some sort of pseudo-handout. We'll see what happens).
-
 
 ### Contact
 Email: william.lancer@stonybrook.edu
