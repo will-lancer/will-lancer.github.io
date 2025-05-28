@@ -33,6 +33,18 @@ This summer, I'm going to be doing a few main things:
    subjects this summer. This material is also *foundational* for the hep-th and math
    research I'd like to do.
 
+For these learning goals, I'll be going through the following courses.
+I'll be posting my work as I go for posterity.
+ * Finishing up PHY 610, as taught by Alexander Zamolodchikov in Spring 2025.
+ * [Physics 253a](https://sites.google.com/view/xi-yin/qft-notes) by Xi Yin, as taught in Fall 2022.
+ * Math [55a](https://canvas.harvard.edu/courses/137344/assignments/syllabus) and
+   [55b](https://canvas.harvard.edu/courses/143404/assignments/syllabus) by Denis Auroux,
+   as taught in Fall 2024-Spring 2025.
+I'll be working through Math 55 the whole summer,
+and 253a only once I've finished 610. I'll be doing
+all of the homeworks, and I'll also share my notes here
+once they're done.
+
 My next semester course schedule is:
  * QFT 2
  * Group theory for theoretical physics (PHY 680, as taught by Peter van Nieuwenhuizen)
