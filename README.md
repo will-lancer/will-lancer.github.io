@@ -1,7 +1,8 @@
 # Main stuff
 ## Academics
-  * I am a sophomore in [physics](https://www.stonybrook.edu/commcms/physics/index.php) and
-    [mathematics](https://www.math.stonybrook.edu) at Stony Brook university.
+  * I am a rising Junior in [physics](https://www.stonybrook.edu/commcms/physics/index.php) and
+    [mathematics](https://www.math.stonybrook.edu) at Stony Brook university
+    (graduating May 2027).
   * My research interests are:
 
 | Physics                   | Math                              |
@@ -29,14 +30,15 @@ This summer, I'm going to be doing a few main things:
  * Math. I want to make my foundation in basic math (algebra, topology, analysis)
    stronger; I've taken some classes in them, but I don't have the same freedom thinking
    about math as I do with physics. So I will be spending some time working on these
-   subjects this summer.
+   subjects this summer. This material is also *foundational* for the hep-th and math
+   research I'd like to do.
 
 My next semester course schedule is:
  * QFT 2
- * Group theory for theoretical physics (PHY 680, as taught by Peter van Nieuwenhuizen (one of the inventors of supergravity))
+ * Group theory for theoretical physics (PHY 680, as taught by Peter van Nieuwenhuizen)
  * Grad stat mech
- * Grad algebra 1 (algebra 1 as a junior in university... 💔)
- * Research (theory and experiment)
+ * Algebraic topology 
+ * Research (theory and/or experiment)
 
 ## Industry
 My main interests in industry are:
@@ -58,6 +60,10 @@ I will post writings here as I make them. Some
 ideas I'm playing around with for the future are:
   * Advice for undergrad (targeted towards math/physics/CS majors)
   * A physics version of [the Napkin](https://web.evanchen.cc/napkin.html) by Evan Chen
+
+As I don't have much time these days, my only semi-finished writing is my
+handout on index notation. You may find it [here]([Expository/Math/IndexNotationpt2.pdf](https://docs.google.com/gview?url=https://raw.githubusercontent.com/will-lancer/handouts/main/Expository/Math/IndexNotationpt2.pdf&embedded=true)).
+Please let me know if you have any comments, big or small.
 
 ### Contact
 Email: william.lancer@stonybrook.edu
