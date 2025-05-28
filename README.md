@@ -17,8 +17,6 @@
     interested in Nima-Arkani Hamed's scattering amplitudes program.
 
 ### What I'm doing right now
-Summer is about to to start, so I'll be updating this page soon. But
-my summer plans are below.
 
 This summer, I'm going to be doing a few main things:
  * (Most central item) A research project with Hannah Arnold to implement the
