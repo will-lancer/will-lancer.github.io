@@ -7,14 +7,17 @@
 
 | Physics                   | Math                              |
 | ------------------------- | --------------------------------- |
-| Beyond the Standard Model | The Geometric Langlands program   |
+| Beyond the Standard Model | The geometric Langlands program   |
 | String Theory             | Quantum field theory              |
 | Scattering Amplitudes     | The Langlands program             |
 
   * I am especially interested in working on the mathematics of quantum
     field theory, and in exploring the connections between
-    the Landlands program and theoretical physics. I am also quite
-    interested in Nima-Arkani Hamed's scattering amplitudes program.
+    the Landlands program and theoretical physics. I am also dually
+    interested in solving *physical* problems: the Hierarchy problem,
+    the problem of the cosmological constant, three generations of matter,
+    etc. As far as current research goes, Nima-Arkani Hamed's scattering amplitudes program
+    is the most interesting frontier I see, and I intend on working on it.
 
 ### What I'm doing right now
 
@@ -25,30 +28,22 @@ This summer, I'm going to be doing a few main things:
    the renormalization group and related topics. After about 1.5 months
    we only did renormalization. So I need to learn all of the standard
    QFT 1 stuff, e.g. QED and whatnot before I take QFT 2, as it's all assumed.
- * Math. I want to make my foundation in basic math (algebra, topology, analysis)
-   stronger; I've taken some classes in them, but I don't have the same freedom thinking
-   about math as I do with physics. So I will be spending some time working on these
-   subjects this summer. This material is also *foundational* for the hep-th and math
-   research I'd like to do.
+ * Math. Some of my research interests are highly mathematical, and will
+   require strong grasps of modern mathematics. As such, I need to start
+   going through this learning process. I'm starting with algebra, as
+   I find the idea of algebraic geometry incredibly exciting.
 
-For these learning goals, I'll be going through the following courses.
-I'll be posting my work as I go for posterity.
- * Finishing up PHY 610, as taught by Alexander Zamolodchikov in Spring 2025.
+For these learning goals, I'll be going through the following courses/books.
  * [Physics 253a](https://sites.google.com/view/xi-yin/qft-notes) by Xi Yin, as taught in Fall 2022.
- * Math [55a](https://canvas.harvard.edu/courses/137344/assignments/syllabus) and
-   [55b](https://canvas.harvard.edu/courses/143404/assignments/syllabus) by Denis Auroux,
-   as taught in Fall 2024-Spring 2025.
-I'll be working through Math 55 the whole summer,
-and 253a only once I've finished 610. I'll be doing
-all of the homeworks, and I'll also share my notes here
-once they're done.
+   This will be supplemented with Coleman's QFT book, as well as Yin's 253b course.
+ * Paolo Aluffi's *Algebra: Chapter 0*.
 
 My next semester course schedule is:
  * QFT 2
  * Group theory for theoretical physics (PHY 680, as taught by Peter van Nieuwenhuizen)
  * Grad stat mech
- * Algebraic topology 
- * Research (theory and/or experiment)
+ * Grad algebra 1
+ * Research (theory and experiment)
 
 ## Industry
 My main interests in industry are:
