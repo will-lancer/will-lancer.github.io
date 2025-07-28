@@ -21,24 +21,10 @@
 
 ### What I'm doing right now
 
-This summer, I'm going to be doing a few main things:
- * (Most central item) A research project with Hannah Arnold to implement the
-   SALT framework in studying leptonic decays of ttH(->cc).
- * QFT. Zamolodchikov's course is very unique, mostly focusing on
-   the renormalization group and related topics. After about 1.5 months
-   we only did renormalization. So I need to learn all of the standard
-   QFT 1 stuff, e.g. QED and whatnot before I take QFT 2, as it's all assumed.
- * Math. Some of my research interests are highly mathematical, and will
-   require strong grasps of modern mathematics. As such, I need to start
-   going through this learning process. I'm starting with algebra, as
-   I find the idea of algebraic geometry incredibly exciting.
+This summer, I'm researching with Hannah Arnold, studying the
+ttH(->cc) decay using the SALT machine learning framework.
 
-For these learning goals, I'll be going through the following courses/books.
- * [Physics 253a](https://sites.google.com/view/xi-yin/qft-notes) by Xi Yin, as taught in Fall 2022.
-   This will be supplemented with Coleman's QFT book, as well as Yin's 253b course.
- * Paolo Aluffi's *Algebra: Chapter 0*.
-
-My next semester course schedule is:
+My Fall 2025 course schedule is:
  * QFT 2
  * Group theory for theoretical physics (PHY 680, as taught by Peter van Nieuwenhuizen)
  * Grad topology
