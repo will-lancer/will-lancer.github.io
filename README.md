@@ -41,30 +41,33 @@ For these learning goals, I'll be going through the following courses/books.
 My next semester course schedule is:
  * QFT 2
  * Group theory for theoretical physics (PHY 680, as taught by Peter van Nieuwenhuizen)
- * Grad stat mech
- * Grad algebra 1
- * Research (theory and experiment)
+ * Grad topology
+ * A reading course in commutative algebra and algebraic geometry
+ * Physics research with Zohar Komargodski
 
 ## Industry
 My main interests in industry are:
- * Economical nuclear fission, and commercial nuclear fusion.
- * Quantitative finance.
+ * Economical nuclear fission, and commercial nuclear fusion
+ * Quantitative finance
  * The prospect of AGI; applying high-level artificial intelligence
    to specific industries (finance, energy efficiency,
    customer service, defense, etc.)
 
 ## Hobbies
 Outside of physics and math, I enjoy,
-  * Lifting weights.
-  * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com)).
-  * Learning other languages (currently Mandarin; I
-    use [Lingq](https://www.lingq.com/en/) as my main resource).
+  * Running (I am training for an ultra-marathon right now)
+  * Lifting weights
+  * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com))
+  * Reading
+  * Talking with my girlfriend
 
-## Writing
+## Writing and notes
 I will post writings here as I make them. Some
 ideas I'm playing around with for the future are:
   * Advice for undergrad (targeted towards math/physics/CS majors)
-  * A physics version of [the Napkin](https://web.evanchen.cc/napkin.html) by Evan Chen
+  * My notes and mind-maps that I've made in my undergrad.
+    Most people don't really think about the notes they
+    take, so I would like to show mine as a positive example.
 
 As I don't have much time these days, my only semi-finished writing is my
 handout on index notation. You may find it [here]([Expository/Math/IndexNotationpt2.pdf](https://docs.google.com/gview?url=https://raw.githubusercontent.com/will-lancer/handouts/main/Expository/Math/IndexNotationpt2.pdf&embedded=true)).
