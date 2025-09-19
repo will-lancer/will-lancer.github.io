@@ -26,22 +26,17 @@ ttH(->cc) decay using the SALT machine learning framework.
 
 My Fall 2025 course schedule is:
  * QFT 2
- * Group theory for theoretical physics (PHY 680, as taught by Peter van Nieuwenhuizen)
- * Grad topology
- * A reading course in commutative algebra and algebraic geometry
+ * Group theory for theoretical physics (PHY 680, taught by Peter van Nieuwenhuizen)
+ * Algebra I
+ * A reading course in commutative algebra and algebraic geometry under Jason Starr
  * Physics research with Zohar Komargodski
 
 ## Industry
-My main interests in industry are:
- * Economical nuclear fission, and commercial nuclear fusion
- * Quantitative finance
- * The prospect of AGI; applying high-level artificial intelligence
-   to specific industries (finance, energy efficiency,
-   customer service, defense, etc.)
+For industry, I'm almost exclusively interested in the prospect of ASI.
 
 ## Hobbies
 Outside of physics and math, I enjoy,
-  * Running (I am training for an ultra-marathon right now)
+  * Running
   * Lifting weights
   * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com))
   * Reading
