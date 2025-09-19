@@ -21,15 +21,21 @@
 
 ### What I'm doing right now
 
-This summer, I'm researching with Hannah Arnold, studying the
-ttH(->cc) decay using the SALT machine learning framework.
-
 My Fall 2025 course schedule is:
  * QFT 2
  * Group theory for theoretical physics (PHY 680, taught by Peter van Nieuwenhuizen)
  * Algebra I
  * A reading course in commutative algebra and algebraic geometry under Jason Starr
  * Physics research with Zohar Komargodski
+
+My physics research is in condensed matter theory.
+
+### What I'm thinking about
+
+I'm thinking about whether or not to take a gap year to
+go all in on AI and start-ups. I see almost zero downside
+to this, and a potentially massive upside. We will see, though.
+I like physics research a lot, so I need to think about things more.
 
 ## Industry
 For industry, I'm almost exclusively interested in the prospect of ASI.
