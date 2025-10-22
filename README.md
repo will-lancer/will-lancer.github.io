@@ -24,11 +24,10 @@
 My Fall 2025 course schedule is:
  * QFT 2
  * Group theory for theoretical physics (PHY 680, taught by Peter van Nieuwenhuizen)
- * Algebra I
- * A reading course in commutative algebra and algebraic geometry under Jason Starr
- * Physics research with Zohar Komargodski
+ * Graduate algebra 1
+ * Physidcs research with Zohar Komargodski.
 
-My physics research is in condensed matter theory.
+My physics research is currently in condensed matter theory.
 
 ### What I'm thinking about
 
@@ -38,7 +37,8 @@ to this, and a potentially massive upside. We will see, though.
 I like physics research a lot, so I need to think about things more.
 
 ## Industry
-For industry, I'm almost exclusively interested in the prospect of ASI.
+For industry, I'm almost exclusively interested in the prospect
+of using AI to solve problems.
 
 ## Hobbies
 Outside of physics and math, I enjoy,
@@ -46,6 +46,8 @@ Outside of physics and math, I enjoy,
   * Lifting weights
   * Brazilian jiu-jitsu (I train at [Vanguard Academy](https://www.vanguardjj.com))
   * Reading
+  * Listening to podcasts
+  * Writing
   * Talking with my girlfriend
 
 ## Writing and notes
