@@ -50,7 +50,7 @@ For courses:
  * Xi Yin's [lecture notes](https://sites.google.com/view/xi-yin/qft-notes) on QFT. Prof. Yin has YouTube lectures online from when he taught
    the class, which are a necessary supplement to these notes. These notes are the best QFT
    resource I've come across--they are the most "morally correct" way of presenting the material
-   that I've seen. The best way to describe this class is as a more pedagogical, clear, modern,
+   that I've seen. The best way to describe these notes is as a more pedagogical, clear, modern,
    and mathematically precise version of Weinberg. I treasure these notes so much that I'm getting
    them bound into a book for Christmas. The main shortcoming of these notes is that you don't get enough
    computational practice from them--my personal theory is that computation comes naturally to Xi and so
