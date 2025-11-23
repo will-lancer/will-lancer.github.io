@@ -36,9 +36,9 @@ For courses:
  * Srednicki's *Quantum Field Theory*. A very solid and clear book on QFT.
    Nice and modern, focusing on the path integral and including modern topics
    like spinor-helicity and many interesting gauges. Nice problems too--not too hard
-   but not too easy. IMO, its exposition does occasionally lack, though; he does
-   not use enough words at times. However, this is both a pro and a con of this book, so
-   I guess one needs to just pick his or her poison.
+   but not too easy. I think a weakness of this book is its brevity. It sometimes
+   does not explain or motivate things enough in my opinion. This is also a strength
+   of this book, though, so one has to pick their poison.
  * Schwart'z *Quantum Field Theory and the Standard Model*. This is the book my QFT II
    mostly follows. I read it against my will. Kidding (kind of). I think Schwartz has useful discussions
    of some things, but this book isn't really to my tastes. I will not vent my frustrations
