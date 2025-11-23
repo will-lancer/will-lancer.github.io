@@ -59,7 +59,7 @@ For courses:
    the rigor to be amenable to a physicists taste (well, he's an M-theorist, so practically a
    mathematician. But still.) I think the general theory of these notes is a useful supplement
    to the immense and unrelenting detail of PvN's notes.
- * Aluffi's *Algebra: Chapter 0*. I'm reading this for graudate algebra I. I believe Aluffi
+ * Aluffi's *Algebra: Chapter 0*. I'm reading this for graduate algebra I. I believe Aluffi
    is going to be the new graduate standard. His writing is very clear, there are tons of
    interesting exercises, and everything is covered with sights set on further mathematics.
    He covers everything categorically, which is actually quite helpful once you get the hang
