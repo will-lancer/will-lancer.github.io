@@ -33,19 +33,20 @@ My physics research is currently in condensed matter theory and quantum field th
 Some books that I'm reading now:
 
 For courses:
- * Srednicki's *Quantum Field Theory*. A very solid and clear book on QFT.
-   Nice and modern, focusing on the path integral and including modern topics
-   like spinor-helicity and many interesting gauges. Nice problems too--not too hard
-   but not too easy. I think a weakness of this book is its brevity. It sometimes
-   does not explain or motivate things enough in my opinion. This is also a strength
-   of this book, though, so one has to pick their poison.
+ * Srednicki's *Quantum Field Theory*. A very solid and clear book on QFT,
+   focusing on the path integral. It's also one of the more modern canonical
+   QFT textbooks. Nice problems too--not too hard but not too easy. I think a weakness
+   of this book is its brevity. It sometimes does not explain or motivate things enough
+   in my opinion. This is also a strength of this book, though, so one has to pick their poison.
+   (I would chug gallons of this poison over reading another misplaced index in Schwartz.)
  * Schwart'z *Quantum Field Theory and the Standard Model*. This is the book my QFT II
    mostly follows. I read it against my will. Kidding (kind of). I think Schwartz has useful discussions
    of some things, but this book isn't really to my tastes. I will not vent my frustrations
    here, but I morally disgree with Schwartz on how physics (and writing physics
-   textbooks) should be done. For example, I am a purist about indices of any kind--Schwartz...
-   isn't. While this example is a bit on the trivial side, I think anyone that has flipped
-   through the book knows what I'm talking about.
+   textbooks) should be done. For example, I am a purist about index placement--Schwartz...
+   isn't. I think anyone that has flipped through the book knows what I'm talking about.
+   It is a solid textbook with a good selection of topics, but it's not a textbook that I
+   am eager to read.
  * Xi Yin's [lecture notes](https://sites.google.com/view/xi-yin/qft-notes) on QFT. Prof. Yin has YouTube lectures online from when he taught
    the class, which are a necessary supplement to these notes. These notes are the best QFT
    resource I've come across--they are the most "morally correct" way of presenting the material
