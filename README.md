@@ -2,7 +2,7 @@
 ## Academics
   * I am a Junior in [physics](https://www.stonybrook.edu/commcms/physics/index.php) and
     [mathematics](https://www.math.stonybrook.edu) at Stony Brook university
-    (graduating May 2027).
+    (graduating May 2026).
   * My research interests are:
 
 | Physics                   | Math                              |
