@@ -51,7 +51,7 @@ For courses:
    resource I've come across--they are the most "morally correct" way of presenting the material
    that I've seen. The best way to describe this class is as a more pedagogical, clear, modern,
    and mathematically precise version of Weinberg. I treasure these notes so much that I'm getting
-   them bound into a book for Christmas. Remark: one can find problem sets if they look hard
+   them bound into a book for Christmas. **Remark:** one can find problem sets if they look hard
    enough... [253a](https://web.archive.org/web/20250201215530/https://www.coursetexts.org/quantum-field-theory-i-physics253a) [253b](https://web.archive.org/web/20250116074730/https://www.coursetexts.org/quantum-field-theory-ii-physics253b) [253c](https://web.archive.org/web/20250227172314/https://www.coursetexts.org/quantum-field-theory-iii-physics253cr)
  * Andre Lukas' [notes](https://www-thphys.physics.ox.ac.uk/people/AndreLukas/GroupsandRepresentations/groupsrepslecturenotes.pdf)
    on group and representation theory. These notes are very nice, and I use them in tandem with
