@@ -18,7 +18,7 @@
     of dark matter and dark energy. I also have interests in pure mathematics,
     and I think modern physics will require new and more advanced mathematical
     techniques for its implementation. Specifically, the Geometric Langlands program
-    in physics is interesting to me, although I have very little knowledge about it.
+    in physics is interesting to me, although I have very little knowledge about it as of now.
 
 ### What I'm doing right now
 
