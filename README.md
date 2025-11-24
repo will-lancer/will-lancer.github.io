@@ -12,13 +12,16 @@
 | Cosmology                 | Algebraic geometry                |
 
   * I am mainly interested in quantum field theory, specifically its non-perturbative
-    and on-shell formulations. I think these vectors are useful ones for answering
+    and on-shell formulations. I think these vectors are useful ones for solving
     some of the biggest problems in physics today. I also think cosmology is one
     of the most exciting frontiers in physics right now, and I am very fascinated at the prospect
-    of dark matter and dark energy. I also have interests in pure mathematics,
+    of dark matter and dark energy.
+  * I also have interests in pure mathematics,
     and I think modern physics will require new and more advanced mathematical
     techniques for its implementation. Specifically, the Geometric Langlands program
     in physics is interesting to me, although I have very little knowledge about it as of now.
+    The work with the positive Grassmannian a la Nima Arkani-Hamed also seems quite
+    interesting.
 
 ### What I'm doing right now
 
@@ -43,19 +46,19 @@ For courses:
    mostly follows. I read it against my will. Kidding (kind of). I think Schwartz has useful discussions
    of some things, but this book isn't really to my tastes. I will not vent my frustrations
    here, but I morally disgree with Schwartz on how physics (and writing physics
-   textbooks) should be done. For example, I am a purist about index placement--Schwartz...
+   textbooks) should be done. For example, I am a purist about index placement---Schwartz...
    isn't. I think anyone that has flipped through the book knows what I'm talking about.
    It is a solid textbook with a good selection of topics, but it's not a textbook that I
    am eager to read.
  * Xi Yin's [lecture notes](https://sites.google.com/view/xi-yin/qft-notes) on QFT. Prof. Yin has YouTube lectures online from when he taught
    the class, which are a necessary supplement to these notes. These notes are the best QFT
-   resource I've come across--they are the most "morally correct" way of presenting the material
+   resource I've come across---they contain the most "morally correct" way of presenting the material
    that I've seen. The best way to describe these notes is as a more pedagogical, clear, modern,
    and mathematically precise version of Weinberg. I treasure these notes so much that I'm getting
    them bound into a book for Christmas. The main shortcoming of these notes is that you don't get enough
-   computational practice from them--my personal theory is that computation comes naturally to Xi and so
-   he doesn't emphasize it as much, as it's not something he had to practice so much. Also, Weyl spinors are
-   not covered in "enough" detail, which is a shame. **Remark:** one can find problem sets if they look hard
+   computational practice from them---my personal theory is that computation comes naturally to Xi and so
+   he doesn't emphasize it as much. One needs to supplement with Srednicki or Schwartz for more "standard"
+   computational practice. **Remark:** one can find problem sets if they look hard
    enough... [253a](https://web.archive.org/web/20250201215530/https://www.coursetexts.org/quantum-field-theory-i-physics253a) [253b](https://web.archive.org/web/20250116074730/https://www.coursetexts.org/quantum-field-theory-ii-physics253b) [253c](https://web.archive.org/web/20250227172314/https://www.coursetexts.org/quantum-field-theory-iii-physics253cr)
  * Andre Lukas' [notes](https://www-thphys.physics.ox.ac.uk/people/AndreLukas/GroupsandRepresentations/groupsrepslecturenotes.pdf)
    on group and representation theory. These notes are very nice, and I use them in tandem with
@@ -65,7 +68,8 @@ For courses:
    to the immense and unrelenting detail of PvN's notes.
  * Aluffi's *Algebra: Chapter 0*. I'm reading this for graduate algebra I. I believe Aluffi
    is going to be the new graduate standard. His writing is very clear, there are tons of
-   interesting exercises, and everything is covered with sights set on further mathematics.
+   interesting exercises, and everything is covered with sights set on further mathematics
+   (usually algebraic geometry).
    He covers everything categorically, which is actually quite helpful once you get the hang
    of it. An overall great graduate algebra textbook with an algebraic geometry flavor.
 
