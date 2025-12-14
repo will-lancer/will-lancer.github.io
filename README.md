@@ -36,12 +36,6 @@ My physics research is currently in condensed matter theory and quantum field th
 Some books that I'm reading now:
 
 For courses:
- * Srednicki's *Quantum Field Theory*. A very solid and clear book on QFT,
-   focusing on the path integral. It's also one of the more modern canonical
-   QFT textbooks. Nice problems too--not too hard but not too easy. I think a weakness
-   of this book is its brevity. It sometimes does not explain or motivate things enough
-   in my opinion. This is also a strength of this book, though, so one has to pick their poison.
-   (I would chug gallons of this poison over reading another misplaced index in Schwartz.)
  * Schwart'z *Quantum Field Theory and the Standard Model*. This is the book my QFT II
    mostly follows. I read it against my will. Kidding (kind of). I think Schwartz has useful discussions
    of some things, but this book isn't really to my tastes. I will not vent my frustrations
@@ -61,16 +55,18 @@ For courses:
    computational practice. **Remark:** one can find problem sets if they look hard
    enough... [253a](https://web.archive.org/web/20250201215530/https://www.coursetexts.org/quantum-field-theory-i-physics253a) [253b](https://web.archive.org/web/20250116074730/https://www.coursetexts.org/quantum-field-theory-ii-physics253b) [253c](https://web.archive.org/web/20250227172314/https://www.coursetexts.org/quantum-field-theory-iii-physics253cr)
  * Andre Lukas' [notes](https://www-thphys.physics.ox.ac.uk/people/AndreLukas/GroupsandRepresentations/groupsrepslecturenotes.pdf)
-   on group and representation theory. These notes are very nice, and I use them in tandem with
+   on group and representation theory. These notes are solid, and I use them in tandem with
    PvN's group theory course. They mostly follow Fulton and Harris, but translate out much of
    the rigor to be amenable to a physicists taste (well, he's an M-theorist, so practically a
    mathematician. But still.) I think the general theory of these notes is a useful supplement
-   to the immense and unrelenting detail of PvN's notes.
+   to the immense and unrelenting detail of PvN's notes. However, a serious downside of these
+   notes is that they are relatively terse--many non-trivial claims are just stated. His usage
+   of vectors having upper indices and covectors having lower indices is also abnormal, and makes
+   a number of his formulas look weird.
  * Aluffi's *Algebra: Chapter 0*. I'm reading this for graduate algebra I. I believe Aluffi
    is going to be the new graduate standard. His writing is very clear, there are tons of
    interesting exercises, and everything is covered with sights set on further mathematics
-   (usually algebraic geometry).
-   He covers everything categorically, which is actually quite helpful once you get the hang
+   (usually algebraic geometry). He covers everything categorically, which is actually quite helpful once you get the hang
    of it. An overall great graduate algebra textbook with an algebraic geometry flavor.
 
 For fun/in my free time:
@@ -78,12 +74,11 @@ For fun/in my free time:
     book is a transcription of Colemans's legendary quantum field theory course that
     he taught for decades at Harvard. It is a wonderful book, chock-full of physical
     insight and witty jokes from one of the best quantum field theorists of all time.
-    It's really quite fun to read; I read it everyday while eating breakfast
+    It's really quite fun to read.
  * Robert Littlejohn's [Quantum Mechanics](https://bohr.physics.berkeley.edu/classes/221/2122/221.html) course.
     Littlejohn has utterly perfected the presentation of graduate
     quantum mechanics after teaching Berkeley's grad QM course for 30 years straight.
-    His notes and lectures are absolute works of art. I watch his lectures when I eat
-    lunch.
+    His notes and lectures are absolute works of art.
     
 ## Industry
 For industry, I'm almost exclusively interested in the prospect
@@ -100,32 +95,63 @@ Outside of physics and math, I enjoy,
   * Talking with my girlfriend (future wife)
 
 ## Writing and notes
-I will post my notes here as I make them. My note-taking process is
-as follows:
-  * I do not take notes when I'm reading or listening to something.
-    I just think really hard about what I'm learning and organize things
-    in my head. To help things along, I will oftentimes pace
-    around or talk to myself, or I'll just stare off into space
-    for a while.
-  * I then make a mind-map of this content. This is to refine and
-    encode my understanding of something, as well as to store it for
-    later.
-  * I free-recall content all of the time. I constantly have some physics
-    problem in my "RAM", or my working memory, and I'll just constantly
-    be thinking about what I learned recently. I also have dedicated free-recall
+
+### Mind-maps
+Here are some of my mind-maps. A few remarks:
+   * I take lecture notes via mind-maps as well. If you see
+     scattered tiny maps that's probably what those are.
+   * My current understanding of the subject should have a big
+     purple oval around it with a title like "Current map" or something.
+   * These aren't meant to be learned from--I just want to share
+     what good physics/math mind-maps look like to hopefully expose
+     people to the efficacy of this learning methodology.
+
+Current maps:
+  * Group theory for physics. (Coming right after I figure out how to put
+    a giant mind-map on my GitHub)
+     
+
+### Random remarks on learning and note-taking
+My note-taking process is as follows:
+  * I skim through whatever I'm reading and broadly organize the content
+    in a mind-map before I go deep into the material; this is one of the hardest
+    parts of the studying process, but well worth it.
+  * I then read the resource. I will occasionally add certain things
+    to my mind-map at this time, but most of this reading is just reading
+    with no note-taking--the hard part (knowing how to think about the material)
+    was already done.
+  * I continue reading the resource until it's time to rework my entire understanding
+    of the subject, then I rewrite my mind-map. This happens a few times when learning
+    anything; you make massive jumps in understanding whenever you do this, and it's quite
+    fun to change the way you think about something.
+  * I free-recall content all of the time. I usually will have some physics
+    problem in my "RAM", or my working memory, and I'll think about it when I have
+    free time. I also have dedicated free-recall
     sessions; these take place before I learn my next batch of content. For example,
     if I read a chapter of a book one day, the next day I will free-recall the content
     before I continue learning the next chapter of the book.
 
 **Note:** this is what works for me--it is not a recommendation for you reading this.
-I have come to this process through a *tremendous* amount of trial and error. 
-I have tried innumerable note-taking techniques, and this hand-crafted method works best for me.
-I think it plays to my unique strengths and preferences, like all customized learning systems should. 
+I have come to this process through a *tremendous* amount of trial and error.
 If you're making a learning system for yourself,
 try a lot of stuff and unapologetically do what works. Every person is such a unique snowflake
 of a human being that I think you really just have to try stuff and see what sticks.
 There are general recommendations to follow from learning science (e.g. you need to think 
 hard, you shouldn't write a lot, etc.), but there is a wide variance in what works for people.
+I do have a few recommendations, though:
+  * Try to do "higher-order learning"; I think Bloom's revised taxonomy is
+    solid. It's not the Bible--just a decent recommendation.
+  * Don't write so much. Writing is just a tool to help you think. Thinking
+    is what matters for learning. Don't trick yourself into believing that
+    writing = learning. In fact, the *worst* students I've seen write the *most*.
+    It's laughable and kind of depressing to see people make this error;
+    please abstain from it.
+  * Try mind-mapping. I know, I know, it's super trendy and cringe, but seriously:
+    try it. It's seriously effective, and is built to activate
+    higher-order learning processes. Warning: like anything, it's a skill that you
+    develop. I think it probably took me around 20 mind-maps to start
+    getting good at them. However, if you build this skill, I genuinely think
+    you can 100x your learning.
 
 ### Contact
 Email: william.lancer@stonybrook.edu
