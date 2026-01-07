@@ -24,66 +24,7 @@
     interesting.
 
 ### What I'm doing right now
-
-My Fall 2025 course schedule is:
- * QFT 2
- * Group theory for theoretical physics (PHY 680, taught by Peter van Nieuwenhuizen)
- * Graduate algebra 1
- * Physics research with Zohar Komargodski.
-
-My physics research is currently in condensed matter theory and quantum field theory.
-
-Some books that I'm reading now:
-
-For courses:
- * Schwart'z *Quantum Field Theory and the Standard Model*. This is the book my QFT II
-   mostly follows. I read it against my will. Kidding (kind of). I think Schwartz has useful discussions
-   of some things, but this book isn't really to my tastes. I will not vent my frustrations
-   here, but I morally disgree with Schwartz on how physics (and writing physics
-   textbooks) should be done. For example, I am a purist about index placement---Schwartz...
-   isn't. I think anyone that has flipped through the book knows what I'm talking about.
-   It is a solid textbook with a good selection of topics, but it's not a textbook that I
-   am eager to read.
- * Xi Yin's [lecture notes](https://sites.google.com/view/xi-yin/qft-notes) on QFT. Prof. Yin has YouTube lectures online from when he taught
-   the class, which are a necessary supplement to these notes. These notes are the best QFT
-   resource I've come across---they contain the most "morally correct" way of presenting the material
-   that I've seen. The best way to describe these notes is as a more pedagogical, clear, modern,
-   and mathematically precise version of Weinberg. I treasure these notes so much that I'm getting
-   them bound into a book for Christmas. The main shortcoming of these notes is that you don't get enough
-   computational practice from them---my personal theory is that computation comes naturally to Xi and so
-   he doesn't emphasize it as much. One needs to supplement with Srednicki or Schwartz for more "standard"
-   computational practice. **Remark:** one can find problem sets if they look hard
-   enough... [253a](https://web.archive.org/web/20250201215530/https://www.coursetexts.org/quantum-field-theory-i-physics253a) [253b](https://web.archive.org/web/20250116074730/https://www.coursetexts.org/quantum-field-theory-ii-physics253b) [253c](https://web.archive.org/web/20250227172314/https://www.coursetexts.org/quantum-field-theory-iii-physics253cr)
- * Andre Lukas' [notes](https://www-thphys.physics.ox.ac.uk/people/AndreLukas/GroupsandRepresentations/groupsrepslecturenotes.pdf)
-   on group and representation theory. These notes are solid, and I use them in tandem with
-   PvN's group theory course. They mostly follow Fulton and Harris, but translate out much of
-   the rigor to be amenable to a physicists taste (well, he's an M-theorist, so practically a
-   mathematician. But still.) I think the general theory of these notes is a useful supplement
-   to the immense and unrelenting detail of PvN's notes. However, a serious downside of these
-   notes is that they are relatively terse--many non-trivial claims are just stated. His usage
-   of vectors having upper indices and covectors having lower indices is also abnormal, and makes
-   a number of his formulas look weird.
- * Aluffi's *Algebra: Chapter 0*. I'm reading this for graduate algebra I. I believe Aluffi
-   is going to be the new graduate standard. His writing is very clear, there are tons of
-   interesting exercises, and everything is covered with sights set on further mathematics
-   (usually algebraic geometry). He covers everything categorically, which is actually quite helpful once you get the hang
-   of it. An overall great graduate algebra textbook with an algebraic geometry flavor.
-
-For fun/in my free time:
- * Bryan Gin-ge Chen et. al's *Quantum Field Theory: Lectures of Sidney Coleman*. This
-    book is a transcription of Colemans's legendary quantum field theory course that
-    he taught for decades at Harvard. It is a wonderful book, chock-full of physical
-    insight and witty jokes from one of the best quantum field theorists of all time.
-    It's really quite fun to read.
- * Robert Littlejohn's [Quantum Mechanics](https://bohr.physics.berkeley.edu/classes/221/2122/221.html) course.
-    Littlejohn has utterly perfected the presentation of graduate
-    quantum mechanics after teaching Berkeley's grad QM course for 30 years straight.
-    His notes and lectures are absolute works of art.
-    
-## Industry
-For industry, I'm almost exclusively interested in the prospect
-of using AI to solve problems. I also think using AI to speed up 
-scientific research in the near future will be revolutionary.
+Learning about AI
 
 ## Hobbies
 Outside of physics and math, I enjoy,
@@ -106,10 +47,7 @@ Here are some of my mind-maps. A few remarks:
      what good physics/math mind-maps look like to hopefully expose
      people to the efficacy of this learning methodology.
 
-Current maps:
-  * Group theory for physics. (Coming right after I figure out how to put
-    a giant mind-map on my GitHub)
-     
+Coming soon (after I figure out how to put giant mind-maps on GitHub).
 
 ### Random remarks on learning and note-taking
 My note-taking process is as follows:
