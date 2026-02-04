@@ -24,7 +24,7 @@
     interesting.
 
 ### What I'm doing right now
-Learning about AI
+Building a start-up.
 
 ## Hobbies
 Outside of physics and math, I enjoy,
