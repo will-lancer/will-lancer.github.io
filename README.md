@@ -33,7 +33,7 @@ Outside of physics and math, I enjoy,
   * Reading
   * Listening to podcasts
   * Writing
-  * Talking with my girlfriend (future wife)
+  * Talking with my girlfriend
 
 ## Writing and notes
 
