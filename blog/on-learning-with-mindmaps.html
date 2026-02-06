@@ -5,24 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>On Learning with Mind-maps | Will Lancer</title>
     <meta name="description" content="Study workflow using mind-maps, reading loops, and free recall.">
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const theme =
+            savedTheme === "light" || savedTheme === "dark"
+              ? savedTheme
+              : (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Sora:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     >
+    <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
     <header class="site-header">
       <div class="container header-row">
         <a class="brand" href="../index.html">Will Lancer</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="../index.html#about">About Me</a>
-          <a href="../index.html#writings">Writings</a>
-          <a href="../cv.html">CV</a>
-          <a href="index.html">Blog</a>
-        </nav>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="../index.html#about">About Me</a>
+            <a href="../index.html#writings">Writings</a>
+            <a href="../cv.html">CV</a>
+            <a href="index.html">Blog</a>
+          </nav>
+          <button class="button theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+            Dark mode
+          </button>
+        </div>
       </div>
     </header>
 
@@ -31,25 +52,54 @@
         <h1 class="title-serif">On Learning with Mind-maps</h1>
         <p class="meta post-date">January 2026</p>
         <p>
-          My process starts with structure, not details. Before reading deeply, I map the rough shape of the
-          material so I know what ideas connect and what ideas are upstream.
+          My note-taking process starts with structure, not details. I organize content in a broad
+          mind-map before I go deep into the material.
         </p>
 
-        <h2 class="title-serif">The loop</h2>
+        <h2 class="title-serif">My Process</h2>
         <ol class="simple-list">
-          <li>Skim the resource and draft a broad mind-map first.</li>
-          <li>Read deeply and only add high-value updates to the map.</li>
-          <li>When understanding changes, rewrite the map from scratch.</li>
-          <li>Run free-recall sessions before learning the next batch of content.</li>
+          <li>
+            I skim what I am reading and broadly organize the content in a mind-map
+            before I go deep into the material.
+          </li>
+          <li>
+            I then read the resource. I occasionally add to the map, but most of this
+            phase is deep reading with minimal note-taking.
+          </li>
+          <li>
+            When my understanding changes enough, I rewrite the mind-map from scratch.
+            This usually happens multiple times when learning any hard subject.
+          </li>
+          <li>
+            I free-recall constantly, including dedicated recall sessions before I start
+            the next batch of content.
+          </li>
         </ol>
 
-        <h2 class="title-serif">Why this works for me</h2>
+        <h2 class="title-serif">Important Note</h2>
         <p>
-          It separates thinking from transcription. If writing becomes the default activity, learning quality drops.
-          The map acts as a model of the subject rather than a long transcript of the source.
+          This is what works for me. It is not a universal recommendation.
+          I arrived at this process through a lot of trial and error.
         </p>
+
+        <h2 class="title-serif">Recommendations</h2>
+        <ul class="simple-list">
+          <li>
+            Aim for higher-order learning. Bloom's revised taxonomy is a useful guide.
+          </li>
+          <li>
+            Do not write excessively. Writing is a tool to support thinking; thinking is
+            what actually drives learning.
+          </li>
+          <li>
+            Try mind-mapping seriously. It is a skill that takes practice, but it can
+            radically improve how fast and how deeply you learn.
+          </li>
+        </ul>
+
         <p>
-          I do not treat this as universal advice. It is just what has worked after a lot of trial and error.
+          Every person is different. The key is to test methods honestly and keep what
+          actually works for your own learning.
         </p>
 
         <p>
@@ -64,5 +114,6 @@
         <p><a href="../index.html">Back to Home</a></p>
       </div>
     </footer>
+    <script src="../theme.js"></script>
   </body>
 </html>
