@@ -26,218 +26,220 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
       rel="stylesheet"
     >
     <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <div class="bg-orb orb-a" aria-hidden="true"></div>
-    <div class="bg-orb orb-b" aria-hidden="true"></div>
+  <body id="top">
     <header class="site-header">
       <div class="container header-row">
-        <a class="brand" href="index.html">Will Lancer</a>
-        <div class="header-actions">
+        <a class="brand" href="#top">Will Lancer</a>
+        <div class="header-tools">
           <nav class="site-nav" aria-label="Primary">
-            <a href="#about">About Me</a>
-            <a href="#writings">Writings</a>
+            <a href="#about">About</a>
+            <!-- <a href="#writings">Writings</a> -->
             <a href="#hobbies">Hobbies</a>
-            <a href="#cv">CV</a>
-            <a href="#blog">Blog</a>
+            <!-- <a href="#blog">Blog</a> -->
+            <a href="#contact">Contact</a>
           </nav>
-          <button class="button theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-            Dark mode
-          </button>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Toggle color theme"
+          ></button>
         </div>
       </div>
     </header>
 
-    <main class="container">
-      <section class="hero panel">
-        <div class="hero-content">
-          <div class="hero-image">
-            <div class="hero-photo-pill">
-              <img src="will-lancer-photo.png" alt="Will Lancer" class="profile-photo">
-            </div>
-          </div>
-          <div class="hero-text">
-            <p class="eyebrow">Physics + Mathematics + Start-Ups</p>
-            <h1 class="title-serif">
-              I study high-energy physics and how we can use
-              AI to speed up scientific progress.
-            </h1>
-            <p class="lead">
-              I am a Junior in physics and mathematics at Stony Brook university (graduating May 2026).
-            </p>
-            <div class="button-row">
-              <a class="button" href="#writings">Read Writings</a>
-              <a class="button button-secondary" href="Will_Lancer_Resume.pdf">View CV</a>
-              <a class="button button-secondary" href="blog/">Visit Blog</a>
-            </div>
-          </div>
+    <main class="page">
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="intro-media">
+          <img src="will-lancer-photo.png" alt="Will Lancer" class="profile-photo">
+          <p class="meta-line">Stony Brook University / Physics + Mathematics / May 2026</p>
         </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="section-head">
-          <p class="eyebrow">About Me</p>
-          <h2 class="title-serif">Academics and current focus</h2>
-        </div>
-        <div class="about-layout">
-          <article class="panel">
-            <p>
-              I am a Junior in
-              <a href="https://www.stonybrook.edu/commcms/physics/index.php">physics</a>
-              and
-              <a href="https://www.math.stonybrook.edu">mathematics</a>
-              at Stony Brook university (graduating May 2026).
-            </p>
-            <p>
-              I am mainly interested in quantum field theory, specifically its non-perturbative
-              and on-shell formulations. I think these vectors are useful ones for solving
-              some of the biggest problems in physics today. I also think cosmology is one
-              of the most exciting frontiers in physics right now, and I am very fascinated at the prospect
-              of dark matter and dark energy.
-            </p>
-            <p>
-              I also have interests in pure mathematics,
-              and I think modern physics will require new and more advanced mathematical
-              techniques for its implementation. Specifically, the Geometric Langlands program
-              in physics is interesting to me, although I have very little knowledge about it as of now.
-              The work with the positive Grassmannian a la Nima Arkani-Hamed also seems quite
-              interesting.
-            </p>
-          </article>
-
-          <aside class="panel">
-            <h3>Research interests</h3>
-            <div class="interest-grid">
-              <section>
-                <h4>Physics</h4>
-                <ul>
-                  <li>Quantum Field Theory</li>
-                  <li>Scattering Amplitudes</li>
-                  <li>Cosmology</li>
-                </ul>
-              </section>
-              <section>
-                <h4>Math</h4>
-                <ul>
-                  <li>Geometric Langlands Program</li>
-                  <li>Langlands Program</li>
-                  <li>Algebraic Geometry</li>
-                </ul>
-              </section>
-            </div>
-            <p class="status"><strong>Current project:</strong> Building a start-up focusing on
-              integrating AI tools to accelerate fundamental physics research.</p>
-          </aside>
-        </div>
-      </section>
-
-      <section id="writings" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Writings</p>
-          <h2 class="title-serif">Notes, handouts, and learning systems</h2>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <h3>MAT 308 Laplace Handout</h3>
-            <p>A school handout from MAT 308.</p>
-            <a class="text-link" href="Handouts/School/MAT308_Laplace.pdf">Open PDF</a>
-          </article>
-          <article class="card">
-            <h3>Physics Handout (Mock)</h3>
-            <p>A mock handout from my physics notes workflow.</p>
-            <a class="text-link" href="Handouts/Physics/Mock.pdf">Open PDF</a>
-          </article>
-          <article class="card">
-            <h3>Mind-map Archive</h3>
-            <p>
-              Mind-maps and map-based lecture notes. These are not meant to be learned from directly.
-              I share them to show what strong physics/math mind-maps can look like. Coming soon.
-            </p>
-            <a class="text-link" href="Mindmaps/">Open Mindmaps Folder</a>
-          </article>
-          <article class="card">
-            <h3>Random remarks on learning and note-taking</h3>
-            <p>
-              My note-taking process: map first, read deeply with minimal writing,
-              rewrite maps when understanding changes, and use frequent free recall.
-            </p>
-            <a class="text-link" href="blog/on-learning-with-mindmaps.html">Read Post</a>
-          </article>
-        </div>
-      </section>
-
-      <section id="hobbies" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Hobbies</p>
-          <h2 class="title-serif">Outside of physics and math</h2>
-        </div>
-        <article class="panel">
-          <p>Outside of physics and math, I enjoy,</p>
-          <ul>
-            <li>Lifting weights</li>
-            <li>Brazilian jiu-jitsu (I train at <a href="https://www.vanguardjj.com">Vanguard Academy</a>)</li>
-            <li>Reading</li>
-            <li>Listening to podcasts</li>
-            <li>Writing</li>
-            <li>Talking with my girlfriend</li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="cv" class="section">
-        <div class="section-head">
-          <p class="eyebrow">CV</p>
-          <h2 class="title-serif">Curriculum Vitae</h2>
-        </div>
-        <article class="panel cv-panel">
-          <p>
-            Download my resume as a PDF for applications and emails.
+        <div class="intro-copy">
+          <p class="kicker">Physics, mathematics, writing</p>
+          <h1 class="intro-title" id="intro-title">
+            I study high-energy physics and how we can use AI to speed up scientific progress.
+          </h1>
+          <p class="lede">
+            I am a Junior in physics and mathematics at Stony Brook University (graduating May 2026).
           </p>
-          <a class="button" href="Will_Lancer_Resume.pdf">Download Resume PDF</a>
-        </article>
+          <p>
+            I am mainly interested in quantum field theory, specifically its non-perturbative
+            and on-shell formulations. I think these vectors are useful ones for solving some of
+            the biggest problems in physics today.
+          </p>
+          <div class="inline-links" aria-label="Primary links">
+            <a href="Will_Lancer_Resume.pdf">Resume PDF</a>
+            <!-- <a href="blog/">Blog archive</a> -->
+            <a href="mailto:william.lancer@stonybrook.edu">Academic email</a>
+            <a href="mailto:will.m.lancer@gmail.com">Personal email</a>
+          </div>
+        </div>
       </section>
 
-      <section id="blog" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Blog</p>
-          <h2 class="title-serif">Recent posts</h2>
+      <section id="about" class="section" aria-labelledby="about-title">
+        <p class="section-label">About Me</p>
+        <h2 id="about-title">Academics and current focus</h2>
+        <p>
+          I am a Junior in
+          <a href="https://www.stonybrook.edu/commcms/physics/index.php">physics</a>
+          and
+          <a href="https://www.math.stonybrook.edu">mathematics</a>
+          at Stony Brook University (graduating May 2026).
+        </p>
+        <p>
+          I am mainly interested in quantum field theory, specifically its non-perturbative
+          and on-shell formulations. I think these vectors are useful ones for solving
+          some of the biggest problems in physics today. I also think cosmology is one
+          of the most exciting frontiers in physics right now, and I am very fascinated at the prospect
+          of dark matter and dark energy.
+        </p>
+        <p>
+          I also have interests in pure mathematics,
+          and I think modern physics will require new and more advanced mathematical
+          techniques for its implementation. Specifically, the Geometric Langlands program
+          in physics is interesting to me, although I have very little knowledge of it as of now.
+          The work with the positive Grassmannian a la Nima Arkani-Hamed also seems quite
+          interesting.
+        </p>
+        <div class="interest-columns">
+          <div class="stack-block">
+            <p class="link-label">Research interests</p>
+            <h3>Physics</h3>
+            <ul class="compact-list">
+              <li>Quantum Field Theory</li>
+              <li>Scattering Amplitudes</li>
+              <li>Cosmology</li>
+            </ul>
+          </div>
+          <div class="stack-block">
+            <h3>Math</h3>
+            <ul class="compact-list">
+              <li>Geometric Langlands Program</li>
+              <li>Local Langlands Program</li>
+              <li>Low-dimensional topology</li>
+            </ul>
+          </div>
         </div>
-        <div class="card-grid">
-          <article class="card">
-            <p class="post-date">January 2026</p>
-            <h3>On Learning with Mind-maps</h3>
-            <p>
-              The full note-taking process I use: broad mapping before deep reading,
-              map rewrites, and free recall before each new learning block.
-            </p>
-            <a class="text-link" href="blog/on-learning-with-mindmaps.html">Read Post</a>
-          </article>
-          <article class="card">
-            <p class="post-date">February 2026</p>
-            <h3>Startup Log: What I Am Building</h3>
-            <p>What I am doing right now: building a start-up.</p>
-            <a class="text-link" href="blog/startup-log-feb-2026.html">Read Post</a>
-          </article>
-          <article class="card">
-            <p class="post-date">Archive</p>
-            <h3>All Blog Posts</h3>
-            <p>Browse the complete index as new writing is added.</p>
-            <a class="text-link" href="blog/">View Archive</a>
-          </article>
-        </div>
+      </section>
+
+      <!-- Hidden for now; restore when ready.
+      <section id="writings" class="section" aria-labelledby="writings-title">
+        <p class="section-label">Writings</p>
+        <h2 id="writings-title">Notes, handouts, and learning systems</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-item">
+              <h3><a href="Handouts/School/MAT308_Laplace.pdf">MAT 308 Laplace Handout</a></h3>
+              <p>A school handout from MAT 308.</p>
+            </div>
+            <span class="resource-meta">PDF</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3><a href="Handouts/Physics/Mock.pdf">Physics Handout (Mock)</a></h3>
+              <p>A mock handout from my physics notes workflow.</p>
+            </div>
+            <span class="resource-meta">PDF</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3><a href="Mindmaps/">Mind-map Archive</a></h3>
+              <p>
+                Mind-maps and map-based lecture notes. These are not meant to be learned from directly.
+                I share them to show what strong physics and math mind-maps can look like. Coming soon.
+              </p>
+            </div>
+            <span class="resource-meta">Archive</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3><a href="blog/on-learning-with-mindmaps.html">Random remarks on learning and note-taking</a></h3>
+              <p>
+                My note-taking process: map first, read deeply with minimal writing,
+                rewrite maps when understanding changes, and use frequent free recall.
+              </p>
+            </div>
+            <span class="resource-meta">Article</span>
+          </li>
+        </ul>
+      </section>
+      -->
+
+      <section id="hobbies" class="section" aria-labelledby="hobbies-title">
+        <p class="section-label">Hobbies</p>
+        <h2 id="hobbies-title">Outside of physics and math</h2>
+        <p>Outside of physics and math, I enjoy,</p>
+        <ul class="compact-list">
+          <li>Lifting weights</li>
+          <li>Brazilian jiu-jitsu (I train at <a href="https://www.vanguardjj.com">Vanguard Academy</a>)</li>
+          <li>Reading</li>
+          <li>Listening to podcasts</li>
+          <li>Writing</li>
+          <li>Talking with my girlfriend</li>
+        </ul>
+      </section>
+
+      <section id="cv" class="section" aria-labelledby="cv-title">
+        <p class="section-label">CV</p>
+        <h2 id="cv-title">Curriculum Vitae</h2>
+        <p>
+          Download my resume as a PDF for applications and emails
+          (<a href="Will_Lancer_Resume.pdf">PDF</a>).
+        </p>
+      </section>
+
+      <!-- Hidden for now; restore when ready.
+      <section id="blog" class="section" aria-labelledby="blog-title">
+        <p class="section-label">Blog</p>
+        <h2 id="blog-title">Recent posts</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-item">
+              <h3><a href="blog/on-learning-with-mindmaps.html">On Learning with Mind-maps</a></h3>
+              <p>
+                The full note-taking process I use: broad mapping before deep reading,
+                map rewrites, and free recall before each new learning block.
+              </p>
+            </div>
+            <span class="resource-meta">January 2026</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3><a href="blog/startup-log-feb-2026.html">Startup Log: What I Am Building</a></h3>
+              <p>What I am doing right now: building a start-up.</p>
+            </div>
+            <span class="resource-meta">February 2026</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3><a href="blog/">All Blog Posts</a></h3>
+              <p>Browse the complete index as new writing is added.</p>
+            </div>
+            <span class="resource-meta">Archive</span>
+          </li>
+        </ul>
+      </section>
+      -->
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <p class="section-label">Contact</p>
+        <h2 id="contact-title">Get in touch</h2>
+        <p>Academic email: <a href="mailto:william.lancer@stonybrook.edu">william.lancer@stonybrook.edu</a></p>
+        <p>Personal email: <a href="mailto:will.m.lancer@gmail.com">will.m.lancer@gmail.com</a></p>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-row">
-        <p>Contact: <a href="mailto:william.lancer@stonybrook.edu">william.lancer@stonybrook.edu</a></p>
-        <p><a href="mailto:will.m.lancer@gmail.com">will.m.lancer@gmail.com</a></p>
         <p>&copy; <span id="year">2026</span> Will Lancer</p>
+        <p><a href="#top">Back to top</a></p>
       </div>
     </footer>
 

@@ -23,58 +23,65 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
       rel="stylesheet"
     >
     <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
   </head>
-  <body>
+  <body id="top">
     <header class="site-header">
       <div class="container header-row">
         <a class="brand" href="../index.html">Will Lancer</a>
-        <div class="header-actions">
+        <div class="header-tools">
           <nav class="site-nav" aria-label="Primary">
-            <a href="../index.html#about">About Me</a>
-            <a href="../index.html#writings">Writings</a>
-            <a href="../cv.html">CV</a>
-            <a href="index.html">Blog</a>
+            <a href="../index.html#about">About</a>
+            <!-- <a href="../index.html#writings">Writings</a> -->
+            <!-- <a href="../index.html#blog">Home Blog</a> -->
+            <a href="../index.html#contact">Contact</a>
           </nav>
-          <button class="button theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-            Dark mode
-          </button>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Toggle color theme"
+          ></button>
         </div>
       </div>
     </header>
 
-    <main class="container page-top">
-      <section class="panel">
-        <p class="eyebrow">Blog</p>
-        <h1 class="title-serif">Thoughts on learning, writing, and building</h1>
-        <p class="lead">
+    <main class="page">
+      <section class="section" aria-labelledby="blog-home-title">
+        <p class="section-label">Blog</p>
+        <h1 class="page-title" id="blog-home-title">Thoughts on learning, writing, and building</h1>
+        <p class="lede">
           Posts on my mind-map learning workflow and what I am currently building.
         </p>
       </section>
 
-      <section class="section">
-        <div class="card-grid">
-          <article class="card">
-            <p class="post-date">January 2026</p>
-            <h2>On Learning with Mind-maps</h2>
-            <p>
-              My full process: map first, read deeply with minimal writing,
-              rewrite maps as understanding changes, and free-recall before new material.
-            </p>
-            <a class="text-link" href="on-learning-with-mindmaps.html">Read Post</a>
-          </article>
-
-          <article class="card">
-            <p class="post-date">February 2026</p>
-            <h2>Startup Log: What I Am Building</h2>
-            <p>A short note on what I am doing right now: building a start-up.</p>
-            <a class="text-link" href="startup-log-feb-2026.html">Read Post</a>
-          </article>
-        </div>
+      <section class="section" aria-labelledby="blog-posts-title">
+        <p class="section-label">Posts</p>
+        <h2 id="blog-posts-title">Current archive</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-item">
+              <h3><a href="on-learning-with-mindmaps.html">On Learning with Mind-maps</a></h3>
+              <p>
+                My full process: map first, read deeply with minimal writing,
+                rewrite maps as understanding changes, and free-recall before new material.
+              </p>
+            </div>
+            <span class="resource-meta">January 2026</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3><a href="startup-log-feb-2026.html">Startup Log: What I Am Building</a></h3>
+              <p>A short note on what I am doing right now: building a start-up.</p>
+            </div>
+            <span class="resource-meta">February 2026</span>
+          </li>
+        </ul>
       </section>
     </main>
 
@@ -84,6 +91,7 @@
         <p><a href="../index.html">Back to Home</a></p>
       </div>
     </footer>
+
     <script src="../theme.js"></script>
   </body>
 </html>

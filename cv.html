@@ -23,97 +23,119 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
       rel="stylesheet"
     >
     <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body id="top">
     <header class="site-header">
       <div class="container header-row">
         <a class="brand" href="index.html">Will Lancer</a>
-        <div class="header-actions">
+        <div class="header-tools">
           <nav class="site-nav" aria-label="Primary">
-            <a href="index.html#about">About Me</a>
-            <a href="index.html#writings">Writings</a>
-            <a href="index.html#blog">Blog</a>
-            <a href="cv.html">CV</a>
+            <a href="index.html#about">About</a>
+            <!-- <a href="index.html#writings">Writings</a> -->
+            <!-- <a href="index.html#blog">Blog</a> -->
+            <a href="index.html#contact">Contact</a>
           </nav>
-          <button class="button theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-            Dark mode
-          </button>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Toggle color theme"
+          ></button>
         </div>
       </div>
     </header>
 
-    <main class="container page-top">
-      <section class="panel">
-        <p class="eyebrow">Curriculum Vitae</p>
-        <h1 class="title-serif">Will Lancer</h1>
-        <p class="lead">Physics and mathematics student at Stony Brook University (graduating May 2026).</p>
-        <div class="button-row">
-          <a class="button" href="mailto:william.lancer@stonybrook.edu">Academic Email</a>
-          <a class="button button-secondary" href="mailto:will.m.lancer@gmail.com">Personal Email</a>
+    <main class="page">
+      <section class="section" aria-labelledby="cv-home-title">
+        <p class="section-label">Curriculum Vitae</p>
+        <h1 class="page-title" id="cv-home-title">Will Lancer</h1>
+        <p class="lede">
+          Physics and mathematics student at Stony Brook University (graduating May 2026).
+        </p>
+        <div class="inline-links" aria-label="CV links">
+          <a href="Will_Lancer_Resume.pdf">Resume PDF</a>
+          <a href="mailto:william.lancer@stonybrook.edu">Academic email</a>
+          <a href="mailto:will.m.lancer@gmail.com">Personal email</a>
         </div>
       </section>
 
-      <section class="section">
-        <div class="card-grid">
-          <article class="card">
-            <h2>Education</h2>
-            <p>
-              B.S. candidate in Physics and Mathematics, Stony Brook University.
-            </p>
-            <p>Expected graduation: May 2026.</p>
-          </article>
-
-          <article class="card">
-            <h2>Research Interests</h2>
-            <ul class="simple-list">
-              <li>Quantum Field Theory</li>
-              <li>Non-perturbative and on-shell methods</li>
-              <li>Scattering amplitudes</li>
-              <li>Cosmology</li>
-              <li>Algebraic geometry and the Langlands program</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h2>Current Work</h2>
+      <section class="section" aria-labelledby="cv-focus-title">
+        <p class="section-label">Focus</p>
+        <h2 id="cv-focus-title">Education and current work</h2>
+        <div class="two-column">
+          <div>
+            <div class="stack-block">
+              <h3>Education</h3>
+              <p>B.S. candidate in Physics and Mathematics, Stony Brook University.</p>
+              <p>Expected graduation: May 2026.</p>
+            </div>
+            <div class="stack-block">
+              <h3>Research Interests</h3>
+              <ul class="compact-list">
+                <li>Quantum Field Theory</li>
+                <li>Non-perturbative and on-shell methods</li>
+                <li>Scattering amplitudes</li>
+                <li>Cosmology</li>
+                <li>Algebraic geometry and the Langlands program</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="note">
+            <p class="link-label">Current work</p>
             <p>Building a startup while continuing research and technical writing.</p>
-          </article>
+          </aside>
         </div>
       </section>
 
-      <section class="section">
-        <div class="card-grid">
-          <article class="card">
-            <h2>Selected Writing</h2>
-            <ul class="simple-list">
-              <li><a class="text-link" href="Handouts/School/MAT308_Laplace.pdf">MAT 308 Laplace Handout</a></li>
-              <li><a class="text-link" href="Handouts/Physics/Mock.pdf">Physics Mock Handout</a></li>
-              <li><a class="text-link" href="blog/on-learning-with-mindmaps.html">On Learning with Mind-maps</a></li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h2>Interests Outside Academics</h2>
-            <ul class="simple-list">
+      <section class="section" aria-labelledby="cv-writing-title">
+        <p class="section-label">Selected Writing</p>
+        <h2 id="cv-writing-title">Writing and interests outside academics</h2>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-item">
+              <h3><a href="Handouts/School/MAT308_Laplace.pdf">MAT 308 Laplace Handout</a></h3>
+              <p>School handout from MAT 308.</p>
+            </div>
+            <span class="resource-meta">PDF</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3><a href="Handouts/Physics/Mock.pdf">Physics Mock Handout</a></h3>
+              <p>A mock handout from my physics notes workflow.</p>
+            </div>
+            <span class="resource-meta">PDF</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3><a href="blog/on-learning-with-mindmaps.html">On Learning with Mind-maps</a></h3>
+              <p>Thoughts on learning systems, mind-maps, and free recall.</p>
+            </div>
+            <span class="resource-meta">Article</span>
+          </li>
+        </ul>
+        <div class="two-column">
+          <div>
+            <h3>Interests Outside Academics</h3>
+            <ul class="compact-list">
               <li>Lifting weights</li>
               <li>Brazilian jiu-jitsu</li>
               <li>Reading and writing</li>
               <li>Podcasts</li>
             </ul>
-          </article>
-
-          <article class="card">
-            <h2>Links</h2>
-            <ul class="simple-list">
-              <li><a class="text-link" href="index.html">Home</a></li>
-              <li><a class="text-link" href="blog/">Blog Archive</a></li>
+          </div>
+          <div>
+            <h3>Links</h3>
+            <ul class="compact-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="blog/">Blog Archive</a></li>
             </ul>
-          </article>
+          </div>
         </div>
       </section>
     </main>
@@ -124,6 +146,7 @@
         <p><a href="index.html">Back to Home</a></p>
       </div>
     </footer>
+
     <script src="theme.js"></script>
   </body>
 </html>
