@@ -20,6 +20,8 @@
 
     toggleButtons.forEach((button) => {
       const isDark = theme === "dark";
+      // Keep the toggle icon-only even if stale text nodes get restored by the browser.
+      button.replaceChildren();
       button.setAttribute("aria-pressed", String(isDark));
       const label = isDark ? "Switch to light mode" : "Switch to dark mode";
       button.setAttribute("aria-label", label);
