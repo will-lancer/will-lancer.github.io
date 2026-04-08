@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Why Non-perturbative Methods Matter | Will Lancer</title>
+    <meta name="description" content="An argument for taking non-perturbative QFT seriously as a research direction.">
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const theme =
+            savedTheme === "light" || savedTheme === "dark"
+              ? savedTheme
+              : (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body id="top">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../index.html">Will Lancer</a>
+        <div class="header-tools">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#writing">Writing</a>
+            <a href="../index.html#contact">Contact</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Toggle color theme"
+          ></button>
+        </div>
+      </div>
+    </header>
+
+    <main class="article-shell">
+      <header class="article-header">
+        <p class="section-label">Writing</p>
+        <h1 class="article-title">Why Non-perturbative Methods Matter</h1>
+        <p class="post-date">March 2026</p>
+      </header>
+
+      <article class="article">
+        <p>
+          Most of what we know in quantum field theory comes from perturbation theory.
+          You start with a free theory, treat the interaction as a small correction, and
+          expand in powers of a coupling constant. This is spectacularly successful when
+          it works — the magnetic moment of the electron is predicted to ten decimal places.
+          But there are vast regions of physics where it does not work, and we have surprisingly
+          little to say about them.
+        </p>
+
+        <h2>The Limits of Perturbation Theory</h2>
+        <p>
+          Perturbative expansions are asymptotic, not convergent. The series diverges; you
+          are only ever approximating. For weakly coupled theories this is fine in practice.
+          But for strongly coupled systems — confinement in QCD, the mass gap, much of
+          condensed matter physics — perturbation theory is not merely imprecise; it is
+          structurally incapable of capturing the relevant physics. Confinement is a
+          fundamentally non-perturbative phenomenon. No finite number of Feynman diagrams
+          will produce it.
+        </p>
+        <p>
+          This is not a technical inconvenience. It is a conceptual wall. The most important
+          open problems in quantum field theory live on the other side of it.
+        </p>
+
+        <h2>Yang-Mills and the Mass Gap</h2>
+        <p>
+          The Clay Mathematics Institute's Millennium Prize problem on Yang-Mills existence
+          and the mass gap is, at bottom, a question about non-perturbative physics. Can we
+          rigorously construct a quantum Yang-Mills theory in four dimensions and prove that
+          the lowest excitation has strictly positive mass? Perturbation theory cannot even
+          formulate this question properly, because the mass gap is invisible to every order
+          in the perturbative expansion.
+        </p>
+        <p>
+          Lattice gauge theory gives strong numerical evidence that the mass gap exists. But
+          a proof requires genuinely new mathematical ideas — ideas about what a quantum field
+          theory <em>is</em>, not just what it predicts order by order.
+        </p>
+
+        <h2>Why Now</h2>
+        <p>
+          Three developments make this the right time to take non-perturbative QFT seriously
+          as a research program:
+        </p>
+        <ol class="simple-list">
+          <li>
+            <strong>Constructive QFT is maturing.</strong> The mathematical infrastructure for
+            rigorously defining interacting quantum field theories has improved substantially.
+            Techniques from stochastic quantization and regularity structures are opening doors
+            that were closed twenty years ago.
+          </li>
+          <li>
+            <strong>Machine learning offers new computational tools.</strong> Neural network
+            approaches to lattice field theory, normalizing flows for sampling, and learned
+            representations of field configurations are not yet mature, but the trajectory is
+            clear. These tools could let us probe non-perturbative regimes computationally in
+            ways that were previously impractical.
+          </li>
+          <li>
+            <strong>On-shell methods reveal hidden structure.</strong> The amplituhedron and
+            positive Grassmannian programs show that scattering amplitudes have geometric
+            structure that is invisible in the Feynman diagram expansion. This suggests that the
+            perturbative formulation is not the fundamental one — that there is a deeper, more
+            economical description of quantum field theory waiting to be found.
+          </li>
+        </ol>
+
+        <h2>The Next Decade</h2>
+        <p>
+          I think the next ten years will be a golden age for non-perturbative physics. The
+          combination of better mathematical tools, machine learning, and a generation of
+          physicists who take the mass gap problem seriously as a target — not just as a curiosity
+          — means that real progress is possible. Not guaranteed, but possible in a way that it
+          was not before.
+        </p>
+        <p>
+          The perturbative paradigm has been extraordinarily productive. But it has also shaped
+          what questions physicists consider tractable, and therefore what questions they ask.
+          Expanding the set of tractable questions is what non-perturbative methods are for. That
+          is why they matter.
+        </p>
+
+        <p><a class="back-link" href="../index.html#writing">Back to Writing</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Will Lancer</p>
+        <p><a href="../index.html">Back to Home</a></p>
+      </div>
+    </footer>
+
+    <script src="../theme.js"></script>
+  </body>
+</html>
