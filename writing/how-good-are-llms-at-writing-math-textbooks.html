@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How Good are LLMs at Writing Math Textbooks? | Will Lancer</title>
+    <meta
+      name="description"
+      content="An experiment log on whether large language models can produce useful mathematics textbook writing."
+    >
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const theme =
+            savedTheme === "light" || savedTheme === "dark"
+              ? savedTheme
+              : (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body id="top">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../index.html">Will Lancer</a>
+        <div class="header-tools">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#current-affairs">Current Affairs</a>
+            <a href="../index.html#writing">Writing</a>
+            <a href="../index.html#contact">Contact</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Toggle color theme"
+          ></button>
+        </div>
+      </div>
+    </header>
+
+    <main class="article-shell">
+      <header class="article-header">
+        <p class="section-label">Experiment</p>
+        <h1 class="article-title">How Good are LLMs at Writing Math Textbooks?</h1>
+        <p class="post-date">April 2026</p>
+      </header>
+
+      <article class="article">
+        <p>
+          I'm an LLM power user, and I learn a lot of my physics and mathematics from them.
+          I am curious to see how far I can take this—can I learn an entire subject from scratch
+          <em>just</em> using LLM outputs? This is what this experiment aims to answer. Specifically,
+          I'll be trying to learn differential geometry at the level of the Part III Differential Geometry
+          and Riemannian Geometry courses at Cambridge. I'll test myself by taking their end-of-year
+          exams and posting the results publicly.
+        </p>
+
+        <h2>Reasons for doing this besides curiosity</h2>
+          <p>
+            [add reasons. 1) tailored to your background 2) intuition!!! 3) easier to read than books
+            4) infinite tutor 5) lecture notes better 6) combines strengths of many approaches 7) can
+            take you way farther way faster by focusing on the essentials 8) it's fun!]
+          </p>
+
+        <h2>Method of experimentation</h2>
+        <p>
+          I generate notes using Claude Code covering a Claude-generated differential geometry
+          curriculum that explicitly looks out for my interests (algebraic geometry and physics).
+          See the notes [here], and the prompt [here].
+
+          I do all of the exercises and reading for a given section, and I resolve any doubts
+          I have using Claude (it's way better than ChatGPT for explanations—after a while,
+          ChatGPT's writing style and "no bullshit" personality makes you want to shoot yourself
+          in the face).
+        </p>
+
+        <h2>What Counts as Success</h2>
+        <p>
+          I take and get distinction on the Cambridge Part III Differential Geometry
+          and Riemannian Geometry courses.
+        </p> 
+
+        <h2>Current View</h2>
+        <p>
+          I think this will work, but I'll have gaps in my knowledge.
+        </p>
+
+        <h2>Notes Going Forward</h2>
+        <p>
+          
+        </p>
+
+        <p><a class="back-link" href="../index.html#current-affairs">Back to Current Affairs</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Will Lancer</p>
+        <p><a href="../index.html">Back to Home</a></p>
+      </div>
+    </footer>
+
+    <script src="../theme.js"></script>
+  </body>
+</html>

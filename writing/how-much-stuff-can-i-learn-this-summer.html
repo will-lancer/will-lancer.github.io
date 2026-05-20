@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How Much Stuff Can I Learn This Summer? | Will Lancer</title>
+    <meta
+      name="description"
+      content="[add meta description for this experiment]"
+    >
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const theme =
+            savedTheme === "light" || savedTheme === "dark"
+              ? savedTheme
+              : (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body id="top">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../index.html">Will Lancer</a>
+        <div class="header-tools">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#current-affairs">Current Affairs</a>
+            <a href="../index.html#writing">Writing</a>
+            <a href="../index.html#contact">Contact</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Toggle color theme"
+          ></button>
+        </div>
+      </div>
+    </header>
+
+    <main class="article-shell">
+      <header class="article-header">
+        <p class="section-label">Experiment</p>
+        <h1 class="article-title">How Much Stuff Can I Learn This Summer?</h1>
+        <p class="post-date">May 2026</p>
+      </header>
+
+      <article class="article">
+        <p>
+          Summer has finally dawned, and it's time to self-study! I have some subjects that
+          I've been wanting to learn deeply, and honestly—I want to get to researching new things!
+          For fun, and for my personal edification, I've decided to meticulously record my learnings
+          (e.g. hours worked, photos of all homeworks, annotated PDFs uploaded, etc.) this summer and 
+          document them at this page. Tag along to see how confused I get!
+        </p>
+
+        <h2>What I'm Trying to Learn</h2>
+        <p>
+          I've decided against making a Huge List That I Will Never Finish™ 
+          at the beginning of this experiment and then, well, not finishing it.
+          Rather, I'm just going to do SGD on whatever subject strikes the balance between
+          interesting and useful at that given time. Interspersed in this stochastic
+          process will be a few things that I must cover before Part III: a second pass
+          of QFT, and a full pass of GR at the master's level.
+        </p>
+
+        <h2>How I Learn</h2>
+        <p>
+          I learn via <em>mind-maps</em>. My meta-goal when learning is to think about
+          things in the simplest and most natural way possible. It is my fervent belief that
+          physics and mathematics are easy, and if something is not easy, you're just not thinking
+          about it in the right way. Here's the general schema for how I enter into a new subject:
+        <ul>
+          <li><strong>Pick the right resource.</strong> I like a good mix of intuition and precision,
+            and shoot for modern viewpoints of things. I also only read nicely typeset
+            resources—bad typesetting is an indication of laziness to me, especially in the
+            era of AI, and I have no patience for it.
+          </li>
+          <li><strong>Get a general overview of the entire resource.</strong> I will read through the entire 
+            resource, jot down the main ideas in my mind-map, and start preliminarily organizing
+            things. This will be extremely messy and ugly, and the mind-map won't stay like this.
+            I basically just want to put things in context and get a bird's eye view of the subject.
+            This process usually takes a few hours (2-4), varying with how familiar I am with the subject
+            and how long the resource I'm reading is. This is one of the most important parts of learning
+            to me—I feel blind without it. Nothing makes sense to me unless I can see the natural or obvious 
+            context to put it in.
+          </li>
+          <li><strong>Start reading.</strong> After getting a general view of things, I just start going through the resource. 
+            I think things through from scratch when reading, as I am borderline obsessed with finding the simplest and most natural way
+            to think about things. I construct simple examples of general claims when I read them. I ask a lot of questions
+            and answer them using LLMs, professors, or just by thinking about it for a bit longer. I tend to heavily
+            annotate the PDFs I'm reading because of this. I think of myself as easily confused, in the sense that I cannot
+            tolerate anything less than something being completely obvious, and I stay confused about things until they clarify
+            in this way (or don't...). I occasionally query LLMs during this time if I feel like I'm not understanding something
+            actually important in the text. When reading, I will oftentimes skip more technical points or discussions that I think 
+            aren't useful for learning the Big Ideas™ of whatever subject I'm there to learn—this is a feel thing, and I mark 
+            down when this occurs so I can come back to these discussions one day. I also will tend to skip more detailed worked
+            examples, as I think it's usually better to just derive these things yourself. Note that I will be updating and re-organizing
+            my mind-map while I'm reading, but it's not super frequently that I do this. Most of the time I have the notes open and
+            I'm just reading them.
+          </li>
+          <li><strong>Do problems.</strong> After reading a chapter/watching a few lectures of some resource, I will find some 
+            exercises so I can stretch my legs and think about what I just learned. I view problems more as ways to investigate the subject
+            at hand rather than these big chunky things that you need to be clever to do. Again, if a problem is hard, I think you
+            probably just haven't found a good way of thinking about it yet. Physics should be easy. Nature is smart, and it's
+            <em>your</em> job to try to figure out the right ways of thinking about things so you're as smart as Her!
+          </li>
+          <li><strong>Re-read what I just learned and answer questions.</strong> After doing some problems so things are more stuck in my
+            brain, I go through my annotated notes and resolve loose ends. This means I think through the ten millions questions 
+            I left for myself, read the more techincal sections I skipped, and do any derivations that I marked for myself to do.
+            LLMs are very useful for answering doubts here.
+          </li>
+          <li><strong>Rinse and repeat!</strong></li>
+        </ul>
+        </p>
+
+        <h2>What I'll be recording</h2>
+        <p>
+          For posterity, I'll be recording the following statistics:
+        <ul>
+          <li>Total hours studied per subject. This will be recorded with a stop watch
+            and is strict: no dilly-dallying allowed on the clock and all work must be recorded.
+            I will not lie about this, as I selfishly do not want to poison this extremely useful data.
+          </li>
+          <li>Photos of all homeworks done.</li>
+          <li>Upload of the annotated PDF I'm reading (if applicable).</li>
+          <li>Upload of completed mind-map at the end of the course.</li>
+          <li>List of unanswered questions at the end of the course.</li>
+        </ul>
+        </p>
+
+        <h2>What Counts as Success</h2>
+        <p>
+          This is going to be judged on vibes, as I'm not trying to win any accolades by doing this.
+          I know when I know something at this point. The basic metric of success in any course is
+          problem-solving ability, so if I solve all of the problem sheets for the course,
+          I think I'm in decent shape.
+        </p>
+
+        <h2>Progress Log</h2>
+        <p>
+          [to be updated after sft is done]
+        </p>
+
+        <div class="section-divider section-divider-centered" aria-hidden="true"></div>
+
+        <h2>Course List</h2>
+        <h3>
+          Part III Statistical Field Theory
+        </h3>
+
+        <div class="course-list">
+          <div class="course-block">
+            <h3>Statistical Field Theory</h3>
+            <ul class="compact-list course-record-list">
+              <li><strong>Resource:</strong> <a href="https://davidtong.org/teaching/statistical-field-theory/" 
+                target="_blank">Tong's SFT notes</a>, and occasionally <a href="https://mcgreevy.physics.ucsd.edu/f18/2018F-217-lectures.pdf" 
+                target="_blank">McGreevy's RG notes</a></li>
+              <li><strong>Status:</strong> In Progress</li>
+              <li><strong>Hours studied:</strong> tbd</li>
+              <li><strong>Homework photos:</strong> tbd</li>
+              <li><strong>Annotated PDF:</strong> tbd</li>
+              <li><strong>Mind-map:</strong> tbd</li>
+              <li><strong>Unanswered questions:</strong> tbd</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- <div class="course-list">
+          <div class="course-block">
+            <h3>[subject name]</h3>
+            <ul class="compact-list course-record-list">
+              <li><strong>Resource:</strong> [book, notes, lectures, etc.]</li>
+              <li><strong>Status:</strong> [not started / in progress / done]</li>
+              <li><strong>Hours studied:</strong> [ ]</li>
+              <li><strong>Homework photos:</strong> [links]</li>
+              <li><strong>Annotated PDF:</strong> [link]</li>
+              <li><strong>Mind-map:</strong> [link]</li>
+              <li><strong>Unanswered questions:</strong> [list or link]</li>
+            </ul>
+          </div>
+        </div> -->
+ 
+        <p><a class="back-link" href="../index.html#current-affairs">Back to Current Affairs</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Will Lancer</p>
+        <p><a href="../index.html">Back to Home</a></p>
+      </div>
+    </footer>
+
+    <script src="../theme.js"></script>
+  </body>
+</html>
