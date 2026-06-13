@@ -77,9 +77,9 @@
 
 html {
   scroll-behavior: smooth;
-  /* Scales the whole page (everything is rem-based) so body text reads larger
-     while the type hierarchy stays in proportion. */
-  font-size: clamp(17px, 16.4px + 0.3vw, 19px);
+  /* Root drives the page chrome (headings, labels, nav) — kept a touch smaller
+     than the body prose, which is pinned independently on <body> below. */
+  font-size: clamp(15.5px, 15.2px + 0.16vw, 17.5px);
 }
 
 body {
@@ -87,6 +87,8 @@ body {
   min-height: 100vh;
   color: var(--text);
   font-family: var(--serif);
+  /* Body prose size, decoupled from the root so chrome can scale separately. */
+  font-size: clamp(18px, 17.7px + 0.1vw, 19px);
   line-height: 1.7;
   text-rendering: optimizeLegibility;
   background:
