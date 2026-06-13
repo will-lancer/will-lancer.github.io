@@ -199,7 +199,7 @@ pre {
   position: relative;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.76rem;
+  font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-decoration: none;
   text-transform: uppercase;
@@ -304,7 +304,7 @@ pre {
 .link-label {
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.76rem;
+  font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -540,7 +540,7 @@ pre {
 .resource-meta {
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.74rem;
+  font-size: 0.66rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -589,7 +589,7 @@ pre {
   margin: 0;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.76rem;
+  font-size: 0.7rem;
   letter-spacing: 0.06em;
 }
 
