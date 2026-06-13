@@ -1,38 +1,72 @@
+/* Self-hosted Computer Modern (the LaTeX serif). Version-locked, no third-party CDN. */
+@font-face {
+  font-family: "CMU Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cmunrm.woff") format("woff");
+}
+@font-face {
+  font-family: "CMU Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cmunti.woff") format("woff");
+}
+@font-face {
+  font-family: "CMU Serif";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/cmunbx.woff") format("woff");
+}
+@font-face {
+  font-family: "CMU Serif";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/cmunbi.woff") format("woff");
+}
+
 :root {
   color-scheme: light;
-  --bg: #f7f3ec;
-  --header-bg: rgba(247, 243, 236, 0.9);
-  --surface: rgba(255, 255, 255, 0.48);
-  --surface-strong: rgba(255, 255, 255, 0.72);
-  --text: #171412;
-  --muted: #675f56;
-  --line: rgba(23, 20, 18, 0.14);
-  --line-strong: rgba(23, 20, 18, 0.26);
-  --accent: #1f4fba;
-  --accent-hover: #163884;
-  --wash-a: rgba(31, 79, 186, 0.06);
-  --wash-b: rgba(100, 116, 139, 0.08);
-  --shadow: 0 12px 32px rgba(23, 20, 18, 0.06);
-  --max-width: 980px;
+  --bg: #f8f4ec;
+  --header-bg: rgba(248, 244, 236, 0.82);
+  --surface: rgba(255, 255, 255, 0.5);
+  --surface-strong: rgba(255, 255, 255, 0.74);
+  --text: #1a1613;
+  --muted: #6b6258;
+  --faint: #938a7e;
+  --line: rgba(26, 22, 19, 0.13);
+  --line-strong: rgba(26, 22, 19, 0.24);
+  --accent: #1d4488;
+  --accent-hover: #122c5c;
+  --wash-a: rgba(29, 68, 136, 0.05);
+  --wash-b: rgba(120, 106, 86, 0.06);
+  --shadow: 0 14px 38px rgba(26, 22, 19, 0.07);
+  --max-width: 1020px;
+  --measure: 40rem;
+  --gutter: 15.5rem;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --serif: "Latin Modern Roman", "Iowan Old Style", "Book Antiqua", Georgia, serif;
+  --serif: "CMU Serif", "Latin Modern Roman", "Iowan Old Style", "Book Antiqua", Georgia, serif;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #101318;
-  --header-bg: rgba(16, 19, 24, 0.9);
-  --surface: rgba(28, 34, 42, 0.52);
-  --surface-strong: rgba(28, 34, 42, 0.76);
-  --text: #f4efe8;
-  --muted: #b8ad9f;
-  --line: rgba(244, 239, 232, 0.16);
-  --line-strong: rgba(244, 239, 232, 0.28);
-  --accent: #8fb4ff;
-  --accent-hover: #bdd1ff;
-  --wash-a: rgba(143, 180, 255, 0.1);
-  --wash-b: rgba(148, 163, 184, 0.08);
-  --shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+  --bg: #0f1216;
+  --header-bg: rgba(15, 18, 22, 0.82);
+  --surface: rgba(28, 34, 42, 0.5);
+  --surface-strong: rgba(28, 34, 42, 0.74);
+  --text: #f3eee6;
+  --muted: #b6ab9d;
+  --faint: #8a8074;
+  --line: rgba(243, 238, 230, 0.15);
+  --line-strong: rgba(243, 238, 230, 0.27);
+  --accent: #9bbcff;
+  --accent-hover: #c6d8ff;
+  --wash-a: rgba(155, 188, 255, 0.09);
+  --wash-b: rgba(148, 163, 184, 0.07);
+  --shadow: 0 16px 36px rgba(0, 0, 0, 0.26);
 }
 
 *,
@@ -50,15 +84,23 @@ body {
   min-height: 100vh;
   color: var(--text);
   font-family: var(--serif);
-  line-height: 1.7;
+  font-size: clamp(1.05rem, 1.01rem + 0.18vw, 1.16rem);
+  line-height: 1.72;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background:
-    radial-gradient(circle at 0 0, var(--wash-a), transparent 28%),
-    radial-gradient(circle at 100% 100%, var(--wash-b), transparent 34%),
+    radial-gradient(circle at 0 0, var(--wash-a), transparent 26%),
+    radial-gradient(circle at 100% 100%, var(--wash-b), transparent 32%),
     var(--bg);
 }
 
 ::selection {
-  background: rgba(31, 79, 186, 0.18);
+  background: rgba(29, 68, 136, 0.16);
+}
+
+:root[data-theme="dark"] ::selection {
+  background: rgba(155, 188, 255, 0.24);
 }
 
 img {
@@ -78,13 +120,18 @@ ol {
 
 a {
   color: var(--accent);
-  text-decoration-thickness: 1.3px;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 38%, transparent);
+  text-underline-offset: 0.16em;
+  transition:
+    color 140ms ease,
+    text-decoration-color 140ms ease;
 }
 
 a:hover,
 a:focus-visible {
   color: var(--accent-hover);
+  text-decoration-color: currentColor;
 }
 
 button,
@@ -225,10 +272,10 @@ pre {
 
 .intro {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 3rem;
+  grid-template-columns: 232px minmax(0, 1fr);
+  gap: 3.4rem;
   align-items: start;
-  padding: 1rem 0 2rem;
+  padding: 1.5rem 0 2.4rem;
 }
 
 .intro-media {
@@ -237,12 +284,14 @@ pre {
 }
 
 .profile-photo {
-  width: 220px;
+  width: 232px;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
+  border-radius: 14px;
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px rgba(255, 255, 255, 0.4) inset;
 }
 
 .meta-line,
@@ -608,4 +657,244 @@ pre {
   .inline-links {
     gap: 0.35rem 0.8rem;
   }
+}
+
+/* ============================================================
+   Refined layer: math, margin notes, TOC, anchored headings
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- Hero signature equation --- */
+.hero-eq {
+  margin-top: 0.2rem;
+  padding: 0.85rem 1rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hero-eq .katex-display {
+  margin: 0;
+}
+
+.hero-eq .katex {
+  font-size: 1.04em;
+}
+
+.eq-caption {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* --- KaTeX display math --- */
+.katex-display {
+  margin: 1.5rem 0;
+  max-width: var(--measure);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 2px;
+}
+
+.article .katex {
+  font-size: 1.03em;
+}
+
+/* --- Article measure + reading rhythm --- */
+.article p,
+.article li,
+.article ol,
+.article ul,
+.article h2,
+.article h3,
+.article .lead,
+.article .toc,
+.article .footnotes {
+  max-width: var(--measure);
+}
+
+.article > p:first-of-type {
+  font-size: 1.06em;
+}
+
+/* --- Anchored, linkable headings --- */
+.article h2 {
+  position: relative;
+  scroll-margin-top: 5.5rem;
+}
+
+.head-anchor {
+  position: absolute;
+  left: -1.3em;
+  top: 0.06em;
+  display: inline-block;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 0.82em;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 130ms ease;
+}
+
+.article h2:hover .head-anchor,
+.head-anchor:focus-visible {
+  opacity: 1;
+}
+
+@media (max-width: 760px) {
+  .head-anchor {
+    display: none;
+  }
+}
+
+/* --- Table of contents --- */
+.toc {
+  margin: 1.6rem 0 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.toc-label {
+  margin-bottom: 0.5rem;
+}
+
+.toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+
+.toc li {
+  counter-increment: toc;
+}
+
+.toc li + li {
+  margin-top: 0.32rem;
+}
+
+.toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  margin-right: 0.7em;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.78em;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.toc a:hover,
+.toc a:focus-visible {
+  color: var(--accent);
+}
+
+/* --- Margin notes (Tufte-style sidenotes) --- */
+.article {
+  counter-reset: sidenote;
+}
+
+.sidenote-ref {
+  counter-increment: sidenote;
+}
+
+.sidenote-ref::after {
+  content: counter(sidenote);
+  margin-left: 1px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.62em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.sidenote {
+  float: right;
+  clear: right;
+  width: var(--gutter);
+  margin-right: calc(-1 * var(--gutter) - 1.4rem);
+  margin-top: 0.2rem;
+  margin-bottom: 1.1rem;
+  color: var(--muted);
+  font-size: 0.83em;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.sidenote::before {
+  content: counter(sidenote);
+  margin-right: 0.4em;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.72em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+@media (max-width: 1100px) {
+  .sidenote {
+    float: none;
+    width: auto;
+    max-width: var(--measure);
+    margin: 0.9rem 0;
+    padding-left: 0.95rem;
+    border-left: 2px solid var(--line-strong);
+  }
+}
+
+/* --- Footnotes --- */
+.footnotes {
+  margin-top: 2.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+.footnotes ol {
+  padding-left: 1.1rem;
+}
+
+/* --- External link markers (added by enhance.js) --- */
+.article a[data-external]::after,
+.prose a[data-external]::after {
+  content: "\2197";
+  margin-left: 0.12em;
+  color: var(--faint);
+  font-size: 0.74em;
+  vertical-align: baseline;
+}
+
+/* --- Pull-quote / emphasis aside reused on essays --- */
+.aside-note {
+  margin: 1.6rem 0;
+  padding: 0.9rem 1.15rem;
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 12px 12px 0;
+  color: var(--muted);
+  font-style: italic;
+  max-width: var(--measure);
+}
+
+.aside-note p {
+  margin-bottom: 0;
 }
