@@ -30,10 +30,11 @@
       rel="stylesheet"
     >
     <link rel="preload" href="fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f4ec">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14120f">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#323639">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#232427">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Will Lancer — Physics, Mathematics, and AI">
@@ -71,17 +72,29 @@
     </header>
 
     <main class="page">
-      <section class="intro" aria-labelledby="intro-title">
-        <div class="intro-media">
-          <img src="will-lancer-photo.png" alt="Will Lancer" class="profile-photo">
-          <p class="meta-line">Cambridge University / Theoretical physics / Oct. 2026 - June 2027</p>
-        </div>
-        <div class="intro-copy">
-          <p class="kicker">Physics, mathematics, AI</p>
-          <h1 class="intro-title" id="intro-title">
-            I study theoretical high-energy physics.
-          </h1>
-          <p class="lede">
+      <p class="arxiv-stamp" aria-hidden="true">arXiv:2607.00001v1&#8201;&#8201;[hep-th]&#8201;&#8201;6 Jul 2026</p>
+
+      <header class="paper-head" aria-labelledby="intro-title">
+        <p class="submit-note">Prepared for submission to JHEP</p>
+        <h1 class="paper-title" id="intro-title">
+          I study theoretical high-energy physics.
+        </h1>
+        <hr class="title-rule" aria-hidden="true">
+        <p class="paper-author">Will Lancer</p>
+        <p class="paper-affil">Cambridge University / Theoretical physics / Oct. 2026 - June 2027</p>
+        <p class="paper-email">
+          <em>E-mail:</em>
+          <a href="mailto:william.lancer@stonybrook.edu">william.lancer@stonybrook.edu</a>,
+          <a href="mailto:will.m.lancer@gmail.com">will.m.lancer@gmail.com</a>
+        </p>
+        <p class="paper-eprint">
+          <em>Resume:</em>
+          <a href="Will_Lancer_Resume.pdf">Will_Lancer_Resume.pdf</a>
+          <!-- <a href="blog/">Blog archive</a> -->
+        </p>
+        <div class="paper-abstract">
+          <p>
+            <span class="runin">Abstract:</span>
             I graduated summa cum laude in physics & mathematics from Stony Brook University in 2026.
             I'm a Goldwater scholar, currently do research at the Simons
             Center for Geometry and Physics under Zohar Komargodski, and am going to Cambridge in the Fall
@@ -92,18 +105,27 @@
             begun seriously learning about AI safety. I also deeply enjoy
             pure mathematics, religious philosophy, and moral philosophy.
           </p>
-          <div class="inline-links" aria-label="Primary links">
-            <a href="Will_Lancer_Resume.pdf">Resume PDF</a>
-            <!-- <a href="blog/">Blog archive</a> -->
-            <a href="mailto:william.lancer@stonybrook.edu">Academic email</a>
-            <a href="mailto:will.m.lancer@gmail.com">Personal email</a>
-          </div>
         </div>
-      </section>
+        <p class="paper-keywords"><span class="runin">Keywords:</span> Physics, mathematics, AI</p>
+        <nav class="paper-toc" aria-label="Contents">
+          <p class="toc-title">Contents</p>
+          <ol>
+            <li><a href="#about">Academics and Interests <span class="toc-page">1</span></a></li>
+            <li><a href="#current-affairs">Current Affairs <span class="toc-page">1</span></a></li>
+            <li><a href="#hobbies">Hobbies <span class="toc-page">1</span></a></li>
+            <li><a href="#cv">Curriculum Vitae <span class="toc-page">1</span></a></li>
+            <li><a href="#contact">Get in touch <span class="toc-page">1</span></a></li>
+          </ol>
+        </nav>
+      </header>
 
       <section id="about" class="section" aria-labelledby="about-title">
         <p class="section-label">About Me</p>
         <h2 id="about-title">Academics and Interests</h2>
+        <figure class="paper-figure">
+          <img src="will-lancer-photo.png" alt="Will Lancer" class="profile-photo">
+          <figcaption><span class="fig-label">Figure 1.</span> The author.</figcaption>
+        </figure>
         <p>
           I graduated summa cum laude in three years from Stony Brook university.
           My degree was in physics & mathematics. I'll be going to
@@ -141,9 +163,9 @@
           I finish my summer research project, I'm going to read up on scalable oversight. I intend to produce 
           research in it before I start at Cambridge this year.
         </p>
+        <p class="table-caption">Research interests</p>
         <div class="interest-columns">
           <div class="stack-block">
-            <p class="link-label">Research interests</p>
             <h3>Physics</h3>
             <ul class="compact-list">
               <li>Q</li>
@@ -152,7 +174,6 @@
             </ul>
           </div>
           <div class="stack-block">
-            <p class="link-label link-label-placeholder" aria-hidden="true">Research interests</p>
             <h3>Math</h3>
             <ul class="compact-list">
               <li>Geometric Langlands</li>
@@ -161,7 +182,6 @@
             </ul>
           </div>
           <div class="stack-block">
-            <p class="link-label link-label-placeholder" aria-hidden="true">Research interests</p>
             <h3>AI safety</h3>
             <ul class="compact-list">
               <li>Scalable oversight</li>

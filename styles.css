@@ -1,4 +1,10 @@
-/* Self-hosted Computer Modern (the LaTeX serif). Version-locked, no third-party CDN. */
+/* ============================================================
+   JHEP costume: the site rendered as a paper "Prepared for
+   submission to JHEP", viewed in a PDF reader. Same content,
+   same class vocabulary — the visual layer apes jheppub.sty.
+   Self-hosted Computer Modern (serif, sans, typewriter).
+   ============================================================ */
+
 @font-face {
   font-family: "CMU Serif";
   font-style: normal;
@@ -27,47 +33,79 @@
   font-display: swap;
   src: url("fonts/cmunbi.woff") format("woff");
 }
+/* CMU Sans: the jheppub title/author face. */
+@font-face {
+  font-family: "CMU Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cmunss.woff") format("woff");
+}
+@font-face {
+  font-family: "CMU Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/cmunsx.woff") format("woff");
+}
+/* CMU Typewriter: \texttt — e-mail lines, resource tags. */
+@font-face {
+  font-family: "CMU Typewriter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cmuntt.woff") format("woff");
+}
 
 :root {
   color-scheme: light;
-  --bg: #f8f4ec;
-  --header-bg: rgba(248, 244, 236, 0.82);
-  --surface: rgba(255, 255, 255, 0.5);
-  --surface-strong: rgba(255, 255, 255, 0.74);
-  --text: #1a1613;
-  --muted: #6b6258;
-  --faint: #938a7e;
-  --line: rgba(26, 22, 19, 0.13);
-  --line-strong: rgba(26, 22, 19, 0.24);
-  --accent: #1d4488;
-  --accent-hover: #122c5c;
-  --wash-a: rgba(29, 68, 136, 0.05);
-  --wash-b: rgba(120, 106, 86, 0.06);
-  --shadow: 0 14px 38px rgba(26, 22, 19, 0.07);
-  --max-width: 944px;
+  /* The reading environment (PDF-viewer chrome) */
+  --backdrop: #50545a;
+  --toolbar: #323639;
+  --toolbar-text: #d9dbde;
+  --toolbar-text-strong: #ffffff;
+  --toolbar-line: rgba(0, 0, 0, 0.45);
+  --toolbar-accent: #8ab4f8;
+  /* The paper itself */
+  --sheet: #ffffff;
+  --text: #131313;
+  --muted: #3f3f3f;
+  --faint: #6e6e6e;
+  --rule: #1a1a1a;                      /* \hrule black */
+  --line: rgba(0, 0, 0, 0.16);          /* soft site hairlines */
+  --accent: #1717c4;                    /* hyperref blue */
+  --accent-hover: #0d0d86;
+  --sheet-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    0 10px 34px rgba(0, 0, 0, 0.3);
+  --max-width: 884px;
   --measure: 40rem;
-  --gutter: 15.5rem;
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --mono-ui: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --mono-paper: "CMU Typewriter", "JetBrains Mono", ui-monospace, monospace;
   --serif: "CMU Serif", "Latin Modern Roman", "Iowan Old Style", "Book Antiqua", Georgia, serif;
+  --sans: "CMU Sans", "Latin Modern Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  /* Warm charcoal, not blue-black: the same paper, read by lamplight. */
-  --bg: #14120f;
-  --header-bg: rgba(20, 18, 15, 0.82);
-  --surface: rgba(40, 36, 30, 0.5);
-  --surface-strong: rgba(40, 36, 30, 0.74);
-  --text: #f3eee6;
-  --muted: #b6ab9d;
-  --faint: #8a8074;
-  --line: rgba(243, 238, 230, 0.15);
-  --line-strong: rgba(243, 238, 230, 0.27);
-  --accent: #9bbcff;
-  --accent-hover: #c6d8ff;
-  --wash-a: rgba(155, 188, 255, 0.07);
-  --wash-b: rgba(196, 178, 148, 0.06);
-  --shadow: 0 16px 36px rgba(0, 0, 0, 0.26);
+  /* Night viewer: dark sheet, inverted ink. */
+  --backdrop: #141518;
+  --toolbar: #232427;
+  --toolbar-text: #b9bbbf;
+  --toolbar-text-strong: #f2f3f5;
+  --toolbar-line: rgba(0, 0, 0, 0.6);
+  --toolbar-accent: #8ab4f8;
+  --sheet: #1e1f23;
+  --text: #e8e4dc;
+  --muted: #b3afa6;
+  --faint: #8b877f;
+  --rule: #d6d2c9;
+  --line: rgba(232, 228, 220, 0.16);
+  --accent: #93a4ff;
+  --accent-hover: #c0caff;
+  --sheet-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.6),
+    0 12px 36px rgba(0, 0, 0, 0.5);
 }
 
 *,
@@ -78,9 +116,7 @@
 
 html {
   scroll-behavior: smooth;
-  /* Root drives the page chrome (headings, labels, nav) — kept a touch smaller
-     than the body prose, which is pinned independently on <body> below. */
-  font-size: clamp(15.5px, 15.2px + 0.16vw, 17.5px);
+  font-size: clamp(15.5px, 15.2px + 0.16vw, 17px);
 }
 
 body {
@@ -88,25 +124,22 @@ body {
   min-height: 100vh;
   color: var(--text);
   font-family: var(--serif);
-  /* Body prose size, decoupled from the root so chrome can scale separately. */
-  font-size: clamp(18px, 17.7px + 0.1vw, 19px);
-  line-height: 1.7;
+  /* Paper body text: dense, book-like. */
+  font-size: clamp(17px, 16.7px + 0.1vw, 18px);
+  line-height: 1.52;
   text-rendering: optimizeLegibility;
   font-kerning: normal;
   font-variant-ligatures: common-ligatures contextual;
-  background:
-    radial-gradient(circle at 0 0, var(--wash-a), transparent 26%),
-    radial-gradient(circle at 100% 100%, var(--wash-b), transparent 32%),
-    var(--bg);
+  background: var(--backdrop);
   transition: background-color 260ms ease, color 260ms ease;
 }
 
 ::selection {
-  background: rgba(29, 68, 136, 0.16);
+  background: rgba(23, 23, 196, 0.16);
 }
 
 :root[data-theme="dark"] ::selection {
-  background: rgba(155, 188, 255, 0.24);
+  background: rgba(147, 164, 255, 0.28);
 }
 
 img {
@@ -135,7 +168,7 @@ p {
 }
 
 li::marker {
-  color: var(--muted);
+  color: var(--text);
 }
 
 :focus-visible {
@@ -144,20 +177,19 @@ li::marker {
   border-radius: 2px;
 }
 
+/* Hyperref look: colored links, no underline; underline on hover only. */
 a {
   color: var(--accent);
-  text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in srgb, var(--accent) 38%, transparent);
-  text-underline-offset: 0.16em;
-  transition:
-    color 140ms ease,
-    text-decoration-color 140ms ease;
+  text-decoration: none;
+  transition: color 140ms ease;
 }
 
 a:hover,
 a:focus-visible {
   color: var(--accent-hover);
-  text-decoration-color: currentColor;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
 }
 
 button,
@@ -169,23 +201,23 @@ select {
 
 code,
 pre {
-  font-family: var(--mono);
+  font-family: var(--mono-paper);
 }
 
-.container,
-.page,
-.article-shell {
-  width: min(var(--max-width), 92vw);
+.container {
+  width: min(1160px, 95vw);
   margin: 0 auto;
 }
 
+/* ------------------------------------------------------------
+   Viewer chrome: the sticky header plays PDF-toolbar
+   ------------------------------------------------------------ */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
-  border-bottom: 1px solid var(--line);
-  background: var(--header-bg);
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--toolbar-line);
+  background: var(--toolbar);
 }
 
 .header-row {
@@ -193,17 +225,23 @@ pre {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.95rem 0;
+  padding: 0.62rem 0;
 }
 
 .brand {
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 0.84rem;
+  color: var(--toolbar-text-strong);
+  font-family: var(--mono-ui);
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.brand:hover,
+.brand:focus-visible {
+  color: var(--toolbar-text-strong);
+  text-decoration: none;
 }
 
 .header-tools {
@@ -221,9 +259,9 @@ pre {
 
 .site-nav a {
   position: relative;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.7rem;
+  color: var(--toolbar-text);
+  font-family: var(--mono-ui);
+  font-size: 0.64rem;
   letter-spacing: 0.12em;
   text-decoration: none;
   text-transform: uppercase;
@@ -240,18 +278,19 @@ pre {
   top: 50%;
   width: 1px;
   height: 0.8rem;
-  background: var(--line-strong);
-  opacity: 0.55;
+  background: currentColor;
+  opacity: 0.35;
   transform: translateY(-50%);
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--text);
+  color: var(--toolbar-text-strong);
+  text-decoration: none;
 }
 
 .site-nav a[aria-current="true"] {
-  color: var(--text);
+  color: var(--toolbar-text-strong);
 }
 
 .site-nav a[aria-current="true"]::after {
@@ -260,8 +299,8 @@ pre {
   left: 0;
   right: 0;
   bottom: -0.42em;
-  height: 1px;
-  background: var(--accent);
+  height: 2px;
+  background: var(--toolbar-accent);
 }
 
 .site-nav a + a[aria-current="true"]::after {
@@ -273,30 +312,24 @@ pre {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   background: transparent;
-  color: var(--text);
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.1rem;
+  height: 2.1rem;
   padding: 0;
   overflow: hidden;
-  font-family: var(--mono);
   font-size: 0;
-  letter-spacing: 0;
   line-height: 1;
   color: transparent;
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease;
+  transition: background-color 160ms ease, border-color 160ms ease;
 }
 
 .theme-toggle::before {
   content: "\263E";
-  color: var(--text);
+  color: var(--toolbar-text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI Symbol", sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 :root[data-theme="dark"] .theme-toggle::before {
@@ -305,45 +338,427 @@ pre {
 
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
-  border-color: var(--line-strong);
-  background: var(--surface-strong);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
 }
 
+/* ------------------------------------------------------------
+   The sheet: every <main> is a page of the paper
+   ------------------------------------------------------------ */
 .page,
 .article-shell {
-  padding: 3rem 0 5rem;
+  position: relative;
+  width: min(var(--max-width), 100%);
+  margin: 1.7rem auto 2.8rem;
+  padding: clamp(2.4rem, 6vw, 4.6rem) clamp(1.35rem, 7.4vw, 5.6rem) 2.6rem;
+  background: var(--sheet);
+  box-shadow: var(--sheet-shadow);
+  transition: background-color 260ms ease;
 }
 
-.intro {
-  display: grid;
-  grid-template-columns: 232px minmax(0, 1fr);
-  gap: 3.4rem;
-  align-items: start;
-  padding: 1.5rem 0 2.4rem;
+/* Centered page number at the sheet's foot, jheppub style. */
+.page::after,
+.article-shell::after {
+  content: "– 1 –";
+  display: block;
+  margin-top: 2.6rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
 }
 
-.intro-media {
-  display: grid;
-  gap: 0.85rem;
+/* The rotated arXiv stamp in the left margin of the first page. */
+.arxiv-stamp {
+  position: absolute;
+  top: 23rem;
+  left: 1.05rem;
+  color: var(--faint);
+  font-family: var(--mono-paper);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  user-select: none;
 }
 
-.profile-photo {
-  width: 232px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow:
-    var(--shadow),
-    0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+@media (max-width: 1020px) {
+  .arxiv-stamp {
+    display: none;
+  }
 }
 
-/* The photo's meta line reads as a figure caption: hairline rule, then text. */
-.intro-media .meta-line {
-  padding-top: 0.6rem;
+/* ------------------------------------------------------------
+   JHEP title block
+   ------------------------------------------------------------ */
+.submit-note {
+  margin: 0 0 3.2rem;
+  font-size: 0.86rem;
+  color: var(--text);
+}
+
+.paper-title {
+  margin: 0 0 1.15rem;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.6vw, 1.98rem);
+  line-height: 1.28;
+  letter-spacing: 0;
+}
+
+.title-rule {
+  height: 0;
+  margin: 0 0 1.9rem;
+  border: 0;
+  border-top: 1.5px solid var(--rule);
+}
+
+.paper-author {
+  margin: 0 0 0.55rem;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.paper-affil,
+.paper-email,
+.paper-eprint {
+  margin: 0 0 0.45rem 1.1em;
+  font-size: 0.98rem;
+}
+
+.paper-affil {
+  font-style: italic;
+}
+
+.paper-email em,
+.paper-eprint em {
+  font-style: italic;
+}
+
+.paper-email a,
+.paper-eprint a {
+  font-family: var(--mono-paper);
+  font-size: 0.94em;
+}
+
+.paper-abstract {
+  margin-top: 1.7rem;
+}
+
+.paper-abstract p {
+  margin: 0;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.paper-abstract p + p {
+  text-indent: 1.55em;
+}
+
+.paper-keywords {
+  margin: 1.15rem 0 0;
+  text-align: justify;
+}
+
+/* Small-caps run-in labels: Abstract:, Keywords: */
+.runin {
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
+/* ------------------------------------------------------------
+   Contents (both the hand-written homepage one and the
+   enhance.js-built article one)
+   ------------------------------------------------------------ */
+.paper-toc,
+.toc {
+  margin: 2.3rem 0 0;
+  padding: 1.05rem 0 1.25rem;
+  border-top: 1.5px solid var(--rule);
+  border-bottom: 1.5px solid var(--rule);
+  background: none;
+}
+
+.toc-title,
+.toc-label {
+  margin: 0 0 0.85rem;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.paper-toc ol,
+.toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+
+.paper-toc li,
+.toc li {
+  counter-increment: toc;
+}
+
+.paper-toc li + li,
+.toc li + li {
+  margin-top: 0.38rem;
+}
+
+.paper-toc a,
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85em;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.paper-toc a::before,
+.toc a::before {
+  content: counter(toc);
+  min-width: 1.15em;
+  font-weight: 700;
+}
+
+.toc li::before {
+  content: none;
+}
+
+.paper-toc .toc-page,
+.toc a::after {
+  margin-left: auto;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.toc a::after {
+  content: "1";
+}
+
+.paper-toc a:hover,
+.paper-toc a:focus-visible,
+.toc a:hover,
+.toc a:focus-visible {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------
+   Numbered sections, LaTeX paragraph texture
+   ------------------------------------------------------------ */
+.page {
+  counter-reset: sec;
+}
+
+.section {
+  margin-top: 2.4rem;
+  scroll-margin-top: 5rem;
+}
+
+/* The mono eyebrows break the costume; the paper carries numbers instead. */
+.page > .section > .section-label {
+  display: none;
+}
+
+.section h2 {
+  margin-bottom: 0.85rem;
+  font-size: 1.24rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.page > .section h2::before {
+  counter-increment: sec;
+  content: counter(sec);
+  display: inline-block;
+  min-width: 1.6em;
+}
+
+.section h3,
+.article h2 {
+  margin-bottom: 0.55rem;
+  font-size: 1.04rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.article h2 {
+  margin-top: 1.9rem;
+}
+
+/* Justified prose with \parindent and \parskip=0 — the LaTeX texture. */
+.section > p,
+.article p,
+.intro-copy p {
+  max-width: none;
+  margin-bottom: 0;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-lines: 2;
+}
+
+.section > p + p,
+.article p + p {
+  text-indent: 1.55em;
+}
+
+.section > p:last-child,
+.article p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists read as itemize: a bit of air above/below, none between items. */
+.compact-list,
+.simple-list {
+  margin: 0.6rem 0 0.9rem;
+  padding-left: 1.9em;
+}
+
+.compact-list li + li,
+.simple-list li + li {
+  margin-top: 0.28rem;
+}
+
+.compact-list .list-divider {
+  list-style: none;
+  height: 0;
+  margin: 0.7rem 0 0.55rem;
   border-top: 1px solid var(--line);
 }
 
+.article ul,
+.article ol {
+  margin: 0.6rem 0 0.9rem;
+  padding-left: 1.9em;
+}
+
+.article li + li {
+  margin-top: 0.35rem;
+}
+
+.article li {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ------------------------------------------------------------
+   Figure 1: the author
+   ------------------------------------------------------------ */
+.paper-figure {
+  float: right;
+  width: 204px;
+  margin: 0.3rem 0 1.1rem 2rem;
+}
+
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.paper-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.fig-label {
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .paper-figure {
+    float: none;
+    width: min(232px, 72%);
+    margin: 0.4rem auto 1.3rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   Tables (interest columns as booktabs tabulars)
+   ------------------------------------------------------------ */
+.table-caption,
+.section > p.table-caption {
+  margin: 1.6rem auto 0.75rem;
+  max-width: none;
+  font-size: 0.9rem;
+  text-align: center;
+  text-indent: 0;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+.table-caption::before {
+  content: "Table 1.\00A0\00A0";
+  font-weight: 700;
+}
+
+.interest-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem 2.2rem;
+  margin: 1.4rem 0 0;
+  padding: 0.65rem 0.15rem 0.9rem;
+  border-top: 1.5px solid var(--rule);
+  border-bottom: 1.5px solid var(--rule);
+}
+
+.table-caption + .interest-columns {
+  margin-top: 0;
+}
+
+.interest-columns h3 {
+  margin-bottom: 0.55rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.interest-columns .compact-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.interest-columns .compact-list li + li {
+  margin-top: 0.3rem;
+}
+
+.interest-columns .compact-list .list-divider {
+  border-top: 1px solid var(--line);
+}
+
+.interest-columns .link-label,
+.interest-columns .link-label-placeholder {
+  display: none;
+}
+
+.stack-block + .stack-block {
+  margin-top: 1.5rem;
+}
+
+.interest-columns > .stack-block + .stack-block {
+  margin-top: 0;
+}
+
+/* ------------------------------------------------------------
+   Shared components restyled to paper
+   ------------------------------------------------------------ */
 .meta-line,
 .section-label,
 .eyebrow,
@@ -351,7 +766,7 @@ pre {
 .kicker,
 .link-label {
   color: var(--muted);
-  font-family: var(--mono);
+  font-family: var(--mono-ui);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -361,134 +776,146 @@ pre {
   visibility: hidden;
 }
 
-.meta-line {
-  line-height: 1.8;
-}
-
-/* Numbered sections, LaTeX-style, carried on the mono eyebrows. */
-.page {
-  counter-reset: sec;
-}
-
-.page > .section > .section-label {
-  counter-increment: sec;
-}
-
-.page > .section > .section-label::before {
-  content: counter(sec, decimal-leading-zero) " / ";
-  color: var(--faint);
-}
-
+/* Non-home pages keep serif titles but in the paper's sans-bold voice. */
 .intro-title,
 .page-title,
 .article-title,
 .title-serif {
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1.03;
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.24;
 }
 
 .intro-title {
   margin-bottom: 1rem;
-  font-size: clamp(1.95rem, 4.8vw, 3.2rem);
+  font-size: clamp(1.5rem, 3.6vw, 2rem);
 }
 
-.page-title {
-  margin-bottom: 0.75rem;
-  font-size: clamp(2.2rem, 6vw, 4rem);
-}
-
+.page-title,
 .article-title {
-  margin-bottom: 0.5rem;
-  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin-bottom: 0.9rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1.5px solid var(--rule);
+  font-size: clamp(1.5rem, 3.8vw, 2.05rem);
+}
+
+.article-header {
+  padding-top: 0.4rem;
+}
+
+.article-header .section-label {
+  display: none;
+}
+
+.post-date {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .lede,
 .lead {
-  max-width: 60ch;
-  color: var(--muted);
-  font-size: 1.08rem;
-}
-
-.intro-copy p,
-.section p,
-.article p,
-.article li {
-  max-width: 70ch;
-}
-
-/* Justified, hyphenated prose — the TeX signature. Wide viewports only, so
-   narrow columns never grow rivers. Mono labels stay ragged. */
-@media (min-width: 761px) {
-  .intro-copy p:not(.kicker),
-  .section > p:not(.section-label),
-  .article p,
-  .article li {
-    text-align: justify;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    hyphenate-limit-chars: 6 3 3;
-    -webkit-hyphenate-limit-before: 3;
-    -webkit-hyphenate-limit-after: 3;
-    -webkit-hyphenate-limit-lines: 2;
-  }
-}
-
-.intro-copy p:last-child,
-.section p:last-child,
-.article p:last-child {
-  margin-bottom: 0;
+  max-width: none;
+  color: var(--text);
+  font-size: 1.02rem;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .inline-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem 1rem;
-  margin-top: 1.4rem;
+  gap: 0.45rem 1.4rem;
+  margin-top: 1.2rem;
 }
 
 .inline-links a {
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  text-decoration: none;
+  font-family: var(--mono-paper);
+  font-size: 0.9rem;
 }
 
-.inline-links a:hover,
-.inline-links a:focus-visible {
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: 2.2rem;
+  align-items: start;
+  margin-top: 1.4rem;
+}
+
+/* \fbox: framed remark */
+.note {
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding: 0.9rem 1rem;
+}
+
+.note p {
+  margin-bottom: 0;
+}
+
+.note .link-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Resource lists: arXiv-listing flavor */
+.resource-list {
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.resource-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: start;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.resource-item h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.resource-item h3 a {
   color: var(--accent);
 }
 
-.section {
-  margin-top: 2rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid var(--line);
-  scroll-margin-top: 6rem;
+.resource-item p {
+  margin-bottom: 0;
+  color: var(--muted);
 }
 
-.page > .section:first-child {
-  margin-top: 0;
+.resource-meta {
+  color: var(--faint);
+  font-family: var(--mono-paper);
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
-.section h2 {
-  margin-bottom: 1rem;
-  font-size: clamp(1.65rem, 4vw, 2.45rem);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
+.resource-meta::before {
+  content: "[";
 }
 
-.section h3,
-.article h2 {
-  margin-bottom: 0.55rem;
-  font-size: 1.08rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.article h2 {
-  margin-top: 1.75rem;
+.resource-meta::after {
+  content: "]";
 }
 
 .course-list {
@@ -503,36 +930,12 @@ pre {
 
 .course-block h3 {
   margin-bottom: 0.65rem;
-  font-size: 1.08rem;
-  font-weight: 600;
+  font-size: 1.04rem;
+  font-weight: 700;
 }
 
 .course-record-list li + li {
   margin-top: 0.45rem;
-}
-
-.two-column {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-  gap: 2.5rem;
-  align-items: start;
-  margin-top: 1.5rem;
-}
-
-.interest-columns {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem 2rem;
-  max-width: 100%;
-  margin-top: 1.5rem;
-}
-
-.stack-block + .stack-block {
-  margin-top: 1.5rem;
-}
-
-.interest-columns > .stack-block + .stack-block {
-  margin-top: 0;
 }
 
 .section-divider {
@@ -551,110 +954,20 @@ pre {
   margin-top: 0.25rem;
 }
 
-.note {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-  padding: 1rem 1.15rem;
-}
-
-.note p {
-  margin-bottom: 0;
-}
-
-.compact-list,
-.simple-list {
-  padding-left: 1.2rem;
-}
-
-.compact-list li + li,
-.simple-list li + li {
-  margin-top: 0.35rem;
-}
-
-.compact-list .list-divider {
-  list-style: none;
-  height: 0;
-  margin: 0.85rem 0 0.65rem;
-  border-top: 1px solid var(--line);
-}
-
-.resource-list {
-  margin: 1.5rem 0 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--line);
-}
-
-.resource-list li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1rem 1.5rem;
-  align-items: start;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.resource-item h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.08rem;
-  font-weight: 600;
-}
-
-.resource-item h3 a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-.resource-item h3 a:hover,
-.resource-item h3 a:focus-visible {
-  color: var(--accent);
-}
-
-.resource-item p {
-  margin-bottom: 0;
-  color: var(--muted);
-}
-
-.resource-meta {
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.article-header {
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
-}
-
-.article {
-  padding-top: 0.5rem;
-}
-
-.article ul,
-.article ol {
-  padding-left: 1.25rem;
-}
-
-.article li + li {
-  margin-top: 0.5rem;
-}
-
 .back-link {
   display: inline-block;
-  margin-top: 1rem;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
+  margin-top: 1.4rem;
+  font-family: var(--mono-paper);
+  font-size: 0.9rem;
 }
 
-/* End-of-paper tombstone: the QED mark, set quietly before the footer. */
+.article p:has(> .back-link) {
+  text-indent: 0;
+}
+
+/* End-of-paper tombstone, before the page number. */
 .end-mark {
-  margin: 3rem 0 0;
+  margin: 2.4rem 0 0;
   color: var(--faint);
   font-size: 0.9rem;
   line-height: 1;
@@ -662,15 +975,15 @@ pre {
   user-select: none;
 }
 
-/* On essays the tombstone sits where LaTeX puts it: flush right of the measure. */
 .article-shell .end-mark {
-  max-width: var(--measure);
-  margin-top: 2.2rem;
   text-align: right;
 }
 
+/* ------------------------------------------------------------
+   Footer: back to viewer chrome
+   ------------------------------------------------------------ */
 .site-footer {
-  border-top: 1px solid var(--line);
+  border-top: none;
 }
 
 .footer-row {
@@ -679,21 +992,37 @@ pre {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1rem 0 2.4rem;
+  padding: 0 0 2.2rem;
 }
 
 .footer-row p {
   margin: 0;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--mono-ui);
+  font-size: 0.68rem;
   letter-spacing: 0.06em;
+}
+
+:root[data-theme="dark"] .footer-row p {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-row a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-row a:hover,
+.footer-row a:focus-visible {
+  color: #ffffff;
 }
 
 .page-top {
   padding-top: 3rem;
 }
 
+/* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
 @media (max-width: 860px) {
   .header-row {
     flex-direction: column;
@@ -705,19 +1034,14 @@ pre {
     justify-content: space-between;
   }
 
-  .intro,
   .two-column,
   .interest-columns,
   .resource-list li {
     grid-template-columns: 1fr;
   }
 
-  .intro {
-    gap: 2rem;
-  }
-
-  .profile-photo {
-    width: min(260px, 100%);
+  .interest-columns {
+    gap: 1.1rem;
   }
 
   .resource-meta {
@@ -728,38 +1052,32 @@ pre {
 @media (max-width: 620px) {
   .page,
   .article-shell {
-    padding-top: 2rem;
+    margin: 0 auto 1.6rem;
+    box-shadow: none;
   }
 
   .site-nav {
     gap: 0.55rem 0.85rem;
   }
 
-  .site-nav a {
-    font-size: 0.72rem;
+  /* Ragged-right below the sheet's comfortable measure. */
+  .section > p,
+  .article p,
+  .article li,
+  .paper-abstract p,
+  .paper-keywords,
+  .lede,
+  .lead {
+    text-align: left;
   }
 
-  .intro-title {
-    font-size: clamp(1.8rem, 9vw, 2.6rem);
-  }
-
-  .page-title,
-  .article-title {
-    font-size: clamp(1.95rem, 11vw, 3rem);
-  }
-
-  .section {
-    margin-top: 1.6rem;
-    padding-top: 1.3rem;
-  }
-
-  .inline-links {
-    gap: 0.35rem 0.8rem;
+  .submit-note {
+    margin-bottom: 2.2rem;
   }
 }
 
 /* ============================================================
-   Refined layer: math, margin notes, TOC, anchored headings
+   Article extras (math, sidenotes, anchors) on the sheet
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -771,35 +1089,6 @@ pre {
   }
 }
 
-/* --- Hero signature equation --- */
-.hero-eq {
-  margin-top: 0.2rem;
-  padding: 0.85rem 1rem 0.7rem;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.hero-eq .katex-display {
-  margin: 0;
-}
-
-.hero-eq .katex {
-  font-size: 1.04em;
-}
-
-.eq-caption {
-  margin: 0.55rem 0 0;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-/* --- KaTeX display math --- */
 .katex-display {
   margin: 1.5rem 0;
   max-width: var(--measure);
@@ -812,36 +1101,34 @@ pre {
   font-size: 1.03em;
 }
 
-/* --- Article measure + reading rhythm --- */
-.article p,
-.article li,
-.article ol,
-.article ul,
-.article h2,
-.article h3,
-.article .lead,
-.article .toc,
-.article .footnotes {
-  max-width: var(--measure);
-}
-
 .article > p:first-of-type {
-  font-size: 1.06em;
+  font-size: 1em;
 }
 
-/* --- Anchored, linkable headings --- */
 .article h2 {
   position: relative;
   scroll-margin-top: 5.5rem;
 }
 
+/* Number article subsections like paper sections. */
+.article {
+  counter-reset: art-sec sidenote;
+}
+
+.article h2::before {
+  counter-increment: art-sec;
+  content: counter(art-sec);
+  display: inline-block;
+  min-width: 1.6em;
+}
+
 .head-anchor {
   position: absolute;
-  left: -1.3em;
+  left: -1.35em;
   top: 0.06em;
   display: inline-block;
   color: var(--faint);
-  font-family: var(--mono);
+  font-family: var(--mono-ui);
   font-weight: 400;
   font-size: 0.82em;
   text-decoration: none;
@@ -860,57 +1147,7 @@ pre {
   }
 }
 
-/* --- Table of contents --- */
-.toc {
-  margin: 1.6rem 0 0;
-  padding: 1rem 1.15rem;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--surface);
-}
-
-.toc-label {
-  margin-bottom: 0.5rem;
-}
-
-.toc ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: toc;
-}
-
-.toc li {
-  counter-increment: toc;
-}
-
-.toc li + li {
-  margin-top: 0.32rem;
-}
-
-.toc li::before {
-  content: counter(toc, decimal-leading-zero);
-  margin-right: 0.7em;
-  color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.78em;
-}
-
-.toc a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-.toc a:hover,
-.toc a:focus-visible {
-  color: var(--accent);
-}
-
-/* --- Margin notes (Tufte-style sidenotes) --- */
-.article {
-  counter-reset: sidenote;
-}
-
+/* Sidenotes become footnote-style boxed asides on the sheet. */
 .sidenote-ref {
   counter-increment: sidenote;
 }
@@ -919,51 +1156,35 @@ pre {
   content: counter(sidenote);
   margin-left: 1px;
   color: var(--accent);
-  font-family: var(--mono);
   font-size: 0.62em;
   vertical-align: super;
   line-height: 0;
 }
 
 .sidenote {
-  float: right;
-  clear: right;
-  width: var(--gutter);
-  margin-right: calc(-1 * var(--gutter) - 1.4rem);
-  margin-top: 0.2rem;
-  margin-bottom: 1.1rem;
+  float: none;
+  width: auto;
+  margin: 0.9rem 0;
+  padding-left: 0.95rem;
+  border-left: 2px solid var(--line);
   color: var(--muted);
-  font-size: 0.83em;
+  font-size: 0.85em;
   line-height: 1.5;
-  text-align: left;
 }
 
 .sidenote::before {
   content: counter(sidenote);
   margin-right: 0.4em;
   color: var(--accent);
-  font-family: var(--mono);
   font-size: 0.72em;
   vertical-align: super;
   line-height: 0;
 }
 
-@media (max-width: 1100px) {
-  .sidenote {
-    float: none;
-    width: auto;
-    max-width: var(--measure);
-    margin: 0.9rem 0;
-    padding-left: 0.95rem;
-    border-left: 2px solid var(--line-strong);
-  }
-}
-
-/* --- Footnotes --- */
 .footnotes {
   margin-top: 2.6rem;
   padding-top: 1.2rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--rule);
   color: var(--muted);
   font-size: 0.9em;
 }
@@ -972,45 +1193,42 @@ pre {
   padding-left: 1.1rem;
 }
 
-/* --- External link markers (added by enhance.js) --- */
+/* Hyperref doesn't decorate external links; neither do we here. */
 .article a[data-external]::after,
 .prose a[data-external]::after {
-  content: "\2197";
-  margin-left: 0.12em;
-  color: var(--faint);
-  font-size: 0.74em;
-  vertical-align: baseline;
+  content: none;
 }
 
-/* --- Pull-quote / emphasis aside reused on essays --- */
 .aside-note {
   margin: 1.6rem 0;
   padding: 0.9rem 1.15rem;
-  border-left: 2px solid var(--accent);
-  background: var(--surface);
-  border-radius: 0 12px 12px 0;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: none;
   color: var(--muted);
   font-style: italic;
-  max-width: var(--measure);
+  max-width: none;
 }
 
 .aside-note p {
   margin-bottom: 0;
+  text-indent: 0;
 }
 
-/* --- Print: a page this LaTeX-flavored should print like a paper --- */
+/* --- Print: take the sheet back to actual paper --- */
 @media print {
   :root,
   :root[data-theme="dark"] {
-    --bg: #fff;
+    --backdrop: #fff;
+    --sheet: #fff;
     --text: #000;
     --muted: #333;
     --faint: #555;
+    --rule: #000;
     --accent: #000;
     --accent-hover: #000;
     --line: rgba(0, 0, 0, 0.35);
-    --line-strong: rgba(0, 0, 0, 0.6);
-    --shadow: none;
+    --sheet-shadow: none;
   }
 
   body {
@@ -1021,14 +1239,22 @@ pre {
   .site-header,
   .theme-toggle,
   .site-footer,
-  .end-mark {
+  .end-mark,
+  .arxiv-stamp {
     display: none;
   }
 
   .page,
   .article-shell {
     width: auto;
+    margin: 0;
     padding: 0;
+    box-shadow: none;
+  }
+
+  .page::after,
+  .article-shell::after {
+    content: none;
   }
 
   a {
