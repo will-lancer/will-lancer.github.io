@@ -29,8 +29,11 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
       rel="stylesheet"
     >
+    <link rel="preload" href="fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f4ec">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14120f">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Will Lancer — Physics, Mathematics, and AI">
@@ -381,6 +384,8 @@
         <p>Academic email (expiring in ∼2027): <a href="mailto:william.lancer@stonybrook.edu">william.lancer@stonybrook.edu</a></p>
         <p>Personal email: <a href="mailto:will.m.lancer@gmail.com">will.m.lancer@gmail.com</a></p>
       </section>
+
+      <div class="end-mark" aria-hidden="true">&#8718;</div>
     </main>
 
     <footer class="site-footer">
@@ -391,6 +396,7 @@
     </footer>
 
     <script src="theme.js"></script>
+    <script src="enhance.js" defer></script>
     <script>
       const yearNode = document.getElementById("year");
       if (yearNode) yearNode.textContent = new Date().getFullYear();

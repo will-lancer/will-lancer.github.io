@@ -53,8 +53,35 @@
     }
   }
 
+  // Underline the nav link for the section currently in view (home page only,
+  // where nav links are same-page hashes).
+  const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+  const spyTargets = new Map();
+  navLinks.forEach((a) => {
+    try {
+      const target = document.querySelector(a.hash);
+      if (target) spyTargets.set(target, a);
+    } catch {
+      /* ignore bad hashes */
+    }
+  });
+  if (spyTargets.size && "IntersectionObserver" in window) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((a) => a.removeAttribute("aria-current"));
+          spyTargets.get(entry.target).setAttribute("aria-current", "true");
+        });
+      },
+      // A thin band just above the viewport's middle decides the active section.
+      { rootMargin: "-38% 0px -57% 0px" }
+    );
+    spyTargets.forEach((_, target) => spy.observe(target));
+  }
+
   // Flag off-site links so the stylesheet can mark them, and open them safely.
-  const host = location.hostname;
+  const host = location.host;
   document.querySelectorAll(".article a[href], .prose a[href]").forEach((a) => {
     try {
       const url = new URL(a.href, location.href);

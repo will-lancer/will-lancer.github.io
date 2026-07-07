@@ -18,6 +18,12 @@
   const applyTheme = (theme, persist) => {
     root.setAttribute("data-theme", theme);
 
+    // Keep the browser chrome tint in step with the active theme.
+    const themeColor = theme === "dark" ? "#14120f" : "#f8f4ec";
+    document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+      meta.setAttribute("content", themeColor);
+    });
+
     toggleButtons.forEach((button) => {
       const isDark = theme === "dark";
       // Keep the toggle icon-only even if stale text nodes get restored by the browser.
