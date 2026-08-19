@@ -12,9 +12,6 @@
     }
   };
 
-  const getSystemTheme = () =>
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-
   const applyTheme = (theme, persist) => {
     root.setAttribute("data-theme", theme);
 
@@ -43,8 +40,7 @@
     }
   };
 
-  let activeTheme =
-    root.getAttribute("data-theme") || readSavedTheme() || getSystemTheme();
+  let activeTheme = root.getAttribute("data-theme") || readSavedTheme() || "light";
   applyTheme(activeTheme, false);
 
   toggleButtons.forEach((button) => {
@@ -53,17 +49,4 @@
       applyTheme(activeTheme, true);
     });
   });
-
-  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  const syncWithSystemTheme = () => {
-    if (readSavedTheme()) return;
-    activeTheme = getSystemTheme();
-    applyTheme(activeTheme, false);
-  };
-
-  if (typeof mediaQuery.addEventListener === "function") {
-    mediaQuery.addEventListener("change", syncWithSystemTheme);
-  } else if (typeof mediaQuery.addListener === "function") {
-    mediaQuery.addListener(syncWithSystemTheme);
-  }
 })();

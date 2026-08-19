@@ -443,6 +443,7 @@ pre {
 }
 
 .paper-abstract {
+  display: flow-root;
   margin-top: 1.7rem;
 }
 
@@ -455,6 +456,12 @@ pre {
 
 .paper-abstract p + p {
   text-indent: 1.55em;
+}
+
+.paper-abstract::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .paper-keywords {

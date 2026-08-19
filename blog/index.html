@@ -3,99 +3,189 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog | Will Lancer</title>
+    <title>Will Lancer's Blog</title>
     <meta name="description" content="Blog posts by Will Lancer">
     <script>
       (() => {
         try {
           const savedTheme = localStorage.getItem("theme");
-          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          const theme =
-            savedTheme === "light" || savedTheme === "dark"
-              ? savedTheme
-              : (prefersDark ? "dark" : "light");
+          const theme = savedTheme === "light" || savedTheme === "dark"
+            ? savedTheme
+            : "light";
           document.documentElement.setAttribute("data-theme", theme);
         } catch {
           document.documentElement.setAttribute("data-theme", "light");
         }
       })();
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
-      rel="stylesheet"
-    >
     <link rel="preload" href="../fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="../fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="preload" href="../fonts/cmuntt.woff" as="font" type="font/woff" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.css"
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="../interior.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#323639">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#232427">
+    <meta name="theme-color" content="#111111">
   </head>
   <body id="top">
-    <header class="site-header">
-      <div class="container header-row">
-        <a class="brand" href="../index.html">Will Lancer</a>
-        <div class="header-tools">
-          <nav class="site-nav" aria-label="Primary">
-            <a href="../index.html#about">About</a>
-            <!-- <a href="../index.html#writings">Writings</a> -->
-            <!-- <a href="../index.html#blog">Home Blog</a> -->
-            <a href="../index.html#contact">Contact</a>
+    <header class="blog-toolbar">
+      <div class="toolbar-inner">
+        <a class="site-owner" href="../index.html">Will Lancer</a>
+        <div class="toolbar-tools">
+          <nav class="blog-nav" aria-label="Primary">
+            <a href="../index.html">General</a>
+            <a href="#top" aria-current="true">Blog posts</a>
+            <a href="../papers/">Papers</a>
+            <a href="../learning-artifacts/">Learning artifacts</a>
+            <a href="../projects/">Projects</a>
           </nav>
-          <button
-            class="theme-toggle"
-            type="button"
-            data-theme-toggle
-            aria-pressed="false"
-            aria-label="Toggle color theme"
-          ></button>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle color theme"></button>
         </div>
       </div>
     </header>
 
-    <main class="page">
-      <section class="section" aria-labelledby="blog-home-title">
-        <p class="section-label">Blog</p>
-        <h1 class="page-title" id="blog-home-title">Thoughts on learning, writing, and building</h1>
-        <p class="lede">
-          Posts on my mind-map learning workflow and what I am currently building.
-        </p>
-      </section>
+    <main class="blog-sheet">
+      <header class="blog-masthead">
+        <h1>Will Lancer's Blog</h1>
+        <label class="search-box" for="post-search">
+          <span class="search-label">Search</span>
+          <span class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <input id="post-search" type="search" autocomplete="off" placeholder="Search posts">
+          </span>
+        </label>
+      </header>
 
-      <section class="section" aria-labelledby="blog-posts-title">
-        <p class="section-label">Posts</p>
-        <h2 id="blog-posts-title">Current archive</h2>
-        <ul class="resource-list">
-          <li>
-            <div class="resource-item">
-              <h3><a href="on-learning-with-mindmaps.html">On Learning with Mind-maps</a></h3>
+      <div class="blog-layout">
+        <aside class="about" id="about" aria-labelledby="about-title">
+          <h2 id="about-title">About</h2>
+          <p>[tbd]</p>
+        </aside>
+
+        <section class="post-feed" id="posts" aria-label="Blog posts">
+          <p class="search-status" data-search-status aria-live="polite"></p>
+
+          <article class="post" id="why-effective-theories-work" data-post>
+            <header class="post-header">
+              <p class="post-category">Physics</p>
+              <h2>Why effective theories work so well</h2>
+              <p class="post-meta">
+                <time datetime="2026-08-19T09:17:36-07:00">August 19, 2026 at 9:17:36 AM MST</time>
+                <span aria-hidden="true">·</span>
+                <span>5 min read</span>
+              </p>
+            </header>
+            <div class="post-preview" id="post-effective-theories" data-post-preview>
               <p>
-                My full process: map first, read deeply with minimal writing,
-                rewrite maps as understanding changes, and free-recall before new material.
+                There is a useful way to think about an effective field theory: it is a disciplined refusal
+                to claim knowledge of short distances. We write every interaction allowed by the symmetries
+                and order the terms by how strongly they can matter at the scale of the experiment.
+              </p>
+              <p>For a scalar field, the beginning of the expansion might look like</p>
+              <div class="display-math" data-katex data-display="true">\mathcal{L}_{\mathrm{eff}} = \frac{1}{2}(\partial \phi)^2 - \frac{m^2}{2}\phi^2 - \frac{\lambda}{4!}\phi^4 + \sum_{n&gt;4}\frac{c_n}{\Lambda^{n-4}}\mathcal{O}_n.</div>
+              <p>
+                The parameter <span data-katex>\Lambda</span> records where the description should stop being
+                trusted. At energies <span data-katex>E \ll \Lambda</span>, operators with large
+                <span data-katex>n</span> are suppressed by powers of <span data-katex>E/\Lambda</span>.
+                The theory becomes predictive because ignorance arrives in an ordered series.
+              </p>
+              <p>
+                This is more than a calculational convenience. It tells us which questions can be answered
+                without knowing the microscopic theory. Low-energy regularities can be stable even when the
+                ultraviolet story changes completely.
+              </p>
+              <p>
+                The same pattern appears elsewhere in mathematics and computation. A useful abstraction
+                preserves the terms that control the behavior at the scale we care about. Everything else
+                enters as a bounded correction.
               </p>
             </div>
-            <span class="resource-meta">January 2026</span>
-          </li>
-          <li>
-            <div class="resource-item">
-              <h3><a href="startup-log-feb-2026.html">Startup Log: What I Am Building</a></h3>
-              <p>A short note on what I am doing right now: building a start-up.</p>
+            <div class="post-fade" aria-hidden="true"></div>
+            <button class="read-more" type="button" aria-expanded="false" aria-controls="post-effective-theories" data-read-more>
+              <span data-read-more-label>Continue reading</span>
+              <span aria-hidden="true" data-read-more-arrow>↓</span>
+            </button>
+          </article>
+
+          <article class="post" id="notes-on-formalization" data-post>
+            <header class="post-header">
+              <p class="post-category">Mathematics</p>
+              <h2>What I want from a formalization</h2>
+              <p class="post-meta">
+                <time datetime="2026-08-17T14:42:08-07:00">August 17, 2026 at 2:42:08 PM MST</time>
+                <span aria-hidden="true">·</span>
+                <span>4 min read</span>
+              </p>
+            </header>
+            <div class="post-preview" id="post-formalization" data-post-preview>
+              <p>
+                A formal proof becomes interesting when it exposes the load-bearing structure of an argument.
+                The target is a transcription of symbols into a proof assistant. The result should make its
+                assumptions, witnesses, and limiting procedures impossible to blur.
+              </p>
+              <p>For a convergence claim, I want to see the quantifiers in their natural order:</p>
+              <div class="display-math" data-katex data-display="true">\forall \varepsilon &gt; 0,\; \exists N,\; \forall n \geq N,\quad \lVert f_n-f\rVert &lt; \varepsilon.</div>
+              <p>
+                Changing that order changes the theorem. So does hiding a compactness assumption inside a helper
+                lemma. Formalization is most valuable at precisely those seams.
+              </p>
+              <p>
+                My working test is simple. If the formal statement can be true while the paper's intended theorem
+                is false, the contract is still incomplete.
+              </p>
             </div>
-            <span class="resource-meta">February 2026</span>
-          </li>
-        </ul>
-      </section>
+            <div class="post-fade" aria-hidden="true"></div>
+            <button class="read-more" type="button" aria-expanded="false" aria-controls="post-formalization" data-read-more>
+              <span data-read-more-label>Continue reading</span>
+              <span aria-hidden="true" data-read-more-arrow>↓</span>
+            </button>
+          </article>
+
+          <article class="post" id="assorted-links-001" data-post>
+            <header class="post-header">
+              <p class="post-category">Links</p>
+              <h2>A few things worth reading</h2>
+              <p class="post-meta">
+                <time datetime="2026-08-14T11:05:19-07:00">August 14, 2026 at 11:05:19 AM MST</time>
+                <span aria-hidden="true">·</span>
+                <span>2 min read</span>
+              </p>
+            </header>
+            <div class="post-preview" id="post-assorted-links" data-post-preview>
+              <ol>
+                <li>A careful note on why scaling laws can conceal changes in the underlying task distribution.</li>
+                <li>A short history of the renormalization group written for mathematicians.</li>
+                <li>New work on mechanistic anomaly detection. The examples are small, though the experimental design is unusually clean.</li>
+                <li>An interview about the craft of asking research questions. The useful part begins halfway through.</li>
+              </ol>
+            </div>
+            <div class="post-fade" aria-hidden="true"></div>
+            <button class="read-more" type="button" aria-expanded="false" aria-controls="post-assorted-links" data-read-more>
+              <span data-read-more-label>Continue reading</span>
+              <span aria-hidden="true" data-read-more-arrow>↓</span>
+            </button>
+          </article>
+
+          <p class="empty-state" data-empty-state hidden>No posts match your search.</p>
+        </section>
+      </div>
+
+      <footer class="blog-footer">
+        <a href="../index.html">will-lancer.github.io</a>
+        <a href="#top">Back to top ↑</a>
+      </footer>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-row">
-        <p>Will Lancer</p>
-        <p><a href="../index.html">Back to Home</a></p>
-      </div>
-    </footer>
-
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="blog.js"></script>
     <script src="../theme.js"></script>
   </body>
 </html>

@@ -3,16 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Indecision is a Decision | Will Lancer</title>
-    <meta name="description" content="An essay by Will Lancer.">
+    <title>Papers | Will Lancer</title>
+    <meta name="description" content="Papers by Will Lancer">
     <script>
       (() => {
         try {
           const savedTheme = localStorage.getItem("theme");
-          const theme =
-            savedTheme === "light" || savedTheme === "dark"
-              ? savedTheme
-              : "light";
+          const theme = savedTheme === "light" || savedTheme === "dark"
+            ? savedTheme
+            : "light";
           document.documentElement.setAttribute("data-theme", theme);
         } catch {
           document.documentElement.setAttribute("data-theme", "light");
@@ -21,17 +20,12 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
-      rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="preload" href="../fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="../fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../interior.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#323639">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#232427">
   </head>
   <body id="top">
     <header class="site-header">
@@ -40,43 +34,48 @@
         <div class="header-tools">
           <nav class="site-nav" aria-label="Primary">
             <a href="../index.html">General</a>
-            <a href="../blog/" aria-current="true">Blog posts</a>
-            <a href="../papers/">Papers</a>
+            <a href="../blog/">Blog posts</a>
+            <a href="index.html" aria-current="true">Papers</a>
             <a href="../learning-artifacts/">Learning artifacts</a>
             <a href="../projects/">Projects</a>
           </nav>
-          <button
-            class="theme-toggle"
-            type="button"
-            data-theme-toggle
-            aria-pressed="false"
-            aria-label="Toggle color theme"
-          ></button>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle color theme"></button>
         </div>
       </div>
     </header>
 
-    <main class="article-shell">
-      <header class="article-header">
-        <p class="section-label">Writing</p>
-        <h1 class="article-title">Indecision is a Decision</h1>
-        <p class="post-date">April 2026</p>
-      </header>
+    <main class="page">
+      <section class="section" aria-labelledby="papers-title">
+        <p class="section-label">Papers</p>
+        <h1 class="page-title" id="papers-title">Papers</h1>
+      </section>
 
-      <article class="article">
-        <p><em>Coming soon.</em></p>
-        <p><a class="back-link" href="../index.html#writing">Back to Writing</a></p>
-      </article>
+      <section class="section" aria-labelledby="by-me-title">
+        <h2 id="by-me-title">By me</h2>
+        <ul class="resource-list">
+          <!-- Duplicate this list item when adding another paper. -->
+          <li>
+            <div class="resource-item">
+              <h3>[to be filled in]</h3>
+              <p>[tbd]</p>
+            </div>
+            <span class="resource-meta">Paper</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="ai-generated-title">
+        <h2 id="ai-generated-title">AI-generated</h2>
+        <p>[tbd]</p>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-row">
         <p>Will Lancer</p>
-        <p><a href="../index.html">Back to Home</a></p>
+        <p><a href="../index.html">General</a></p>
       </div>
     </footer>
-
     <script src="../theme.js"></script>
-    <script src="../enhance.js" defer></script>
   </body>
 </html>

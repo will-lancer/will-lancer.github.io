@@ -12,11 +12,10 @@
       (() => {
         try {
           const savedTheme = localStorage.getItem("theme");
-          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
           const theme =
             savedTheme === "light" || savedTheme === "dark"
               ? savedTheme
-              : (prefersDark ? "dark" : "light");
+              : "light";
           document.documentElement.setAttribute("data-theme", theme);
         } catch {
           document.documentElement.setAttribute("data-theme", "light");
@@ -32,6 +31,7 @@
     <link rel="preload" href="../fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="../fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../interior.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#323639">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#232427">
@@ -42,10 +42,11 @@
         <a class="brand" href="../index.html">Will Lancer</a>
         <div class="header-tools">
           <nav class="site-nav" aria-label="Primary">
-            <a href="../index.html#about">About</a>
-            <a href="../index.html#current-affairs">Current Affairs</a>
-            <!-- <a href="../index.html#writing">Writing</a> -->
-            <a href="../index.html#contact">Contact</a>
+            <a href="../index.html">General</a>
+            <a href="../blog/" aria-current="true">Blog posts</a>
+            <a href="../papers/">Papers</a>
+            <a href="../learning-artifacts/">Learning artifacts</a>
+            <a href="../projects/">Projects</a>
           </nav>
           <button
             class="theme-toggle"

@@ -12,11 +12,10 @@
       (() => {
         try {
           const savedTheme = localStorage.getItem("theme");
-          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
           const theme =
             savedTheme === "light" || savedTheme === "dark"
               ? savedTheme
-              : (prefersDark ? "dark" : "light");
+              : "light";
           document.documentElement.setAttribute("data-theme", theme);
         } catch {
           document.documentElement.setAttribute("data-theme", "light");
@@ -31,7 +30,7 @@
     >
     <link rel="preload" href="fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#323639">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#232427">
@@ -53,12 +52,11 @@
         <a class="brand" href="#top">Will Lancer</a>
         <div class="header-tools">
           <nav class="site-nav" aria-label="Primary">
-            <a href="#about">About</a>
-            <a href="#current-affairs">Current Affairs</a>
-            <a href="#hobbies">Hobbies</a>
-            <!-- <a href="#writing">Writing</a> -->
-            <!-- <a href="#blog">Blog</a> -->
-            <a href="#contact">Contact</a>
+            <a href="index.html" aria-current="true">General</a>
+            <a href="blog/">Blog posts</a>
+            <a href="papers/">Papers</a>
+            <a href="learning-artifacts/">Learning artifacts</a>
+            <a href="projects/">Projects</a>
           </nav>
           <button
             class="theme-toggle"
@@ -93,6 +91,10 @@
           <!-- <a href="blog/">Blog archive</a> -->
         </p>
         <div class="paper-abstract">
+          <figure class="paper-figure">
+            <img src="will-lancer-photo.png" alt="Will Lancer" class="profile-photo">
+            <figcaption><span class="fig-label">Figure 1.</span> The author.</figcaption>
+          </figure>
           <p>
             <span class="runin">Abstract:</span>
             I graduated summa cum laude in physics & mathematics from Stony Brook University in 2026.
@@ -122,10 +124,6 @@
       <section id="about" class="section" aria-labelledby="about-title">
         <p class="section-label">About Me</p>
         <h2 id="about-title">Academics and Interests</h2>
-        <figure class="paper-figure">
-          <img src="will-lancer-photo.png" alt="Will Lancer" class="profile-photo">
-          <figcaption><span class="fig-label">Figure 1.</span> The author.</figcaption>
-        </figure>
         <p>
           I graduated summa cum laude in three years from Stony Brook University.
           My degree was in physics & mathematics. I'll be going to
