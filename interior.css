@@ -366,9 +366,44 @@ a:focus-visible {
   line-height: 1.3;
 }
 
+.paper-record-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.paper-record-title a:hover,
+.paper-record-title a:focus-visible {
+  color: var(--accent);
+}
+
 .paper-record-title i,
 .paper-record-abstract i {
   font-family: var(--serif);
+}
+
+.paper-record-author {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+}
+
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  color: var(--accent);
+  font-family: var(--mono-ui, var(--mono-paper));
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
+  list-style: none;
+}
+
+.paper-tags li::before {
+  content: "#";
+  color: var(--faint);
 }
 
 .paper-record-abstract {
