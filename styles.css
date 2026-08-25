@@ -312,7 +312,7 @@ pre {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid transparent;
   border-radius: 999px;
   background: transparent;
   width: 2.1rem;
@@ -467,6 +467,7 @@ pre {
 .paper-keywords {
   margin: 1.15rem 0 0;
   text-align: justify;
+  text-indent: 0;
 }
 
 /* Small-caps run-in labels: Abstract:, Keywords: */

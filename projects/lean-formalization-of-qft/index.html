@@ -23,9 +23,17 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="preload" href="../../fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="../../fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="../../interior.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.css"
+      integrity="sha384-u1zONI5gPXUx0UKI62c75/zww972y0v2rSK5ZYlVdS6xEuWDeZWUI66v6t1gvlXJ"
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="../../styles.css?v=2">
+    <link rel="stylesheet" href="../../interior.css?v=4">
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#323639">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#232427">
   </head>
   <body id="top">
     <header class="site-header">
@@ -48,19 +56,121 @@
       <section class="section" aria-labelledby="project-title">
         <p class="section-label">Project</p>
         <h1 class="page-title" id="project-title">Lean Formalization of QFT</h1>
-        <p class="lede">[tbd]</p>
+        <p class="lede">
+          Lean constructions of the objects a later existence proof would need.
+          The entries below are separate pieces of that work.
+        </p>
       </section>
 
       <section class="section" aria-labelledby="project-entries-title">
         <h2 id="project-entries-title">Entries</h2>
         <ul class="resource-list">
-          <!-- Duplicate this list item when adding a note, result, repository, or other artifact. -->
           <li>
             <div class="resource-item">
-              <h3>[to be filled in]</h3>
-              <p>[tbd]</p>
+              <h3>
+                <a href="https://github.com/mrdouglasny/pphi2" target="_blank" rel="noopener">
+                  <span data-katex>P(\Phi)_2</span>
+                </a>
+              </h3>
+              <div class="resource-item-body">
+                <div class="resource-item-preview" id="entry-pphi2" data-paper-preview>
+                  <p>
+                    Michael Douglas is constructing the Euclidean
+                    <span data-katex>P(\Phi)_2</span> measure in Lean 4. The route is
+                    Glimm&ndash;Jaffe / Nelson: lattice measures for an even polynomial
+                    interaction, then continuum limits, aiming at a measure on tempered
+                    distributions that satisfies the Osterwalder&ndash;Schrader axioms.
+                    I contribute to that repository.
+                  </p>
+                  <h4>
+                    <a href="https://github.com/mrdouglasny/pphi2/pull/62" target="_blank" rel="noopener">
+                      Exponential moments only for quartic <span data-katex>P</span>
+                    </a>
+                  </h4>
+                  <p>
+                    One step in the construction used a Gaussian bound on exponential moments of
+                    the interacting lattice field. For a nonnegative source
+                    <span data-katex>f</span>, the claim was
+                  </p>
+                  <div class="paper-equation" data-katex data-display="true">
+                    \int e^{|\varphi(f)|}\,d\mu_P \le 2\exp\Bigl(\tfrac12 \int \varphi(f)^2\,d\mu_P\Bigr).
+                  </div>
+                  <p>
+                    Newman proved a comparison of this shape for quartic site measures. The
+                    repository stated the bound for every even interaction polynomial. A
+                    one-site sextic is already a counterexample.
+                  </p>
+                  <p>
+                    Take a single lattice site, mass 1, and a family of even sextics whose wells
+                    at <span data-katex>-1</span>, <span data-katex>0</span>, and
+                    <span data-katex>1</span> become sharp. The normalized laws converge to
+                  </p>
+                  <div class="paper-equation" data-katex data-display="true">
+                    \nu = \frac{\delta_{-1} + 16\delta_0 + \delta_1}{18}.
+                  </div>
+                  <p>
+                    Most of the mass sits at the origin, so the variance is only
+                    <span data-katex>\mathbb{E}[X^2]=1/9</span>. At source 9 one has
+                    <span data-katex>\varphi(f)=9X</span>. The proposed bound is
+                  </p>
+                  <div class="paper-equation" data-katex data-display="true">
+                    2\exp\bigl(\tfrac12\cdot 81\cdot\mathbb{E}[X^2]\bigr)=2e^{9/2}\approx 180.
+                  </div>
+                  <p>
+                    The exponential moment still sees the outer wells:
+                  </p>
+                  <div class="paper-equation" data-katex data-display="true">
+                    \mathbb{E}_\nu e^{9|X|} = \frac{e^9+8}{9} \approx 901.
+                  </div>
+                  <p>
+                    The same reversal shows up at large finite well curvature, so these are
+                    actual lattice measures in the project, not just the limit. I restricted the
+                    Lean results that used the bound, including the cylinder
+                    Osterwalder&ndash;Schrader theorems that depend on it, to
+                    <span data-katex>\deg P = 4</span>.
+                  </p>
+                </div>
+                <div class="paper-fade" aria-hidden="true"></div>
+                <button class="paper-read-more" type="button" aria-expanded="false" aria-controls="entry-pphi2" data-paper-read-more>
+                  <span data-read-more-label>Show more</span>
+                  <span aria-hidden="true" data-read-more-arrow>↓</span>
+                </button>
+              </div>
             </div>
-            <span class="resource-meta">Entry</span>
+            <span class="resource-meta">Repository</span>
+          </li>
+          <li>
+            <div class="resource-item">
+              <h3>
+                <a href="https://github.com/will-lancer/Research/tree/main/Douglas/fermionic-path-integrals" target="_blank" rel="noopener">
+                  Fermionic path integrals
+                </a>
+              </h3>
+              <div class="resource-item-body">
+                <div class="resource-item-preview" id="entry-fermionic" data-paper-preview>
+                  <p>
+                    I&rsquo;m writing a Lean library for finite fermionic Gaussians. You choose a
+                    finite set of Grassmann generators and an alternating quadratic action
+                  </p>
+                  <div class="paper-equation" data-katex data-display="true">
+                    Q_A = \sum_{i&lt;j} A_{ij}\,\theta_i\theta_j,
+                  </div>
+                  <p>
+                    and the Gaussian integral is the Pfaffian of
+                    <span data-katex>A</span>. The rest of the algebra is Berezin integration,
+                    Wick pairings, charged fermions through a determinant, and exact
+                    elimination of a block of modes. There is no spacetime in the library;
+                    a later construction would supply the modes and the action matrix.
+                  </p>
+                </div>
+                <div class="paper-fade" aria-hidden="true"></div>
+                <button class="paper-read-more" type="button" aria-expanded="false" aria-controls="entry-fermionic" data-paper-read-more>
+                  <span data-read-more-label>Show more</span>
+                  <span aria-hidden="true" data-read-more-arrow>↓</span>
+                </button>
+              </div>
+            </div>
+            <span class="resource-meta">In progress</span>
           </li>
         </ul>
       </section>
@@ -74,6 +184,13 @@
         <p><a href="../../index.html">General</a></p>
       </div>
     </footer>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.js"
+      integrity="sha384-ykMNcWQhhTUb0YV9SPpPUFURHZ+tWmubkakGBP+OgNK/UXdO2gtzglWx0Rj9hnO3"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="../../katex-render.js?v=2"></script>
     <script src="../../theme.js"></script>
   </body>
 </html>

@@ -18,12 +18,19 @@
         }
       })();
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    >
     <link rel="preload" href="../fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="../fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="../fonts/cmuntt.woff" as="font" type="font/woff" crossorigin>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.css"
+      integrity="sha384-u1zONI5gPXUx0UKI62c75/zww972y0v2rSK5ZYlVdS6xEuWDeZWUI66v6t1gvlXJ"
       crossorigin="anonymous"
     >
     <link rel="stylesheet" href="blog.css">
@@ -63,108 +70,51 @@
       <div class="blog-layout">
         <aside class="about" id="about" aria-labelledby="about-title">
           <h2 id="about-title">About</h2>
-          <p>[tbd]</p>
+          <p>Writings about various things.</p>
         </aside>
 
         <section class="post-feed" id="posts" aria-label="Blog posts">
           <p class="search-status" data-search-status aria-live="polite"></p>
 
-          <article class="post" id="why-effective-theories-work" data-post>
-            <header class="post-header">
-              <p class="post-category">Physics</p>
-              <h2>Why effective theories work so well</h2>
-              <p class="post-meta">
-                <time datetime="2026-08-19T09:17:36-07:00">August 19, 2026 at 9:17:36 AM MST</time>
-                <span aria-hidden="true">·</span>
-                <span>5 min read</span>
-              </p>
-            </header>
-            <div class="post-preview" id="post-effective-theories" data-post-preview>
-              <p>
-                There is a useful way to think about an effective field theory: it is a disciplined refusal
-                to claim knowledge of short distances. We write every interaction allowed by the symmetries
-                and order the terms by how strongly they can matter at the scale of the experiment.
-              </p>
-              <p>For a scalar field, the beginning of the expansion might look like</p>
-              <div class="display-math" data-katex data-display="true">\mathcal{L}_{\mathrm{eff}} = \frac{1}{2}(\partial \phi)^2 - \frac{m^2}{2}\phi^2 - \frac{\lambda}{4!}\phi^4 + \sum_{n&gt;4}\frac{c_n}{\Lambda^{n-4}}\mathcal{O}_n.</div>
-              <p>
-                The parameter <span data-katex>\Lambda</span> records where the description should stop being
-                trusted. At energies <span data-katex>E \ll \Lambda</span>, operators with large
-                <span data-katex>n</span> are suppressed by powers of <span data-katex>E/\Lambda</span>.
-                The theory becomes predictive because ignorance arrives in an ordered series.
-              </p>
-              <p>
-                This is more than a calculational convenience. It tells us which questions can be answered
-                without knowing the microscopic theory. Low-energy regularities can be stable even when the
-                ultraviolet story changes completely.
-              </p>
-              <p>
-                The same pattern appears elsewhere in mathematics and computation. A useful abstraction
-                preserves the terms that control the behavior at the scale we care about. Everything else
-                enters as a bounded correction.
-              </p>
-            </div>
-            <div class="post-fade" aria-hidden="true"></div>
-            <button class="read-more" type="button" aria-expanded="false" aria-controls="post-effective-theories" data-read-more>
-              <span data-read-more-label>Continue reading</span>
-              <span aria-hidden="true" data-read-more-arrow>↓</span>
-            </button>
-          </article>
+          <!-- BEGIN AUTO-SYNCED SUBSTACK POSTS -->
+          <!-- END AUTO-SYNCED SUBSTACK POSTS -->
 
-          <article class="post" id="notes-on-formalization" data-post>
+          <article class="post" id="if-youre-a-quant-intern-you-need" data-post>
             <header class="post-header">
-              <p class="post-category">Mathematics</p>
-              <h2>What I want from a formalization</h2>
+              <p class="post-category">AI Safety</p>
+              <h2>If You’re a Quant Intern, You Need to Go into AI Safety</h2>
               <p class="post-meta">
-                <time datetime="2026-08-17T14:42:08-07:00">August 17, 2026 at 2:42:08 PM MST</time>
+                <time datetime="2026-08-24T15:04:07-07:00">August 24, 2026 at 3:04:07 PM PDT</time>
                 <span aria-hidden="true">·</span>
-                <span>4 min read</span>
-              </p>
-            </header>
-            <div class="post-preview" id="post-formalization" data-post-preview>
-              <p>
-                A formal proof becomes interesting when it exposes the load-bearing structure of an argument.
-                The target is a transcription of symbols into a proof assistant. The result should make its
-                assumptions, witnesses, and limiting procedures impossible to blur.
-              </p>
-              <p>For a convergence claim, I want to see the quantifiers in their natural order:</p>
-              <div class="display-math" data-katex data-display="true">\forall \varepsilon &gt; 0,\; \exists N,\; \forall n \geq N,\quad \lVert f_n-f\rVert &lt; \varepsilon.</div>
-              <p>
-                Changing that order changes the theorem. So does hiding a compactness assumption inside a helper
-                lemma. Formalization is most valuable at precisely those seams.
-              </p>
-              <p>
-                My working test is simple. If the formal statement can be true while the paper's intended theorem
-                is false, the contract is still incomplete.
-              </p>
-            </div>
-            <div class="post-fade" aria-hidden="true"></div>
-            <button class="read-more" type="button" aria-expanded="false" aria-controls="post-formalization" data-read-more>
-              <span data-read-more-label>Continue reading</span>
-              <span aria-hidden="true" data-read-more-arrow>↓</span>
-            </button>
-          </article>
-
-          <article class="post" id="assorted-links-001" data-post>
-            <header class="post-header">
-              <p class="post-category">Links</p>
-              <h2>A few things worth reading</h2>
-              <p class="post-meta">
-                <time datetime="2026-08-14T11:05:19-07:00">August 14, 2026 at 11:05:19 AM MST</time>
+                <span>6 min read</span>
                 <span aria-hidden="true">·</span>
-                <span>2 min read</span>
+                <a href="https://wlancer.substack.com/p/if-youre-a-quant-intern-you-need" target="_blank" rel="noopener">Substack</a>
               </p>
+              <p class="post-subtitle">Do you really want your life’s work to be trading Peruvian banana futures one microsecond faster?</p>
             </header>
-            <div class="post-preview" id="post-assorted-links" data-post-preview>
+            <div class="post-preview" id="post-if-youre-a-quant-intern-you-need" data-post-preview>
+              <p>The smartest technical students at the top schools generally go into one of four career options:</p>
               <ol>
-                <li>A careful note on why scaling laws can conceal changes in the underlying task distribution.</li>
-                <li>A short history of the renormalization group written for mathematicians.</li>
-                <li>New work on mechanistic anomaly detection. The examples are small, though the experimental design is unusually clean.</li>
-                <li>An interview about the craft of asking research questions. The useful part begins halfway through.</li>
+                <li><strong>Academia</strong>—this means becoming PhD and master’s students in physics, math, or computer science. For example, this is the most common path for MIT math majors<sup><a href="#footnote-1">1</a></sup>.</li>
+                <li><strong>Consulting, Investment Banking, or FAANG SWE</strong>—reasonably well-paying careers with a relatively high amount of prestige. Quite competitive, but less so compared to the next two options.</li>
+                <li><strong>AI capabilities research at OpenAI, Anthropic, xAI, etc.</strong>—the “new hot job” in town. Promises of massive salaries, very smart coworkers, and the opportunity to bring superintelligence to life.</li>
+                <li><strong>Quantitative finance</strong>—extremely high salaries, genius coworkers, exciting work, and lots of prestige.</li>
               </ol>
+              <p>To gauge approximately how many of these top students go into quant, about 25% of MIT’s math majors go into finance [<a href="https://www.hbs.edu/ris/Publication%20Files/16-067_3d306ef8-09a1-42b3-956f-a797846b9e3c.pdf" target="_blank" rel="noopener">1</a>]. From my personal experience, I think it’s reasonable to assume that at least 10% of the top technical students at the best universities go into quantitative finance. The reasons for doing this are pretty simple: you make a lot of money, you have really smart coworkers who are familiar with your social circle<sup><a href="#footnote-2">2</a></sup>, you get lots of prestige, and the work is interesting.</p>
+              <p>I posit that if you are a quant intern, you should instead go into AI safety. It’s not hard to see why: you will have the same four elements that make quant work interesting, but you’ll actually be doing something useful with your life. It is completely obvious that quants have basically zero positive impact on the world unless they donate large amounts of their income. Technical AI safety, on the other hand, is easily the most important work any technical person on the planet can do with their life. Plus, you still get almost all of the cool benefits of quantitative finance!</p>
+              <ul>
+                <li><strong>Making lots of money.</strong> The salary for a technical alignment researcher at an independent organization is around $200k, and at a top independent org (e.g. Redwood, METR, Apollo, FAR.AI, etc.) you make ~$300-800k. If you work at a frontier lab (e.g. OpenAI or Anthropic), you make ~$500k. The latter number is approximately equal to an introductory quant job at a top firm like Jane Street. So, if you’re going to Jane Street for the short-term money, that is <em>no longer</em> a reason to go there comparative to AI safety. The salary for independent labs can be less than introductory quant firm salaries, but not by more than $150k in most cases. This still probably doesn’t matter: more income has dramatically diminishing returns for well-being past ~$100k. Past this number, there is very little reason to optimize for income over other factors in your work. I would actually guess that the reason people care about income past ~$100k is status-signaling—saying that you make a large amount of money feels good, and so people like higher numbers here to flex on their friends and community.</li>
+                <li><strong>Having really smart coworkers.</strong> Hard truth: your coworkers likely will not be as talented in AI safety as they would be in quant. This is simply because the field is much smaller and less developed than quantitative finance. It’s similar to how quant was in ~1990-2000—the field was just emerging, so most of the really smart people were in e.g. SWE or more traditional finance roles. However, you will still have lots of talented coworkers, and the more prestigious the lab is the more talented your coworkers are likely to be. I would say you start seeing a high frequency of quant-level talent when you get into the top-level independent labs, e.g. Redwood Research or METR, and this likely only increases at frontier labs. At a frontier lab, the talent levels are most likely the same as top quant firms.</li>
+                <li><strong>Prestige.</strong> Unless you work at a frontier lab, this is the main hit you’d take relative to quant. If you go to anyone in a technical major at MIT, they all know what quantitative finance is. Many fewer of them know about AI safety, and about why it’s important. Two arguments for why this shouldn’t really sway you. One, it’s insanely obvious that you should not put random prestige-maxxing tendencies over trying to solve the problem of AI killing everyone on planet Earth. Two, prestige is solved if you just work at a top lab. Saying you work at Anthropic is arguably more sexy than saying you work at Jane Street nowadays. If you can’t live without having a visibly stacked LinkedIn, then work at a frontier lab.</li>
+                <li><strong>Interestingness of the work.</strong> Quant work is interesting for two main reasons: you get to play with lots of money and you get to do lots of quick thinking about coding and mathematics. The work is also interesting because you have interesting coworkers, but this was covered in the previous point. Moving lots of money around is fun because it feels important. Doing lots of quick thinking about math and coding is fun because rapidly thinking about technical subjects is fun. I would argue that both of these elements are present in AI safety in varying amounts. First, the work in AI safety is clearly more important than the work in quant: you are working on the problem of keeping literally everyone on the planet Earth from dying. Aligning artificial intelligence is the most important technical problem of the generation, and that’s the problem you get to work on every day. Second, you will be doing less “quick thinking” than in quant, but you will still be doing lots of interesting coding work every day. I would say the work is approximately equal in interesting-ness across quantitative finance and AI safety, with a bias toward quant finance for most people.</li>
+              </ul>
+              <p>In summary, if you’re a quant intern, you should instead go into AI safety. This is for four reasons. First, you will make basically the same amount of money. Second, you will have very interesting coworkers. Third, you will get lots of status. And fourth: the work is interesting. This makes the job itself approximately equal to quantitative finance. AI safety then absolutely topples quant finance when you consider the importance of the work. Therefore, you should work in AI safety. If you don’t agree that AI doom is likely to occur, please check out <a href="https://arxiv.org/abs/2209.00626" target="_blank" rel="noopener">The Alignment Problem from a Deep Learning Perspective</a> or <a href="https://arxiv.org/abs/2206.13353" target="_blank" rel="noopener">Is Power-Seeking AI an Existential Risk</a>? If you want another good opinion from Neel Nanda, two-time IMO gold medalist and current Head of Interpretability at Google DeepMind, read <a href="https://www.neelnanda.io/blog/47-inside-views" target="_blank" rel="noopener">this</a>.</p>
+              <p>If you are interested in getting into AI alignment work, I’d recommend reading <a href="https://www.lesswrong.com/posts/bcuzjKmNZHWDuEwBz/an-outsider-s-roadmap-into-ai-safety-research-2025" target="_blank" rel="noopener">this</a> guide, or <a href="https://80000hours.substack.com/p/how-to-get-into-ai-safety-in-3-months" target="_blank" rel="noopener">this</a> post.</p>
+              <p class="footnote" id="footnote-1"><sup>1</sup> Around 50% of MIT math majors enter graduate school, although I expect this number to dramatically decrease in the next few years due to AI’s effect on math, physics, and computer science.</p>
+              <p class="footnote" id="footnote-2"><sup>2</sup> By “in your social circle”, this approximately means that most of them (1) know about olympiads and probably did math competitions as a kid, (2) have similar beliefs to you about many things, e.g. what is important in a career, what is interesting, etc. and (3) did basically the same things as you in undergrad and high school (e.g. taking lots of math/physics/CS grad classes, doing the same kinds of internships, attending similar social clubs, etc.).</p>
             </div>
             <div class="post-fade" aria-hidden="true"></div>
-            <button class="read-more" type="button" aria-expanded="false" aria-controls="post-assorted-links" data-read-more>
+            <button class="read-more" type="button" aria-expanded="false" aria-controls="post-if-youre-a-quant-intern-you-need" data-read-more>
               <span data-read-more-label>Continue reading</span>
               <span aria-hidden="true" data-read-more-arrow>↓</span>
             </button>
@@ -183,6 +133,7 @@
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.js"
+      integrity="sha384-ykMNcWQhhTUb0YV9SPpPUFURHZ+tWmubkakGBP+OgNK/UXdO2gtzglWx0Rj9hnO3"
       crossorigin="anonymous"
     ></script>
     <script defer src="blog.js"></script>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Will Lancer</title>
+    <item>
+      <title>Newest post</title>
+      <description>A concise subtitle.</description>
+      <link>https://wlancer.substack.com/p/newest-post</link>
+      <guid>https://wlancer.substack.com/p/newest-post</guid>
+      <pubDate>Tue, 25 Aug 2026 16:30:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+        <p id="opening">Article <strong>body</strong> with a <a href="https://example.com/?utm_source=test&amp;x=1">source</a>.</p>
+        <p><a href="#note-1">Footnote</a></p>
+        <span class="katex-display"><span class="katex"><math><semantics><annotation encoding="application/x-tex">E = mc^2</annotation></semantics></math></span></span>
+        <div class="subscription-widget"><form><input type="email"><button>Subscribe</button></form></div>
+        <div class="footnote" id="note-1"><p>The note.</p></div>
+        <script>alert("bad")</script>
+      ]]></content:encoded>
+    </item>
+    <item>
+      <title>Existing manual post</title>
+      <description>This one stays hand-written.</description>
+      <link>https://wlancer.substack.com/p/manual-post</link>
+      <guid>https://wlancer.substack.com/p/manual-post</guid>
+      <pubDate>Mon, 24 Aug 2026 22:04:07 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Duplicate feed copy.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -159,6 +159,10 @@ a:focus-visible {
   background: var(--blue);
 }
 
+.blog-nav a + a[aria-current="true"]::after {
+  left: 1rem;
+}
+
 .blog-nav a + a::before {
   content: "";
   position: absolute;
@@ -299,6 +303,26 @@ a:focus-visible {
   font-style: italic;
 }
 
+.post-meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.post-meta a:hover,
+.post-meta a:focus-visible {
+  color: var(--blue);
+}
+
+.post-subtitle {
+  margin: -0.85rem 0 1.75rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
 .post-preview {
   max-height: min(72vh, 690px);
   overflow: hidden;
@@ -320,13 +344,62 @@ a:focus-visible {
   text-indent: 1.55em;
 }
 
-.post-preview ol {
-  margin: 0;
+.post-preview p + p.footnote,
+.post-preview .footnote + .footnote {
+  text-indent: 0;
+}
+
+.post-preview ol,
+.post-preview ul {
+  margin: 1.1rem 0;
   padding-left: 1.45em;
+  text-align: left;
 }
 
 .post-preview li + li {
   margin-top: 0.8rem;
+}
+
+.post-preview figure {
+  margin: 1.5rem 0;
+}
+
+.post-preview img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.post-preview figcaption {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.post-preview blockquote {
+  margin: 1.4rem 0;
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--line);
+}
+
+.post-preview .footnote {
+  margin-top: 1.6rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-indent: 0;
+}
+
+.post-preview .footnote + .footnote {
+  margin-top: 0.7rem;
+  text-indent: 0;
+}
+
+.post-preview sup a {
+  color: var(--blue);
+  text-decoration: none;
 }
 
 .display-math {

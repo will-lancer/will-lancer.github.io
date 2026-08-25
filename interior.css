@@ -25,6 +25,8 @@
   --paper: #ffffff;
   --blue: #1717c4;
   --blue-dark: #0d0d86;
+  --mono-ui: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --mono-paper: "CMU Typewriter", "JetBrains Mono", ui-monospace, monospace;
 }
 
 :root[data-theme="dark"] {
@@ -114,12 +116,27 @@ a:focus-visible {
   gap: 0.9rem;
 }
 
+.site-nav,
+.blog-nav {
+  gap: 0.45rem;
+}
+
 .site-nav a,
 .blog-nav a {
   color: var(--toolbar-text);
   font-family: var(--mono-ui, var(--mono));
   font-size: 0.65rem;
   letter-spacing: 0.1em;
+}
+
+.site-nav a + a,
+.blog-nav a + a {
+  padding-left: 1rem;
+}
+
+.site-nav a + a::before,
+.blog-nav a + a::before {
+  left: 0;
 }
 
 .site-nav a:hover,
@@ -136,6 +153,11 @@ a:focus-visible {
   background: var(--toolbar-accent);
 }
 
+.site-nav a + a[aria-current="true"]::after,
+.blog-nav a + a[aria-current="true"]::after {
+  left: 1rem;
+}
+
 .theme-toggle {
   display: inline-flex;
   width: 1.9rem;
@@ -144,7 +166,7 @@ a:focus-visible {
   align-items: center;
   justify-content: center;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.34);
+  border: 1px solid transparent;
   border-radius: 3px;
   background: transparent;
   color: transparent;
@@ -330,8 +352,71 @@ a:focus-visible {
   font-size: 1.02rem;
 }
 
+.resource-item h4 {
+  margin: 1.2rem 0 0.35rem;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.resource-item h4 a {
+  color: var(--accent);
+}
+
 .resource-item p {
   color: var(--muted);
+}
+
+.resource-item p + p,
+.resource-item .paper-equation + p {
+  margin-top: 0.85rem;
+}
+
+.resource-item h3 .katex,
+.resource-item h4 .katex,
+.resource-item p .katex {
+  font-size: 1.04em;
+}
+
+.resource-item h3 a,
+.resource-item h3 a .katex,
+.resource-item h3 a .katex * {
+  color: var(--accent);
+}
+
+.resource-item h3 a:hover,
+.resource-item h3 a:hover .katex,
+.resource-item h3 a:hover .katex *,
+.resource-item h3 a:focus-visible,
+.resource-item h3 a:focus-visible .katex,
+.resource-item h3 a:focus-visible .katex * {
+  color: var(--accent-hover);
+}
+
+.resource-item-body {
+  position: relative;
+  min-width: 0;
+}
+
+.resource-item-preview {
+  max-height: 7.5rem;
+  overflow: hidden;
+}
+
+.resource-item-preview.is-expanded {
+  max-height: none;
+  overflow: visible;
+}
+
+.resource-item-body:has(.resource-item-preview.is-expanded) .paper-fade,
+.resource-item-body:has(.paper-fade[hidden]) .paper-fade {
+  display: none;
+}
+
+.resource-item .paper-equation {
+  font-size: 0.9rem;
 }
 
 .resource-meta {
@@ -377,8 +462,49 @@ a:focus-visible {
 }
 
 .paper-record-title i,
-.paper-record-abstract i {
+.paper-record-abstract i,
+.paper-source i,
+.paper-tags i {
   font-family: var(--serif);
+}
+
+.paper-record-title .katex,
+.paper-tags .katex {
+  font-size: 1em;
+}
+
+.paper-record-abstract .katex,
+.paper-source .katex,
+.paper-tags .katex {
+  color: inherit;
+}
+
+.paper-record-abstract .katex,
+.paper-source .katex {
+  font-size: 1.04em;
+}
+
+.paper-equation {
+  display: block;
+  max-width: 100%;
+  margin: 0.85rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  color: var(--muted);
+  font-size: 0.96rem;
+  text-align: center;
+  scrollbar-width: thin;
+}
+
+.paper-equation .katex,
+.paper-equation .katex-display {
+  color: inherit;
+}
+
+.paper-equation .katex-display {
+  min-width: max-content;
+  margin: 0;
+  padding: 0.15rem 0.25rem 0.3rem;
 }
 
 .paper-record-author {
@@ -386,6 +512,17 @@ a:focus-visible {
   color: var(--muted);
   font-family: var(--sans);
   font-size: 0.88rem;
+}
+
+.paper-record-advisors {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+}
+
+.paper-record-advisors a {
+  color: var(--accent);
 }
 
 .paper-tags {
@@ -412,6 +549,77 @@ a:focus-visible {
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.68;
+}
+
+.paper-record-body,
+.paper-record-heading {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.paper-record-body {
+  position: relative;
+}
+
+.paper-record-preview {
+  max-height: 7.5rem;
+  overflow: hidden;
+}
+
+.paper-record-preview.is-expanded {
+  max-height: none;
+  overflow: visible;
+}
+
+.paper-fade {
+  position: absolute;
+  right: 0;
+  bottom: 1.75rem;
+  left: 0;
+  height: 2.75rem;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--sheet) 84%);
+}
+
+.paper-record-body:has(.paper-record-preview.is-expanded) .paper-fade {
+  display: none;
+}
+
+.paper-read-more {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.5rem;
+  padding: 0 0 0.2rem;
+  border: 0;
+  border-bottom: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-family: var(--mono-ui, var(--mono-paper));
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+.paper-read-more:hover,
+.paper-read-more:focus-visible {
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.paper-source {
+  margin: 0 0 0.85rem;
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.68;
+}
+
+.paper-record-body p + p {
+  margin-top: 0.85rem;
+}
+
+.paper-record-body .runin {
+  margin-right: 0.35em;
+  color: var(--text);
 }
 
 .compact-list,
@@ -674,6 +882,10 @@ a:focus-visible {
 
   .resource-list li {
     grid-template-columns: 1fr;
+  }
+
+  .resource-item .paper-equation {
+    font-size: 0.8rem;
   }
 
   .paper-record {
