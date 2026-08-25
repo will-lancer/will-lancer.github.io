@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.sync_substack import END_MARKER, START_MARKER, api_post_to_entry, sync
+from scripts.sync_substack import END_MARKER, START_MARKER, rss2json_item_to_entry, sync
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,20 +11,20 @@ FIXTURE = ROOT / "tests" / "fixtures" / "substack-feed.xml"
 
 
 class SyncSubstackTest(unittest.TestCase):
-    def test_converts_public_api_posts(self) -> None:
-        post = api_post_to_entry(
+    def test_converts_proxy_posts(self) -> None:
+        post = rss2json_item_to_entry(
             {
-                "slug": "api-post",
-                "canonical_url": "https://wlancer.substack.com/p/api-post",
-                "post_date": "2026-08-25T18:00:00.000Z",
-                "title": "API post",
-                "subtitle": "From the public archive.",
-                "body_html": "<p>Safe body.</p><script>bad()</script>",
-                "postTags": [{"name": "Physics"}],
+                "guid": "https://wlancer.substack.com/p/proxy-post",
+                "link": "https://wlancer.substack.com/p/proxy-post",
+                "pubDate": "2026-08-25 18:00:00",
+                "title": "Proxy post",
+                "description": "From the RSS proxy.",
+                "content": "<p>Safe body.</p><script>bad()</script>",
+                "categories": ["Physics"],
             }
         )
 
-        self.assertEqual(post["slug"], "api-post")
+        self.assertEqual(post["slug"], "proxy-post")
         self.assertEqual(post["category"], "Physics")
         self.assertIn("Safe body.", post["content_html"])
         self.assertNotIn("bad()", post["content_html"])

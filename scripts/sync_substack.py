@@ -15,13 +15,12 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
+from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlunparse
 from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FEED_URL = "https://wlancer.substack.com/feed"
-DEFAULT_PROFILE_USER_ID = "175338933"
 DEFAULT_INDEX = ROOT / "blog" / "index.html"
 DEFAULT_CACHE = ROOT / "blog" / "substack-posts.json"
 START_MARKER = "<!-- BEGIN AUTO-SYNCED SUBSTACK POSTS -->"
@@ -294,23 +293,20 @@ def parse_feed(feed_bytes: bytes) -> list[dict[str, str]]:
     return posts
 
 
-def api_post_to_entry(post: dict[str, object]) -> dict[str, str]:
-    slug = safe_identifier(str(post["slug"]).lower())
-    link = str(post.get("canonical_url") or f"https://wlancer.substack.com/p/{slug}")
-    raw_content = str(post.get("body_html") or "")
-    raw_date = str(post["post_date"]).replace("Z", "+00:00")
-    published = datetime.fromisoformat(raw_date).astimezone(timezone.utc)
-    raw_tags = post.get("postTags")
-    tags = raw_tags if isinstance(raw_tags, list) else []
-    first_tag = tags[0] if tags else None
-    category = str(first_tag.get("name", "Substack")) if isinstance(first_tag, dict) else "Substack"
+def rss2json_item_to_entry(item: dict[str, object]) -> dict[str, str]:
+    link = str(item.get("link") or "")
+    slug = post_slug(link, str(item.get("guid") or link), str(item.get("title") or "Untitled"))
+    raw_content = str(item.get("content") or item.get("description") or "")
+    published = datetime.strptime(str(item["pubDate"]), "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone.utc)
+    raw_categories = item.get("categories")
+    categories = raw_categories if isinstance(raw_categories, list) else []
     return {
         "slug": slug,
-        "title": str(post.get("title") or "Untitled"),
-        "subtitle": plain_text(str(post.get("subtitle") or post.get("description") or "")),
+        "title": str(item.get("title") or "Untitled"),
+        "subtitle": plain_text(str(item.get("description") or "")),
         "url": link,
         "published": published.isoformat(timespec="seconds"),
-        "category": category,
+        "category": str(categories[0]) if categories else "Substack",
         "content_html": sanitize_content(raw_content, slug, link),
     }
 
@@ -438,28 +434,17 @@ def fetch_json(url: str) -> object:
         return json.loads(response.read())
 
 
-def fetch_substack_api(profile_user_id: str) -> list[dict[str, str]]:
-    profile_url = f"https://substack.com/api/v1/profile/posts?profile_user_id={profile_user_id}"
-    profile = fetch_json(profile_url)
-    if not isinstance(profile, dict) or not isinstance(profile.get("posts"), list):
-        raise ValueError("Substack profile API returned an unexpected response")
-
-    posts: list[dict[str, str]] = []
-    for summary in profile["posts"]:
-        if not isinstance(summary, dict) or not summary.get("id"):
-            continue
-        detail_url = f"https://substack.com/api/v1/posts/by-id/{summary['id']}"
-        payload = fetch_json(detail_url)
-        detail = payload.get("post") if isinstance(payload, dict) else None
-        if isinstance(detail, dict) and detail.get("body_html") and detail.get("is_published"):
-            posts.append(api_post_to_entry(detail))
-    return posts
+def fetch_rss2json(feed_url: str) -> list[dict[str, str]]:
+    proxy_url = f"https://api.rss2json.com/v1/api.json?rss_url={quote(feed_url, safe='')}"
+    payload = fetch_json(proxy_url)
+    if not isinstance(payload, dict) or payload.get("status") != "ok" or not isinstance(payload.get("items"), list):
+        raise ValueError("rss2json returned an unexpected response")
+    return [rss2json_item_to_entry(item) for item in payload["items"] if isinstance(item, dict)]
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--feed-url", default=DEFAULT_FEED_URL)
-    parser.add_argument("--profile-user-id", default=DEFAULT_PROFILE_USER_ID)
     parser.add_argument("--feed-file", type=Path)
     parser.add_argument("--index", type=Path, default=DEFAULT_INDEX)
     parser.add_argument("--cache", type=Path, default=DEFAULT_CACHE)
@@ -473,8 +458,8 @@ def main() -> int:
         except urllib.error.HTTPError as error:
             if error.code != 403:
                 raise
-            print("RSS request was blocked; using Substack's public profile API.", file=sys.stderr)
-            posts = fetch_substack_api(args.profile_user_id)
+            print("RSS request was blocked; using the rss2json feed proxy.", file=sys.stderr)
+            posts = fetch_rss2json(args.feed_url)
     count, changed = sync_posts(posts, args.index, args.cache)
     state = "updated" if changed else "already current"
     print(f"Substack archive {state}: {count} automated post{'s' if count != 1 else ''}.")
