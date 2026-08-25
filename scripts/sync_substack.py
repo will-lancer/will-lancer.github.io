@@ -8,13 +8,14 @@ import html
 import json
 import re
 import sys
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
+from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlunparse
 from zoneinfo import ZoneInfo
 
 
@@ -26,6 +27,10 @@ START_MARKER = "<!-- BEGIN AUTO-SYNCED SUBSTACK POSTS -->"
 END_MARKER = "<!-- END AUTO-SYNCED SUBSTACK POSTS -->"
 CONTENT_NAMESPACE = "http://purl.org/rss/1.0/modules/content/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/139.0 Safari/537.36"
+)
 
 ALLOWED_TAGS = {
     "a",
@@ -288,6 +293,27 @@ def parse_feed(feed_bytes: bytes) -> list[dict[str, str]]:
     return posts
 
 
+def api_post_to_entry(post: dict[str, object]) -> dict[str, str]:
+    slug = safe_identifier(str(post["slug"]).lower())
+    link = str(post.get("canonical_url") or f"https://wlancer.substack.com/p/{slug}")
+    raw_content = str(post.get("body_html") or "")
+    raw_date = str(post["post_date"]).replace("Z", "+00:00")
+    published = datetime.fromisoformat(raw_date).astimezone(timezone.utc)
+    raw_tags = post.get("postTags")
+    tags = raw_tags if isinstance(raw_tags, list) else []
+    first_tag = tags[0] if tags else None
+    category = str(first_tag.get("name", "Substack")) if isinstance(first_tag, dict) else "Substack"
+    return {
+        "slug": slug,
+        "title": str(post.get("title") or "Untitled"),
+        "subtitle": plain_text(str(post.get("subtitle") or post.get("description") or "")),
+        "url": link,
+        "published": published.isoformat(timespec="seconds"),
+        "category": category,
+        "content_html": sanitize_content(raw_content, slug, link),
+    }
+
+
 def format_published(value: str) -> tuple[str, str]:
     published = datetime.fromisoformat(value).astimezone(PACIFIC)
     hour = published.hour % 12 or 12
@@ -362,14 +388,14 @@ def update_index(index_html: str, posts: list[dict[str, str]]) -> str:
     return index_html[:start] + rendered + index_html[end:]
 
 
-def sync(feed_bytes: bytes, index_path: Path, cache_path: Path) -> tuple[int, bool]:
+def sync_posts(feed_posts: list[dict[str, str]], index_path: Path, cache_path: Path) -> tuple[int, bool]:
     index_html = index_path.read_text(encoding="utf-8")
     start = index_html.index(START_MARKER) + len(START_MARKER)
     end = index_html.index(END_MARKER, start)
     manual_ids = manual_post_ids(index_html, start, end)
 
     cached = {post["slug"]: post for post in load_cache(cache_path)}
-    for post in parse_feed(feed_bytes):
+    for post in feed_posts:
         if post["slug"] not in manual_ids:
             cached[post["slug"]] = post
     for slug in manual_ids:
@@ -386,10 +412,48 @@ def sync(feed_bytes: bytes, index_path: Path, cache_path: Path) -> tuple[int, bo
     return len(posts), changed
 
 
+def sync(feed_bytes: bytes, index_path: Path, cache_path: Path) -> tuple[int, bool]:
+    return sync_posts(parse_feed(feed_bytes), index_path, cache_path)
+
+
 def fetch_feed(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": "will-lancer.github.io Substack sync"})
+    request = urllib.request.Request(
+        url,
+        headers={
+            "Accept": "application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.7",
+            "User-Agent": BROWSER_USER_AGENT,
+        },
+    )
     with urllib.request.urlopen(request, timeout=30) as response:
         return response.read()
+
+
+def fetch_json(url: str) -> object:
+    request = urllib.request.Request(
+        url,
+        headers={"Accept": "application/json", "User-Agent": BROWSER_USER_AGENT},
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.loads(response.read())
+
+
+def fetch_substack_api(feed_url: str) -> list[dict[str, str]]:
+    parsed = urlparse(feed_url)
+    base_url = f"{parsed.scheme}://{parsed.netloc}"
+    archive_url = f"{base_url}/api/v1/archive?sort=new&search=&offset=0&limit=50"
+    archive = fetch_json(archive_url)
+    if not isinstance(archive, list):
+        raise ValueError("Substack archive API returned an unexpected response")
+
+    posts: list[dict[str, str]] = []
+    for summary in archive:
+        if not isinstance(summary, dict) or not summary.get("slug"):
+            continue
+        detail_url = f"{base_url}/api/v1/posts/{quote(str(summary['slug']))}"
+        detail = fetch_json(detail_url)
+        if isinstance(detail, dict) and detail.get("body_html"):
+            posts.append(api_post_to_entry(detail))
+    return posts
 
 
 def main() -> int:
@@ -400,8 +464,17 @@ def main() -> int:
     parser.add_argument("--cache", type=Path, default=DEFAULT_CACHE)
     args = parser.parse_args()
 
-    feed_bytes = args.feed_file.read_bytes() if args.feed_file else fetch_feed(args.feed_url)
-    count, changed = sync(feed_bytes, args.index, args.cache)
+    if args.feed_file:
+        posts = parse_feed(args.feed_file.read_bytes())
+    else:
+        try:
+            posts = parse_feed(fetch_feed(args.feed_url))
+        except urllib.error.HTTPError as error:
+            if error.code != 403:
+                raise
+            print("RSS request was blocked; using Substack's public archive API.", file=sys.stderr)
+            posts = fetch_substack_api(args.feed_url)
+    count, changed = sync_posts(posts, args.index, args.cache)
     state = "updated" if changed else "already current"
     print(f"Substack archive {state}: {count} automated post{'s' if count != 1 else ''}.")
     return 0
