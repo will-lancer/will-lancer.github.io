@@ -1206,76 +1206,6 @@ pre {
   text-indent: 0;
 }
 
-/* ------------------------------------------------------------
-   Marginalia easter eggs: invisible until the cursor finds them
-   ------------------------------------------------------------ */
-.section {
-  position: relative;
-}
-
-.margin-note,
-.section > p.margin-note {
-  position: absolute;
-  width: 11.5rem;
-  margin: 0;
-  font-size: 0.82rem;
-  font-style: italic;
-  line-height: 1.4;
-  text-align: left;
-  text-indent: 0;
-  -webkit-hyphens: manual;
-  hyphens: manual;
-  opacity: 0;
-  transition: opacity 420ms ease;
-  user-select: none;
-}
-
-.margin-note:hover {
-  opacity: 1;
-}
-
-/* Referee scribbles: red pen in the right margin, slightly askew. */
-.ref-note {
-  left: calc(100% + 1rem);
-  color: #b3372f;
-  transform: rotate(-2deg);
-}
-
-.ref-note-one {
-  transform: rotate(1.4deg);
-}
-
-:root[data-theme="dark"] .ref-note {
-  color: #e0837a;
-}
-
-:root[data-theme="dark"] .ref-note-one {
-  color: #9fbf8f;
-}
-
-.ref-note-one {
-  color: #4a7c3f;
-}
-
-/* Fermat, cramped at the bottom of the left margin. */
-.fermat-note {
-  bottom: 4.2rem;
-  right: calc(100% + 1rem);
-  width: 10rem;
-  color: #8a6a45;
-  transform: rotate(-1.2deg);
-}
-
-:root[data-theme="dark"] .fermat-note {
-  color: #c9b28e;
-}
-
-@media (max-width: 1280px) {
-  .margin-note {
-    display: none;
-  }
-}
-
 /* --- Print: take the sheet back to actual paper --- */
 @media print {
   :root,
@@ -1300,8 +1230,7 @@ pre {
   .site-header,
   .theme-toggle,
   .site-footer,
-  .arxiv-stamp,
-  .margin-note {
+  .arxiv-stamp {
     display: none;
   }
 

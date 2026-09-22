@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 404" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="8" y1="0" x2="300" y2="404" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6b4318"/><stop offset=".12" stop-color="#b98737"/><stop offset=".3" stop-color="#efd28a"/><stop offset=".46" stop-color="#b38336"/><stop offset=".7" stop-color="#806023"/><stop offset=".86" stop-color="#d2ac5b"/><stop offset="1" stop-color="#503817"/>
+    </linearGradient>
+    <linearGradient id="bevel" x1="0" y1="0" x2="320" y2="404" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff0b8"/><stop offset=".33" stop-color="#d6ae60"/><stop offset=".57" stop-color="#765023"/><stop offset="1" stop-color="#422d18"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="54" y2="55" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff1bb"/><stop offset=".45" stop-color="#d3a751"/><stop offset=".75" stop-color="#986b2d"/><stop offset="1" stop-color="#ead08b"/>
+    </linearGradient>
+    <g id="corner">
+      <path d="M6 50C9 33 17 21 31 15C40 11 50 11 60 13C42 15 25 28 20 46C16 41 11 41 6 50Z" fill="#533916" opacity=".7" transform="translate(1.4 1.4)"/>
+      <path d="M6 50C9 33 17 21 31 15C40 11 50 11 60 13C42 15 25 28 20 46C16 41 11 41 6 50Z" fill="url(#leaf)" stroke="#83551e" stroke-width=".7"/>
+      <path d="M13 40C23 21 39 15 53 14M19 31L15 23M27 23L26 16M30 23L37 26M21 32L27 37" stroke="#f7dc91" stroke-width="1.2"/>
+      <path d="M14 15C23 12 23 4 18 3C11 2 4 11 4 21C4 32 8 35 10 39C8 25 9 19 14 15Z" fill="url(#leaf)" stroke="#855a23" stroke-width=".7"/>
+      <path d="M15 14C12 16 10 21 10 28M10 8C7 14 7 22 8 26" stroke="#ffe2a1" stroke-width="1"/>
+      <path d="M15 14C12 23 4 23 3 18C2 11 11 4 21 4C32 4 35 8 39 10C25 8 19 9 15 14Z" fill="url(#leaf)" stroke="#855a23" stroke-width=".7"/>
+      <path d="M14 15C16 12 21 10 28 10M8 10C14 7 22 7 26 8" stroke="#ffe2a1" stroke-width="1"/>
+      <path d="M12 52C13 45 17 38 21 32C17 43 18 50 22 54C18 53 15 53 12 52Z" fill="url(#leaf)" stroke="#855a23" stroke-width=".7"/>
+      <path d="M52 12C45 13 38 17 32 21C43 17 50 18 54 22C53 18 53 15 52 12Z" fill="url(#leaf)" stroke="#855a23" stroke-width=".7"/>
+      <path d="M18 18L25 12L22 22L12 25Z" fill="#e9c57b" stroke="#775020" stroke-width=".8"/>
+      <circle cx="18" cy="18" r="3.1" fill="#f6d98f" stroke="#a97b36"/>
+    </g>
+  </defs>
+  <path d="M4 4H316V400H4ZM32 36V368H288V36Z" fill="url(#gold)" fill-rule="evenodd"/>
+  <rect x="4" y="4" width="312" height="396" rx="1" stroke="#58401e" stroke-width="2"/>
+  <rect x="7" y="7" width="306" height="390" stroke="url(#bevel)" stroke-width="4"/>
+  <rect x="11" y="11" width="298" height="382" stroke="#694b22" stroke-width="1"/>
+  <rect x="15" y="15" width="290" height="374" stroke="#f1ce83" stroke-width="2.7" stroke-dasharray=".4 6.1" stroke-linecap="round"/>
+  <rect x="20" y="21" width="280" height="362" stroke="#795725" stroke-width="3"/>
+  <rect x="22" y="23" width="276" height="358" stroke="#e0b970" stroke-width="1.5"/>
+  <rect x="27" y="31" width="266" height="342" stroke="url(#bevel)" stroke-width="8"/>
+  <rect x="32" y="36" width="256" height="332" stroke="#422c15" stroke-width="1.6"/>
+  <use href="#corner"/>
+  <use href="#corner" transform="translate(320 0) scale(-1 1)"/>
+  <use href="#corner" transform="translate(0 404) scale(1 -1)"/>
+  <use href="#corner" transform="translate(320 404) scale(-1 -1)"/>
+</svg>

@@ -22,18 +22,13 @@
         }
       })();
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
-      rel="stylesheet"
-    >
     <link rel="preload" href="fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="night.css?v=2">
+    <link rel="preload" href="assets/cambridge-starry-night.webp" as="image" fetchpriority="high">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#323639">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#232427">
+    <meta name="theme-color" content="#0c2037">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Will Lancer — Physics, Mathematics, and AI">
@@ -46,16 +41,17 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://will-lancer.github.io/share-card.png">
   </head>
-  <body id="top">
+  <body id="top" class="home">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-row">
         <a class="brand" href="#top">Will Lancer</a>
         <div class="header-tools">
-          <nav class="site-nav" aria-label="Primary">
-            <a href="index.html" aria-current="true">General</a>
-            <a href="blog/">Blog posts</a>
+          <nav class="site-nav" aria-label="Primary" id="primary-nav">
+            <a href="index.html" aria-current="true">Home</a>
+            <a href="blog/">Writing</a>
             <a href="papers/">Papers</a>
-            <a href="learning-artifacts/">Learning artifacts</a>
+            <a href="learning-artifacts/">Learning</a>
             <a href="projects/">Projects</a>
           </nav>
           <button
@@ -65,63 +61,64 @@
             aria-pressed="false"
             aria-label="Toggle color theme"
           ></button>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
         </div>
       </div>
     </header>
-
-    <main class="page">
-      <p class="arxiv-stamp" aria-hidden="true">arXiv:2607.00001v1&#8201;&#8201;[hep-th]&#8201;&#8201;6 Jul 2026</p>
-
-      <header class="paper-head" aria-labelledby="intro-title">
-        <p class="submit-note">Prepared for submission to JHEP</p>
-        <h1 class="paper-title" id="intro-title">
-          I study theoretical high-energy physics
-          and AI alignment. 
-        </h1>
-        <hr class="title-rule" aria-hidden="true">
-        <p class="paper-author">Will Lancer</p>
-        <p class="paper-affil">Cambridge University / Theoretical physics / Oct. 2026 - June 2027</p>
-        <p class="paper-email">
-          <em>E-mail:</em>
-          <a href="mailto:william.lancer@stonybrook.edu">william.lancer@stonybrook.edu</a>,
-          <a href="mailto:will.m.lancer@gmail.com">will.m.lancer@gmail.com</a>
-        </p>
-        <p class="paper-eprint">
-          <em>Resume:</em>
-          <a href="Will_Lancer_Resume.pdf">Will_Lancer_Resume.pdf</a>
-          <!-- <a href="blog/">Blog archive</a> -->
-        </p>
-        <div class="paper-abstract">
-          <figure class="paper-figure">
-            <img src="will-lancer-photo.png" alt="Will Lancer" class="profile-photo">
-            <figcaption><span class="fig-label">Figure 1.</span> The author.</figcaption>
-          </figure>
-          <p>
-            <span class="runin">Abstract:</span>
-            I graduated summa cum laude in physics & mathematics from Stony Brook University in 2026.
-            I'm a Goldwater Scholar, currently doing research at the Simons
-            Center for Geometry and Physics under Zohar Komargodski, and am going to Cambridge in the Fall
-            for my master's in theoretical physics.
-          </p>
-          <p>
-            I am obsessively interested in quantum field theory, and have recently
-            begun seriously learning about AI safety. I also deeply enjoy
-            pure mathematics, religious philosophy, and moral philosophy.
-          </p>
-          <p class="paper-keywords"><span class="runin">Keywords:</span> Physics, mathematics, AI</p>
+    <main id="main" class="home-main">
+      <section class="night-hero" aria-labelledby="intro-title">
+        <div class="paint-scene" aria-hidden="true">
+          <img class="painting" src="assets/cambridge-starry-night.webp" alt="" width="1536" height="1024" fetchpriority="high">
+          <canvas class="flow-canvas" aria-hidden="true"></canvas>
         </div>
-        <nav class="paper-toc" aria-label="Contents">
-          <p class="toc-title">Contents</p>
-          <ol>
-            <li><a href="#about">Academics and Interests</a></li>
-            <li><a href="#current-affairs">Current Affairs</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#cv">Curriculum Vitae</a></li>
-            <li><a href="#contact">Get in touch</a></li>
-          </ol>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="hero-place">Cambridge · Part III · October 2026</p>
+          <h1 id="intro-title">Will Lancer</h1>
+          <p class="hero-intro">I study theoretical high-energy physics and AI alignment.</p>
+          <div class="hero-links">
+            <a href="papers/">My research <span aria-hidden="true">↗</span></a>
+            <a href="blog/">My writing <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <a class="scroll-cue" href="#introduction">About me</a>
+          <p class="scene-caption">Cambridge at night.</p>
+          <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" aria-label="Pause sky animation">
+            <span class="motion-icon" aria-hidden="true"></span><span data-motion-label>Pause sky</span>
+          </button>
+        </div>
+      </section>
+      <div class="home-volume">
+      <section class="home-introduction" id="introduction" aria-labelledby="introduction-title">
+        <div class="intro-copy">
+          <h2 class="section-label" id="introduction-title">About me</h2>
+          <p>I graduated summa cum laude in physics &amp; mathematics from Stony Brook University in 2026. I'm a Goldwater Scholar, currently doing research at the Simons Center for Geometry and Physics under Zohar Komargodski, and am going to Cambridge in the Fall for my master's in theoretical physics.</p>
+          <p>I am obsessively interested in quantum field theory, and have recently begun seriously learning about AI safety. I also deeply enjoy pure mathematics, religious philosophy, and moral philosophy.</p>
+        </div>
+        <figure class="author-portrait">
+          <div class="portrait-frame">
+            <img class="portrait-photo" src="will-lancer-photo.png" alt="Will Lancer" width="413" height="563" loading="lazy">
+            <img class="frame-art" src="assets/portrait-frame.svg" alt="" width="320" height="404" aria-hidden="true">
+          </div>
+          <figcaption>Will Lancer</figcaption>
+        </figure>
+      </section>
+      <div class="home-reading">
+        <nav class="home-contents" aria-label="On this page">
+          <p class="contents-label">On this page</p>
+          <a href="#about">Academics &amp; interests</a>
+          <a href="#current-affairs">Current affairs</a>
+          <a href="#hobbies">Outside academics</a>
+          <a href="#cv">Curriculum vitae</a>
+          <a href="#contact">Get in touch</a>
+          <div class="contents-work">
+            <a href="papers/">Research papers ↗</a>
+            <a href="blog/">Blog posts ↗</a>
+            <a href="projects/">Projects ↗</a>
+          </div>
         </nav>
-      </header>
-
+        <div class="home-essay">
       <section id="about" class="section" aria-labelledby="about-title">
         <p class="section-label">About Me</p>
         <h2 id="about-title">Academics and Interests</h2>
@@ -189,7 +186,6 @@
             </ul>
           </div>
         </div>
-        <p class="margin-note ref-note" style="top: 40%;" aria-hidden="true">&ldquo;100x&rdquo;? [citation needed] &mdash;Ref.&nbsp;2</p>
       </section>
 
       <section id="current-affairs" class="section" aria-labelledby="current-affairs-title">
@@ -223,7 +219,6 @@
             </ul>
           </div>
         </div>
-        <p class="margin-note ref-note" style="top: 34%;" aria-hidden="true">please define &ldquo;stay tuned.&rdquo; &mdash;Ref.&nbsp;2</p>
       </section>
 
       <!-- Hidden for now; restore when ready.
@@ -259,7 +254,6 @@
           <li>Talking with my <a href="https://www.linkedin.com/in/alo-chakravarty/" target="_blank" rel="noopener">girlfriend</a></li>
 
         </ul>
-        <p class="margin-note ref-note" style="top: 22%;" aria-hidden="true">Is &sect;3 strictly necessary? &mdash;Ref.&nbsp;2</p>
       </section>
 
       <!-- Hidden for now; restore when ready.
@@ -331,10 +325,10 @@
         <h2 id="contact-title">Get in touch</h2>
         <p>Academic email (expiring in ∼2027): <a href="mailto:william.lancer@stonybrook.edu">william.lancer@stonybrook.edu</a></p>
         <p>Personal email: <a href="mailto:will.m.lancer@gmail.com">will.m.lancer@gmail.com</a></p>
-        <p class="margin-note ref-note ref-note-one" style="top: 12%;" aria-hidden="true">No further objections. &mdash;Ref.&nbsp;1</p>
       </section>
-
-      <p class="margin-note fermat-note" aria-hidden="true">I have discovered a truly marvelous proof of all of the above, which this margin is too narrow to contain.</p>
+        </div>
+      </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -350,6 +344,8 @@
       const yearNode = document.getElementById("year");
       if (yearNode) yearNode.textContent = new Date().getFullYear();
     </script>
+    <script src="sky-flow.js?v=1" defer></script>
+    <script src="night.js?v=2" defer></script>
   </body>
 </html>
 

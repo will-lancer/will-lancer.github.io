@@ -16,7 +16,7 @@
     root.setAttribute("data-theme", theme);
 
     // Keep the browser chrome tint in step with the active theme (PDF toolbar).
-    const themeColor = theme === "dark" ? "#232427" : "#323639";
+    const themeColor = "#0c2037";
     document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
       meta.setAttribute("content", themeColor);
     });

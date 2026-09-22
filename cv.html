@@ -19,12 +19,6 @@
         }
       })();
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
-      rel="stylesheet"
-    >
     <link rel="preload" href="fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="fonts/cmunsx.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="styles.css?v=2">
@@ -32,17 +26,19 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#323639">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#232427">
+      <link rel="stylesheet" href="night.css?v=2">
   </head>
   <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-row">
         <a class="brand" href="index.html">Will Lancer</a>
         <div class="header-tools">
-          <nav class="site-nav" aria-label="Primary">
-            <a href="index.html">General</a>
-            <a href="blog/">Blog posts</a>
+          <nav class="site-nav" aria-label="Primary" id="primary-nav">
+            <a href="index.html">Home</a>
+            <a href="blog/">Writing</a>
             <a href="papers/">Papers</a>
-            <a href="learning-artifacts/">Learning artifacts</a>
+            <a href="learning-artifacts/">Learning</a>
             <a href="projects/">Projects</a>
           </nav>
           <button
@@ -52,11 +48,12 @@
             aria-pressed="false"
             aria-label="Toggle color theme"
           ></button>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
         </div>
       </div>
     </header>
 
-    <main class="page">
+    <main id="main" class="page">
       <section class="section" aria-labelledby="cv-home-title">
         <p class="section-label">Curriculum Vitae</p>
         <h1 class="page-title" id="cv-home-title">Will Lancer</h1>
@@ -140,5 +137,6 @@
     </footer>
 
     <script src="theme.js"></script>
+      <script src="night.js?v=2" defer></script>
   </body>
 </html>
