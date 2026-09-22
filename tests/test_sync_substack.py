@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.sync_substack import END_MARKER, START_MARKER, rss2json_item_to_entry, sync
+from scripts.sync_substack import END_MARKER, START_MARKER, rss2json_item_to_entry, sanitize_content, sync
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -63,6 +63,23 @@ class SyncSubstackTest(unittest.TestCase):
             second_count, second_changed = sync(FIXTURE.read_bytes(), index, cache)
             self.assertEqual(second_count, 1)
             self.assertFalse(second_changed)
+
+    def test_keeps_mention_names_and_local_footnotes(self) -> None:
+        markup = """
+        <p>See <a href="https://wlancer.substack.com/#footnote-1">1</a></p>
+        <div class="footnote">
+          <a id="footnote-1" href="https://wlancer.substack.com/#footnote-anchor-1">1</a>
+          <div class="footnote-content">
+            <p>Shoutout <span class="mention-wrap" data-component-name="MentionToDOM" data-attrs='{"name": "Miles K. Donahue", "url": null}'></span> now.</p>
+          </div>
+        </div>
+        """
+        rendered = sanitize_content(markup, "newest-post", "https://wlancer.substack.com/p/newest-post")
+        self.assertIn("Miles K. Donahue", rendered)
+        self.assertNotIn("mention-wrap", rendered)
+        self.assertIn('href="#substack-newest-post-footnote-1"', rendered)
+        self.assertIn('id="substack-newest-post-footnote-1"', rendered)
+        self.assertNotIn("wlancer.substack.com/#", rendered)
 
 
 if __name__ == "__main__":

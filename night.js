@@ -32,17 +32,29 @@
   const scene = document.querySelector('.night-hero');
   if (!scene) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const life = typeof createRiverLife === 'function' ? createRiverLife(scene) : null;
   let inView = false;
   let flow = null;
+  let loading = false;
+  let unavailable = false;
   const syncMotion = () => {
     const paused = reduced.matches;
     scene.classList.toggle('scene-outside', !inView || document.hidden);
-    if (!paused && inView && !flow && typeof createPaintedSky === 'function') {
-      flow = createPaintedSky(scene);
+    if (!paused && inView && !document.hidden && !flow && !loading && !unavailable) {
+      loading = true;
+      scene.dataset.paintingStatus = 'loading';
+      import('./painted-relief.js?v=2').then(({ createPaintedSky }) => {
+        flow = createPaintedSky(scene);
+        scene.dataset.paintingStatus = 'loaded';
+        syncMotion();
+      }).catch(error => {
+        unavailable = true;
+        scene.dataset.paintingStatus = 'unavailable';
+        console.warn('The painting is using its still image:', error);
+      }).finally(() => {
+        loading = false;
+      });
     }
     flow?.setActive(!paused && inView && !document.hidden);
-    life?.setActive(!paused && inView && !document.hidden);
   };
   reduced.addEventListener('change', syncMotion);
   document.addEventListener('visibilitychange', syncMotion);

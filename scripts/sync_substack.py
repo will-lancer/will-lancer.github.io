@@ -78,6 +78,16 @@ def clean_url(value: str, base_url: str, anchor_prefix: str) -> str | None:
     if parsed.scheme == "mailto":
         return absolute
 
+    # Feed proxies expand in-article anchors to the publication home.
+    # Keep those on this page, beside the prefixed footnote ids.
+    if parsed.fragment:
+        base = urlparse(base_url)
+        publication = urlparse(DEFAULT_FEED_URL)
+        same_document = parsed.netloc == base.netloc and parsed.path.rstrip("/") == base.path.rstrip("/")
+        publication_home = parsed.netloc == publication.netloc and parsed.path in {"", "/"}
+        if same_document or publication_home:
+            return f"#{anchor_prefix}{parsed.fragment}"
+
     query = [(key, val) for key, val in parse_qsl(parsed.query, keep_blank_values=True) if not key.startswith("utm_")]
     return urlunparse(parsed._replace(query=urlencode(query)))
 
@@ -85,6 +95,27 @@ def clean_url(value: str, base_url: str, anchor_prefix: str) -> str | None:
 def safe_identifier(value: str) -> str:
     cleaned = re.sub(r"[^a-zA-Z0-9_-]+", "-", value).strip("-")
     return cleaned or "item"
+
+
+def mention_html(attrs: dict[str, str]) -> str | None:
+    """Substack mentions store the visible name only in a data attribute."""
+    classes = set(attrs.get("class", "").split())
+    if attrs.get("data-component-name") != "MentionToDOM" and "mention-wrap" not in classes:
+        return None
+    try:
+        data = json.loads(attrs.get("data-attrs", ""))
+    except json.JSONDecodeError:
+        return None
+    if not isinstance(data, dict):
+        return None
+    name = str(data.get("name") or "").strip()
+    if not name:
+        return None
+    url = data.get("url")
+    if isinstance(url, str) and url.startswith(("http://", "https://")):
+        href = html.escape(url, quote=True)
+        return f'<a href="{href}" target="_blank" rel="noopener">{html.escape(name)}</a>'
+    return html.escape(name)
 
 
 class SafeSubstackHTML(HTMLParser):
@@ -173,6 +204,10 @@ class SafeSubstackHTML(HTMLParser):
             return
         if tag in DROP_WITH_CONTENT or self._widget(attrs):
             self.skip_depth = 1
+            return
+        if tag == "span" and (mention := mention_html(attrs)):
+            self.output.append(mention)
+            self.stack.append(None)
             return
 
         mapped = self._mapped_tag(tag, attrs)
