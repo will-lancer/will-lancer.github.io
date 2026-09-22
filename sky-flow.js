@@ -1,4 +1,4 @@
-// Advect the painted sky along fixed, connected currents. The canvas is GPU-only.
+// Advect the painted sky and river along connected currents on the GPU.
 function createPaintedSky(scene) {
   const canvas = scene.querySelector('.flow-canvas');
   const painting = scene.querySelector('.painting');
@@ -35,15 +35,35 @@ function createPaintedSky(scene) {
           * exp(-dot(d, d) * 1.65) * speed;
       }
 
+      float starDisk(vec2 p, vec2 center, float radius) {
+        vec2 d = (p - center) * vec2(1., .666667);
+        float r = dot(d, d) / (radius * radius);
+        return 1. - smoothstep(.08, 1., r);
+      }
+
+      float twinkle(vec2 p, vec2 center, float radius, float phase, float speed) {
+        float pulse = .52 + .34 * sin(u_time * speed + phase)
+          + .14 * sin(u_time * speed * 1.73 + phase * 2.1);
+        return starDisk(p, center, radius) * pulse;
+      }
+
       float sky(vec2 p) {
         float skyline = mix(.54, .30, smoothstep(.56, .77, p.x));
         float area = (1. - smoothstep(skyline - .11, skyline, p.y))
           * smoothstep(.08, .21, p.x);
         // Keep the painted moon and the centres of the larger stars in place.
         area *= smoothstep(.055, .13, length((p - vec2(.912, .145)) * vec2(1., .82)));
-        area *= smoothstep(.019, .049, length(p - vec2(.607, .058)));
-        area *= smoothstep(.018, .045, length(p - vec2(.496, .171)));
-        area *= smoothstep(.018, .046, length(p - vec2(.662, .315)));
+        float stars = starDisk(p, vec2(.1107, .0303), .025);
+        stars = max(stars, starDisk(p, vec2(.0358, .1162), .024));
+        stars = max(stars, starDisk(p, vec2(.2741, .0527), .024));
+        stars = max(stars, starDisk(p, vec2(.3783, .0146), .020));
+        stars = max(stars, starDisk(p, vec2(.6061, .0576), .026));
+        stars = max(stars, starDisk(p, vec2(.7578, .0361), .022));
+        stars = max(stars, starDisk(p, vec2(.4987, .1699), .023));
+        stars = max(stars, starDisk(p, vec2(.1237, .3027), .020));
+        stars = max(stars, starDisk(p, vec2(.6055, .2910), .019));
+        stars = max(stars, starDisk(p, vec2(.6673, .3154), .023));
+        area *= 1. - stars;
         return area;
       }
 
@@ -63,6 +83,21 @@ function createPaintedSky(scene) {
         return p - current(p - v * phase * .5) * phase;
       }
 
+      float river(vec2 p) {
+        // Follow the far bank and keep the bridge and foreground tree still.
+        float bank = .738 + .074 * p.x;
+        return smoothstep(bank + .004, bank + .025, p.y)
+          * smoothstep(.135, .185, p.x);
+      }
+
+      vec2 downstream(vec2 p, float phase) {
+        float depth = smoothstep(.755, 1., p.y);
+        vec2 velocity = vec2(.010 + .018 * depth, .0018 + .004 * depth);
+        vec2 ripple = vec2(.00065 * sin(p.y * 230. - u_time * .48),
+          .00032 * sin(p.x * 95. - u_time * .39));
+        return p - velocity * phase + ripple * depth;
+      }
+
       void main() {
         vec2 p = v_uv * u_crop + (1. - u_crop) * u_position;
         float cycle = u_time / 16.;
@@ -71,7 +106,28 @@ function createPaintedSky(scene) {
         float blend = smoothstep(0., 1., abs(phaseA * 2. - 1.));
         vec4 a = texture2D(u_painting, upstream(p, phaseA));
         vec4 b = texture2D(u_painting, upstream(p, phaseB));
-        gl_FragColor = mix(a, b, blend);
+        vec4 paint = mix(a, b, blend);
+        float water = river(p);
+        if (water > .001) {
+          float riverPhase = fract(u_time / 24.);
+          float riverBlend = smoothstep(0., 1., abs(riverPhase * 2. - 1.));
+          vec4 nearWater = texture2D(u_painting, downstream(p, riverPhase));
+          vec4 farWater = texture2D(u_painting, downstream(p, fract(riverPhase + .5)));
+          paint = mix(paint, mix(nearWater, farWater, riverBlend), water);
+        }
+        // Each existing painted star brightens at its own slow, uneven cadence.
+        float light = twinkle(p, vec2(.1107, .0303), .034, .6, .92);
+        light += twinkle(p, vec2(.0358, .1162), .032, 2.8, 1.16);
+        light += twinkle(p, vec2(.2741, .0527), .031, 4.3, 1.05);
+        light += twinkle(p, vec2(.3783, .0146), .027, 1.1, 1.29);
+        light += twinkle(p, vec2(.6061, .0576), .036, 3.4, .85);
+        light += twinkle(p, vec2(.7578, .0361), .029, 5.8, 1.12);
+        light += twinkle(p, vec2(.4987, .1699), .031, 1.9, .98);
+        light += twinkle(p, vec2(.1237, .3027), .025, 4.9, 1.24);
+        light += twinkle(p, vec2(.6055, .2910), .026, 2.2, 1.34);
+        light += twinkle(p, vec2(.6673, .3154), .033, 6.7, .89);
+        paint.rgb = 1. - (1. - paint.rgb) * (1. - vec3(1., .83, .47) * light * .46);
+        gl_FragColor = paint;
       }`
   };
 

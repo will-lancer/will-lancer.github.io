@@ -30,31 +30,20 @@
   }
 
   const scene = document.querySelector('.night-hero');
-  const toggle = document.querySelector('[data-motion-toggle]');
-  if (!scene || !toggle) return;
+  if (!scene) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let userPaused = false;
+  const life = typeof createRiverLife === 'function' ? createRiverLife(scene) : null;
   let inView = false;
   let flow = null;
-  try { userPaused = localStorage.getItem('night-sky-paused') === 'true'; } catch {}
   const syncMotion = () => {
-    const paused = userPaused || reduced.matches;
-    scene.classList.toggle('motion-paused', paused);
+    const paused = reduced.matches;
     scene.classList.toggle('scene-outside', !inView || document.hidden);
     if (!paused && inView && !flow && typeof createPaintedSky === 'function') {
       flow = createPaintedSky(scene);
     }
     flow?.setActive(!paused && inView && !document.hidden);
-    toggle.hidden = reduced.matches;
-    toggle.setAttribute('aria-pressed', String(paused));
-    toggle.setAttribute('aria-label', paused ? 'Resume sky animation' : 'Pause sky animation');
-    toggle.querySelector('[data-motion-label]').textContent = paused ? 'Resume sky' : 'Pause sky';
+    life?.setActive(!paused && inView && !document.hidden);
   };
-  toggle.addEventListener('click', () => {
-    userPaused = !userPaused;
-    try { localStorage.setItem('night-sky-paused', String(userPaused)); } catch {}
-    syncMotion();
-  });
   reduced.addEventListener('change', syncMotion);
   document.addEventListener('visibilitychange', syncMotion);
   if ('IntersectionObserver' in window) {
