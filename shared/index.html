@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-src blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>Shared document | Will Lancer</title>
+    <link rel="stylesheet" href="viewer.css">
+    <script src="viewer.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Shared document <span>Will Lancer</span></h1>
+      <nav aria-label="Document" hidden>
+        <a id="open" target="_blank" rel="noopener noreferrer">Open PDF</a>
+        <a id="download" download="paper.pdf">Download</a>
+      </nav>
+    </header>
+    <main>
+      <p id="status" role="status">Opening document…</p>
+      <noscript><p>Enable JavaScript to open this shared document.</p></noscript>
+      <iframe id="document" title="Shared paper" referrerpolicy="no-referrer" hidden></iframe>
+    </main>
+  </body>
+</html>
