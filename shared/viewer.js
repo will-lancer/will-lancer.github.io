@@ -16,7 +16,7 @@
       character => character.charCodeAt(0)
     );
     const key = await crypto.subtle.importKey('raw', rawKey, 'AES-GCM', false, ['decrypt']);
-    const response = await fetch('document.bin', { credentials: 'omit', referrerPolicy: 'no-referrer' });
+    const response = await fetch('document.bin', { cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer' });
     if (!response.ok) throw new Error('Document unavailable');
     const encrypted = new Uint8Array(await response.arrayBuffer());
     if (encrypted.length < 29) throw new Error('Incomplete document');
