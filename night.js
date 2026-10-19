@@ -42,7 +42,7 @@
     if (!paused && inView && !document.hidden && !flow && !loading && !unavailable) {
       loading = true;
       scene.dataset.paintingStatus = 'loading';
-      import('./painted-relief.js?v=2').then(({ createPaintedSky }) => {
+      import('./painted-relief.js?v=3').then(({ createPaintedSky }) => {
         flow = createPaintedSky(scene);
         scene.dataset.paintingStatus = 'loaded';
         syncMotion();
