@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-25",
+  "title": "Starting here",
+  "kind": "note",
+  "draft": false,
+  "tags": [],
+  "ai_safety_hours": null,
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Seven courses and a few hours of AI safety every day is a lot to take on. I want to document how it goes and have somewhere to put the work."
+    },
+    {
+      "type": "paragraph",
+      "text": "The plan is to update this daily."
+    }
+  ]
+}

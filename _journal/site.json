@@ -1,0 +1,12 @@
+{
+  "title": "The daily log",
+  "eyebrow": "Cambridge · Part III + AI safety",
+  "intro": [
+    "I'm trying to take seven Cambridge courses alongside 3–4 hours of AI safety a day. This is where I'll keep track of what I get done.",
+    "I'll put my work here as I go, with photos and PDFs alongside the daily entries."
+  ],
+  "goals": [
+    {"value": "07", "label": "Cambridge courses"},
+    {"value": "3–4h", "label": "AI safety / day"}
+  ]
+}

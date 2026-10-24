@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#0c2037">
+  <meta name="description" content="A daily journal of Cambridge Part III and AI safety work.">
+  <title>@@TITLE@@ | Will Lancer</title>
+  <script>
+    try {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+    } catch {}
+  </script>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/cmunrm.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="journal.css?v=1">
+  <script src="../theme.js" defer></script>
+  <script src="journal.js?v=1" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#entries">Skip to entries</a>
+  <header class="site-header">
+    <a class="brand" href="../">Will Lancer</a>
+    <div class="header-tools">
+      <a href="../">Back to website <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"></button>
+    </div>
+  </header>
+  <main class="journal-sheet">
+    <header class="journal-intro" id="about">
+      <div class="intro-copy">
+        <p class="eyebrow">@@EYEBROW@@</p>
+        <h1>@@TITLE@@<span aria-hidden="true">.</span></h1>
+        <div class="intro-text">@@INTRO@@</div>
+      </div>
+      <aside class="challenge" aria-label="The daily goal">
+        <p class="eyebrow">The challenge</p>
+        <dl>@@GOALS@@</dl>
+      </aside>
+    </header>
+    <div class="journal-layout">
+      <aside class="journal-index">
+        <details class="index-disclosure" open>
+          <summary>Browse entries <span aria-hidden="true">↓</span></summary>
+          <div class="index-body">
+            <p class="eyebrow index-heading">Index</p>
+            <div class="search-controls" hidden>
+              <label for="entry-search">Find an entry</label>
+              <input type="search" id="entry-search" placeholder="Search the journal" autocomplete="off">
+              <label for="tag-filter">Topic</label>
+              <select id="tag-filter"><option value="">All topics</option>@@FILTERS@@</select>
+            </div>
+            <nav aria-label="Journal entries">@@INDEX@@</nav>
+            <p class="index-note">@@DAY_COUNT@@<br>Since @@START_DATE@@</p>
+          </div>
+        </details>
+      </aside>
+      <section class="entry-feed" id="entries" aria-label="Daily entries" tabindex="-1">
+        <div class="feed-heading"><h2>Entries</h2><span>Latest first</span></div>
+        <p class="search-status" role="status" aria-live="polite" hidden></p>
+        <div class="empty-search" hidden><h3>No matching entries</h3><p>Try another search or topic.</p><button type="button" id="clear-search">Clear filters</button></div>
+        @@ENTRIES@@
+      </section>
+    </div>
+    <footer class="journal-footer"><span>Will Lancer · Cambridge</span><a href="#top">Back to top ↑</a></footer>
+  </main>
+</body>
+</html>
