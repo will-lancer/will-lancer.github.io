@@ -23,7 +23,11 @@ concurrency:
 
 jobs:
   sync:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-latest, macos-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 5
     steps:
       - name: Check out the site
@@ -40,6 +44,9 @@ jobs:
 
       - name: Test the importer
         run: python -m unittest tests/test_sync_substack.py
+
+      - name: Diagnose feed access
+        run: python scripts/probe_substack.py
 
       - name: Sync the feed
         run: python scripts/sync_substack.py
