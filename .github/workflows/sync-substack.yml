@@ -23,11 +23,7 @@ concurrency:
 
 jobs:
   sync:
-    strategy:
-      fail-fast: false
-      matrix:
-        runner: [ubuntu-latest, macos-latest, ubuntu-24.04-arm]
-    runs-on: ${{ matrix.runner }}
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - name: Check out the site
