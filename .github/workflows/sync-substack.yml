@@ -1,6 +1,13 @@
 name: Sync Substack posts
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/sync-substack.yml
+      - scripts/sync_substack.py
+      - tests/test_sync_substack.py
+      - tests/fixtures/**
   schedule:
     - cron: "17,47 * * * *"
   workflow_dispatch:
@@ -16,6 +23,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Check out the site
         uses: actions/checkout@v7
@@ -33,6 +41,7 @@ jobs:
 
       - name: Commit new posts
         id: commit
+        if: github.ref == 'refs/heads/main'
         run: |
           if git diff --quiet -- blog/index.html blog/substack-posts.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
