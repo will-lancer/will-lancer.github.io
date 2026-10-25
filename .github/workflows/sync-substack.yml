@@ -1,6 +1,14 @@
 name: Sync Substack posts
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/sync-substack.yml
+      - scripts/sync_substack.py
+      - scripts/requirements-substack.txt
+      - tests/test_sync_substack.py
+      - tests/fixtures/**
   schedule:
     - cron: "17,47 * * * *"
   workflow_dispatch:
@@ -16,6 +24,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Check out the site
         uses: actions/checkout@v7
@@ -25,6 +34,9 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install the feed client
+        run: python -m pip install --only-binary=:all: -r scripts/requirements-substack.txt
+
       - name: Test the importer
         run: python -m unittest tests/test_sync_substack.py
 
@@ -33,6 +45,7 @@ jobs:
 
       - name: Commit new posts
         id: commit
+        if: github.ref == 'refs/heads/main'
         run: |
           if git diff --quiet -- blog/index.html blog/substack-posts.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"

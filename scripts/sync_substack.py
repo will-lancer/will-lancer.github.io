@@ -8,15 +8,16 @@ import html
 import json
 import re
 import sys
-import urllib.error
-import urllib.request
+import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlparse, urlunparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 from zoneinfo import ZoneInfo
+
+from curl_cffi import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,10 +28,8 @@ START_MARKER = "<!-- BEGIN AUTO-SYNCED SUBSTACK POSTS -->"
 END_MARKER = "<!-- END AUTO-SYNCED SUBSTACK POSTS -->"
 CONTENT_NAMESPACE = "http://purl.org/rss/1.0/modules/content/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
-BROWSER_USER_AGENT = (
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/139.0 Safari/537.36"
-)
+FETCH_ATTEMPTS = 3
+RETRYABLE_STATUS_CODES = {403, 408, 429, 500, 502, 503, 504}
 
 ALLOWED_TAGS = {
     "a",
@@ -303,6 +302,8 @@ def post_slug(link: str, guid: str, title: str) -> str:
 
 def parse_feed(feed_bytes: bytes) -> list[dict[str, str]]:
     root = ET.fromstring(feed_bytes)
+    if root.tag != "rss" or root.find("channel") is None:
+        raise ValueError("Expected an RSS feed with a channel")
     posts: list[dict[str, str]] = []
     for item in root.findall("./channel/item"):
         title = (item.findtext("title") or "Untitled").strip()
@@ -326,24 +327,6 @@ def parse_feed(feed_bytes: bytes) -> list[dict[str, str]]:
             }
         )
     return posts
-
-
-def rss2json_item_to_entry(item: dict[str, object]) -> dict[str, str]:
-    link = str(item.get("link") or "")
-    slug = post_slug(link, str(item.get("guid") or link), str(item.get("title") or "Untitled"))
-    raw_content = str(item.get("content") or item.get("description") or "")
-    published = datetime.strptime(str(item["pubDate"]), "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone.utc)
-    raw_categories = item.get("categories")
-    categories = raw_categories if isinstance(raw_categories, list) else []
-    return {
-        "slug": slug,
-        "title": str(item.get("title") or "Untitled"),
-        "subtitle": plain_text(str(item.get("description") or "")),
-        "url": link,
-        "published": published.isoformat(timespec="seconds"),
-        "category": str(categories[0]) if categories else "Substack",
-        "content_html": sanitize_content(raw_content, slug, link),
-    }
 
 
 def format_published(value: str) -> tuple[str, str]:
@@ -449,32 +432,23 @@ def sync(feed_bytes: bytes, index_path: Path, cache_path: Path) -> tuple[int, bo
 
 
 def fetch_feed(url: str) -> bytes:
-    request = urllib.request.Request(
-        url,
-        headers={
-            "Accept": "application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.7",
-            "User-Agent": BROWSER_USER_AGENT,
-        },
-    )
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return response.read()
-
-
-def fetch_json(url: str) -> object:
-    request = urllib.request.Request(
-        url,
-        headers={"Accept": "application/json", "User-Agent": BROWSER_USER_AGENT},
-    )
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return json.loads(response.read())
-
-
-def fetch_rss2json(feed_url: str) -> list[dict[str, str]]:
-    proxy_url = f"https://api.rss2json.com/v1/api.json?rss_url={quote(feed_url, safe='')}"
-    payload = fetch_json(proxy_url)
-    if not isinstance(payload, dict) or payload.get("status") != "ok" or not isinstance(payload.get("items"), list):
-        raise ValueError("rss2json returned an unexpected response")
-    return [rss2json_item_to_entry(item) for item in payload["items"] if isinstance(item, dict)]
+    # Match Chrome's TLS and HTTP fingerprint as well as its request headers.
+    for attempt in range(1, FETCH_ATTEMPTS + 1):
+        try:
+            response = requests.get(url, impersonate="chrome", timeout=30)
+        except requests.RequestsError:
+            if attempt == FETCH_ATTEMPTS:
+                raise
+            reason = "network error"
+        else:
+            if response.status_code not in RETRYABLE_STATUS_CODES or attempt == FETCH_ATTEMPTS:
+                response.raise_for_status()
+                return response.content
+            reason = f"HTTP {response.status_code}"
+        delay = 2 ** attempt
+        print(f"Feed request failed ({reason}); retrying in {delay}s.", file=sys.stderr)
+        time.sleep(delay)
+    raise RuntimeError("Feed fetch exhausted its retry attempts")
 
 
 def main() -> int:
@@ -485,16 +459,13 @@ def main() -> int:
     parser.add_argument("--cache", type=Path, default=DEFAULT_CACHE)
     args = parser.parse_args()
 
-    if args.feed_file:
-        posts = parse_feed(args.feed_file.read_bytes())
-    else:
-        try:
-            posts = parse_feed(fetch_feed(args.feed_url))
-        except urllib.error.HTTPError as error:
-            if error.code != 403:
-                raise
-            print("RSS request was blocked; using the rss2json feed proxy.", file=sys.stderr)
-            posts = fetch_rss2json(args.feed_url)
+    try:
+        feed_bytes = args.feed_file.read_bytes() if args.feed_file else fetch_feed(args.feed_url)
+        posts = parse_feed(feed_bytes)
+    except (requests.RequestsError, ET.ParseError, ValueError) as error:
+        print(f"Substack sync failed: {error}", file=sys.stderr)
+        return 1
+    print(f"Read {len(posts)} post{'s' if len(posts) != 1 else ''} from the RSS feed.")
     count, changed = sync_posts(posts, args.index, args.cache)
     state = "updated" if changed else "already current"
     print(f"Substack archive {state}: {count} automated post{'s' if count != 1 else ''}.")
