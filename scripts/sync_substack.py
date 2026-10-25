@@ -9,6 +9,8 @@ import json
 import re
 import sys
 import time
+import urllib.error
+import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -16,8 +18,6 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 from zoneinfo import ZoneInfo
-
-from curl_cffi import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +29,11 @@ END_MARKER = "<!-- END AUTO-SYNCED SUBSTACK POSTS -->"
 CONTENT_NAMESPACE = "http://purl.org/rss/1.0/modules/content/"
 PACIFIC = ZoneInfo("America/Los_Angeles")
 FETCH_ATTEMPTS = 3
-RETRYABLE_STATUS_CODES = {403, 408, 429, 500, 502, 503, 504}
+RETRYABLE_STATUS_CODES = {408, 429, 500, 502, 503, 504}
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/139.0 Safari/537.36"
+)
 
 ALLOWED_TAGS = {
     "a",
@@ -300,14 +304,21 @@ def post_slug(link: str, guid: str, title: str) -> str:
     return safe_identifier(title.lower())
 
 
-def parse_feed(feed_bytes: bytes) -> list[dict[str, str]]:
+def parse_feed(feed_bytes: bytes, feed_url: str = DEFAULT_FEED_URL) -> list[dict[str, str]]:
     root = ET.fromstring(feed_bytes)
     if root.tag != "rss" or root.find("channel") is None:
         raise ValueError("Expected an RSS feed with a channel")
+    source_host = urlparse(feed_url).hostname
+    publication = urlparse(root.findtext("channel/link") or "")
+    if publication.scheme not in {"http", "https"} or publication.hostname != source_host:
+        raise ValueError("RSS feed does not match the requested publication")
     posts: list[dict[str, str]] = []
     for item in root.findall("./channel/item"):
         title = (item.findtext("title") or "Untitled").strip()
         link = (item.findtext("link") or "").strip()
+        parsed_link = urlparse(link)
+        if parsed_link.scheme not in {"http", "https"} or parsed_link.hostname != source_host:
+            raise ValueError("RSS post URL does not match the requested publication")
         guid = (item.findtext("guid") or link).strip()
         slug = post_slug(link, guid, title)
         published = parsedate_to_datetime(item.findtext("pubDate") or "").astimezone(timezone.utc)
@@ -431,24 +442,42 @@ def sync(feed_bytes: bytes, index_path: Path, cache_path: Path) -> tuple[int, bo
     return sync_posts(parse_feed(feed_bytes), index_path, cache_path)
 
 
-def fetch_feed(url: str) -> bytes:
-    # Match Chrome's TLS and HTTP fingerprint as well as its request headers.
+def fetch_feed(url: str, *, headers: dict[str, str] | None = None) -> bytes:
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": BROWSER_USER_AGENT, **(headers or {})},
+    )
     for attempt in range(1, FETCH_ATTEMPTS + 1):
         try:
-            response = requests.get(url, impersonate="chrome", timeout=30)
-        except requests.RequestsError:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return response.read()
+        except urllib.error.HTTPError as error:
+            if error.code not in RETRYABLE_STATUS_CODES or attempt == FETCH_ATTEMPTS:
+                raise
+            reason = f"HTTP {error.code}"
+        except (urllib.error.URLError, TimeoutError):
             if attempt == FETCH_ATTEMPTS:
                 raise
             reason = "network error"
-        else:
-            if response.status_code not in RETRYABLE_STATUS_CODES or attempt == FETCH_ATTEMPTS:
-                response.raise_for_status()
-                return response.content
-            reason = f"HTTP {response.status_code}"
         delay = 2 ** attempt
         print(f"Feed request failed ({reason}); retrying in {delay}s.", file=sys.stderr)
         time.sleep(delay)
     raise RuntimeError("Feed fetch exhausted its retry attempts")
+
+
+def fetch_posts(feed_url: str) -> list[dict[str, str]]:
+    try:
+        return parse_feed(fetch_feed(feed_url), feed_url)
+    except (urllib.error.URLError, TimeoutError, ET.ParseError, ValueError) as error:
+        if isinstance(error, urllib.error.HTTPError) and error.code not in RETRYABLE_STATUS_CODES | {403}:
+            raise
+        print(f"Direct RSS request failed ({error}); using Jina Reader for raw RSS.", file=sys.stderr)
+    # Request the original markup and a fresh fetch so new posts appear promptly.
+    feed_bytes = fetch_feed(
+        f"https://r.jina.ai/{feed_url}",
+        headers={"X-Respond-With": "html", "X-No-Cache": "true"},
+    )
+    return parse_feed(feed_bytes, feed_url)
 
 
 def main() -> int:
@@ -460,9 +489,8 @@ def main() -> int:
     args = parser.parse_args()
 
     try:
-        feed_bytes = args.feed_file.read_bytes() if args.feed_file else fetch_feed(args.feed_url)
-        posts = parse_feed(feed_bytes)
-    except (requests.RequestsError, ET.ParseError, ValueError) as error:
+        posts = parse_feed(args.feed_file.read_bytes(), args.feed_url) if args.feed_file else fetch_posts(args.feed_url)
+    except (urllib.error.URLError, TimeoutError, ET.ParseError, ValueError) as error:
         print(f"Substack sync failed: {error}", file=sys.stderr)
         return 1
     print(f"Read {len(posts)} post{'s' if len(posts) != 1 else ''} from the RSS feed.")
