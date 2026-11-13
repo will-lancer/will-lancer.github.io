@@ -1,0 +1,111 @@
+{
+  "code": 200,
+  "message": "OK",
+  "tweet": {
+    "id": "2118033420706038023",
+    "url": "https://x.com/wmlancer/status/2118033420706038023",
+    "text": "https://x.com/i/article/2118014892573675521",
+    "created_at": "Wed Nov 04 17:31:33 +0000 2026",
+    "created_timestamp": 1793813493,
+    "author": {
+      "screen_name": "wmlancer",
+      "id": "1939811737626443778"
+    },
+    "article": {
+      "id": "2118014892573675521",
+      "title": "Two suggestions for improving automated math and physics research",
+      "created_at": "2026-11-04T17:31:33.000Z",
+      "preview_text": "Really, there are three things that are inhibiting fully automated math and physics research.",
+      "content": {
+        "blocks": [
+          {
+            "key": "b1",
+            "type": "unstyled",
+            "text": "Remark: see Resolution for details.",
+            "inlineStyleRanges": [
+              {
+                "offset": 0,
+                "length": 8,
+                "style": "Italic"
+              }
+            ],
+            "entityRanges": [
+              {
+                "offset": 12,
+                "length": 10,
+                "key": 0
+              }
+            ],
+            "data": {}
+          },
+          {
+            "key": "b2",
+            "type": "unstyled",
+            "text": "Do supervised fine-tuning to make LLM writing better.",
+            "inlineStyleRanges": [
+              {
+                "offset": 0,
+                "length": 53,
+                "style": "Bold"
+              }
+            ],
+            "entityRanges": [],
+            "data": {}
+          },
+          {
+            "key": "b3",
+            "type": "atomic",
+            "text": " ",
+            "inlineStyleRanges": [],
+            "entityRanges": [
+              {
+                "offset": 0,
+                "length": 1,
+                "key": 1
+              }
+            ],
+            "data": {}
+          }
+        ],
+        "entityMap": [
+          {
+            "key": "0",
+            "value": {
+              "type": "LINK",
+              "mutability": "Mutable",
+              "data": {
+                "url": "https://resolution.org/?utm_source=twitter&x=1"
+              }
+            }
+          },
+          {
+            "key": "1",
+            "value": {
+              "type": "MEDIA",
+              "mutability": "Immutable",
+              "data": {
+                "caption": "How well-written papers are structured.",
+                "mediaItems": [
+                  {
+                    "mediaId": "2118021406747230209"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "media_entities": [
+        {
+          "media_id": "2118021406747230209",
+          "media_info": {
+            "__typename": "ApiImage",
+            "original_img_url": "https://pbs.twimg.com/media/HWS5P2fXgAE7l6T.png",
+            "original_img_width": 1512,
+            "original_img_height": 794
+          }
+        }
+      ]
+    }
+  }
+}

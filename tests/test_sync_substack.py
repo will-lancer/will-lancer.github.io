@@ -8,13 +8,26 @@ from pathlib import Path
 from unittest.mock import call, patch
 
 from scripts.sync_substack import (
-    DEFAULT_FEED_URL, END_MARKER, START_MARKER, fetch_feed, fetch_posts, main,
-    parse_feed, sanitize_content, sync,
+    DEFAULT_FEED_URL,
+    DEFAULT_X_HANDLE,
+    END_MARKER,
+    START_MARKER,
+    extract_x_status_ids_from_html,
+    fetch_feed,
+    fetch_posts,
+    fetch_x_articles,
+    main,
+    parse_feed,
+    parse_fxtwitter_article,
+    sanitize_content,
+    sync,
+    sync_all_posts,
 )
 
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "tests" / "fixtures" / "substack-feed.xml"
+X_FIXTURE = ROOT / "tests" / "fixtures" / "x-article.json"
 
 
 class SyncSubstackTest(unittest.TestCase):
@@ -39,6 +52,38 @@ class SyncSubstackTest(unittest.TestCase):
         self.assertEqual(request.get_header("X-respond-with"), "html")
         self.assertEqual(request.get_header("X-no-cache"), "true")
         sleep.assert_not_called()
+
+    def test_substack_api_fallback_recovers_when_jina_also_fails(self) -> None:
+        archive = json.dumps(
+            {
+                "posts": [
+                    {
+                        "slug": "api-post",
+                        "title": "API post",
+                        "subtitle": "Recovered from API.",
+                        "canonical_url": "https://wlancer.substack.com/p/api-post",
+                        "post_date": "2026-11-12T19:14:09.000Z",
+                    }
+                ]
+            }
+        ).encode("utf-8")
+        detail = json.dumps(
+            {
+                "slug": "api-post",
+                "title": "API post",
+                "subtitle": "Recovered from API.",
+                "canonical_url": "https://wlancer.substack.com/p/api-post",
+                "post_date": "2026-11-12T19:14:09.000Z",
+                "body_html": "<p>Body from API.</p><svg><path d='M0 0'/></svg>",
+            }
+        ).encode("utf-8")
+        outcomes = [self.http_error(403), self.http_error(403), archive, detail]
+        with patch("scripts.sync_substack.fetch_feed", side_effect=outcomes):
+            with contextlib.redirect_stderr(io.StringIO()):
+                posts = fetch_posts(DEFAULT_FEED_URL)
+        self.assertEqual(len(posts), 1)
+        self.assertEqual(posts[0]["slug"], "api-post")
+        self.assertEqual(posts[0]["content_html"], "<p>Body from API.</p>")
 
     def test_recovers_from_transient_http_and_network_errors(self) -> None:
         errors = [self.http_error(status) for status in (408, 429, 500, 502, 503, 504)]
@@ -97,7 +142,8 @@ class SyncSubstackTest(unittest.TestCase):
             argv = ["sync_substack.py", "--index", str(index), "--cache", str(cache)]
             for result in (self.http_error(403), b"<html/>", b"broken XML"):
                 with self.subTest(result=result), patch("sys.argv", argv):
-                    with patch("scripts.sync_substack.fetch_feed", side_effect=[self.http_error(403), result]):
+                    outcomes = [self.http_error(403), result, self.http_error(403), self.http_error(403)]
+                    with patch("scripts.sync_substack.fetch_feed", side_effect=outcomes):
                         with contextlib.redirect_stderr(io.StringIO()) as stderr:
                             self.assertEqual(main(), 1)
                     self.assertIn("Substack sync failed:", stderr.getvalue())
@@ -155,6 +201,92 @@ class SyncSubstackTest(unittest.TestCase):
         self.assertIn('href="#substack-newest-post-footnote-1"', rendered)
         self.assertIn('id="substack-newest-post-footnote-1"', rendered)
         self.assertNotIn("wlancer.substack.com/#", rendered)
+
+    def test_parses_and_renders_x_article_with_styles_links_and_figures(self) -> None:
+        payload = json.loads(X_FIXTURE.read_text(encoding="utf-8"))
+        article = parse_fxtwitter_article(payload, DEFAULT_X_HANDLE)
+        assert article is not None
+
+        self.assertEqual(article["slug"], "two-suggestions-for-improving-automated-math-and-physics")
+        self.assertEqual(article["source"], "x")
+        self.assertEqual(article["category"], "X Article")
+        self.assertEqual(article["url"], "https://x.com/wmlancer/status/2118033420706038023")
+        self.assertEqual(article["published"], "2026-11-04T17:31:33+00:00")
+        self.assertIn("<em>Remark: </em>", article["content_html"])
+        self.assertIn('href="https://resolution.org/?x=1"', article["content_html"])
+        self.assertIn("<h2>Do supervised fine-tuning to make LLM writing better.</h2>", article["content_html"])
+        self.assertIn('<img src="https://pbs.twimg.com/media/HWS5P2fXgAE7l6T.png"', article["content_html"])
+        self.assertIn("<figcaption>How well-written papers are structured.</figcaption>", article["content_html"])
+
+        payload["tweet"]["author"]["screen_name"] = "impostor"
+        with self.assertRaises(ValueError):
+            parse_fxtwitter_article(payload, DEFAULT_X_HANDLE)
+
+    def test_discovers_only_unseen_x_statuses_and_merges_chronologically(self) -> None:
+        html_sample = """
+        <a href="/wmlancer/status/2118033420706038023">Nov 4</a>
+        <a href="/wmlancer/status/2118393600354447757">Nov 5</a>
+        <a href="/someoneelse/status/1946477742855532918">Quote</a>
+        """
+        self.assertEqual(
+            extract_x_status_ids_from_html(html_sample, "wmlancer"),
+            ["2118393600354447757", "2118033420706038023"],
+        )
+
+        article_payload = X_FIXTURE.read_bytes()
+        non_article_payload = json.dumps(
+            {
+                "code": 200,
+                "tweet": {
+                    "id": "2118393600354447757",
+                    "author": {"screen_name": "wmlancer"},
+                    "text": "Short post, not an article.",
+                },
+            }
+        ).encode("utf-8")
+
+        with patch("scripts.sync_substack.discover_x_status_ids", return_value=["2118393600354447757", "2118033420706038023"]):
+            with patch("scripts.sync_substack.fetch_feed", side_effect=[article_payload]) as get:
+                articles, seen_ids = fetch_x_articles("wmlancer", known_status_ids={"2118393600354447757"})
+        get.assert_called_once()
+        self.assertEqual(len(articles), 1)
+        self.assertEqual(seen_ids, ["2118393600354447757", "2118033420706038023"])
+
+        with tempfile.TemporaryDirectory() as directory:
+            temp = Path(directory)
+            index = temp / "index.html"
+            substack_cache = temp / "substack-posts.json"
+            x_cache = temp / "x-articles.json"
+            index.write_text(f"<section>\n  {START_MARKER}\n  {END_MARKER}\n</section>\n", encoding="utf-8")
+
+            substack_posts = parse_feed(FIXTURE.read_bytes())
+            count, changed = sync_all_posts(
+                substack_posts,
+                index,
+                substack_cache,
+                x_posts=articles,
+                x_cache_path=x_cache,
+                x_handle="wmlancer",
+                x_status_ids=seen_ids,
+            )
+            rendered = index.read_text(encoding="utf-8")
+            self.assertTrue(changed)
+            self.assertEqual(count, 3)
+            # Nov 2026 X Article appears above Aug 2026 Substack fixture posts.
+            self.assertLess(rendered.index("data-x-article"), rendered.index("data-substack-post"))
+            self.assertIn(">X</a>", rendered)
+
+            # A subsequent run where X fails (x_posts=None) preserves the cached X article!
+            count_after, changed_after = sync_all_posts(
+                substack_posts,
+                index,
+                substack_cache,
+                x_posts=None,
+                x_cache_path=x_cache,
+                x_handle="wmlancer",
+            )
+            self.assertEqual(count_after, 3)
+            self.assertFalse(changed_after)
 
 
 if __name__ == "__main__":
